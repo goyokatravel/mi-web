@@ -240,6 +240,18 @@
   .itin-cta{
     margin-top:auto; font-weight:700; font-size:0.85rem; color:var(--blue-deep);
   }
+  .itin-days{display:flex; flex-direction:column; gap:6px;}
+  .itin-days .day-chip{
+    border-radius:10px; padding:8px 12px; font-size:0.75rem; font-weight:700; color:var(--ink);
+  }
+  .itin-card:nth-child(1) .day-chip:nth-child(1){background:var(--blue-tint);}
+  .itin-card:nth-child(1) .day-chip:nth-child(2){background:#FFF1A8;}
+  .itin-card:nth-child(2) .day-chip:nth-child(1){background:#FFF1A8;}
+  .itin-card:nth-child(2) .day-chip:nth-child(2){background:var(--blue-tint);}
+  .itin-card:nth-child(3) .day-chip:nth-child(1){background:#FFD2C9;}
+  .itin-card:nth-child(3) .day-chip:nth-child(2){background:var(--blue-tint);}
+  .itin-title-row{display:flex; align-items:center; gap:8px;}
+  .itin-title-row .itin-emoji{font-size:1.2rem;}
 
   /* ---------- MOCKUP + TEXT ---------- */
   .split{
@@ -622,18 +634,14 @@
   </div>
   <div class="itin-grid">
     <div class="itin-card reveal">
-      <div class="itin-cover">
-        <div class="itin-route"><span class="dot"></span><span class="line"></span><span class="dot"></span></div>
-        <div class="itin-people">
-          <div class="avatars">
-            <div class="av"></div>
-            <div class="av"></div>
-            <div class="av"></div>
-          </div>
-          <span data-es="6 personas" data-en="6 people">6 personas</span>
-        </div>
+      <div class="itin-days">
+        <span class="day-chip" data-es="Día 1 · Coliseo y Foro Romano" data-en="Day 1 · Colosseum and Roman Forum">Día 1 · Coliseo y Foro Romano</span>
+        <span class="day-chip" data-es="Día 2 · Museos Vaticanos" data-en="Day 2 · Vatican Museums">Día 2 · Museos Vaticanos</span>
       </div>
-      <h3 data-es="Escapada a Lisboa" data-en="Lisbon getaway">Escapada a Lisboa</h3>
+      <div class="itin-title-row">
+        <span class="itin-emoji">🏛️</span>
+        <h3 data-es="Escapada a Roma" data-en="Rome getaway">Escapada a Roma</h3>
+      </div>
       <div class="itin-meta">
         <span data-es="4 días" data-en="4 days">4 días</span>
         <span data-es="Mayo 2026" data-en="May 2026">Mayo 2026</span>
@@ -641,18 +649,14 @@
       <span class="itin-cta" data-es="Descárgate YOKA para verlo →" data-en="Download YOKA to see it →">Descárgate YOKA para verlo →</span>
     </div>
     <div class="itin-card reveal">
-      <div class="itin-cover">
-        <div class="itin-route"><span class="dot"></span><span class="line"></span><span class="dot"></span></div>
-        <div class="itin-people">
-          <div class="avatars">
-            <div class="av"></div>
-            <div class="av"></div>
-            <div class="av"></div>
-          </div>
-          <span data-es="8 personas" data-en="8 people">8 personas</span>
-        </div>
+      <div class="itin-days">
+        <span class="day-chip" data-es="Día 1 · Casco antiguo de Hanói" data-en="Day 1 · Hanoi's Old Quarter">Día 1 · Casco antiguo de Hanói</span>
+        <span class="day-chip" data-es="Día 2 · Excursión en barco a Ha Long" data-en="Day 2 · Boat trip to Ha Long Bay">Día 2 · Excursión en barco a Ha Long</span>
       </div>
-      <h3 data-es="Interrail por Europa" data-en="Interrail across Europe">Interrail por Europa</h3>
+      <div class="itin-title-row">
+        <span class="itin-emoji">🛶</span>
+        <h3 data-es="Ruta por Vietnam" data-en="Vietnam route">Ruta por Vietnam</h3>
+      </div>
       <div class="itin-meta">
         <span data-es="12 días" data-en="12 days">12 días</span>
         <span data-es="Verano 2026" data-en="Summer 2026">Verano 2026</span>
@@ -660,21 +664,17 @@
       <span class="itin-cta" data-es="Descárgate YOKA para verlo →" data-en="Download YOKA to see it →">Descárgate YOKA para verlo →</span>
     </div>
     <div class="itin-card reveal">
-      <div class="itin-cover">
-        <div class="itin-route"><span class="dot"></span><span class="line"></span><span class="dot"></span></div>
-        <div class="itin-people">
-          <div class="avatars">
-            <div class="av"></div>
-            <div class="av"></div>
-            <div class="av"></div>
-          </div>
-          <span data-es="5 personas" data-en="5 people">5 personas</span>
-        </div>
+      <div class="itin-days">
+        <span class="day-chip" data-es="Día 1 · Llegada a Taskent y casco antiguo" data-en="Day 1 · Arrival in Tashkent and old town">Día 1 · Llegada a Taskent y casco antiguo</span>
+        <span class="day-chip" data-es="Día 2 · Tren a Samarcanda y el Registán" data-en="Day 2 · Train to Samarkand and the Registan">Día 2 · Tren a Samarcanda y el Registán</span>
       </div>
-      <h3 data-es="Finde en la nieve" data-en="Snowy weekend">Finde en la nieve</h3>
+      <div class="itin-title-row">
+        <span class="itin-emoji">🕌</span>
+        <h3 data-es="Ruta de la Seda por Uzbekistán" data-en="Silk Road through Uzbekistan">Ruta de la Seda por Uzbekistán</h3>
+      </div>
       <div class="itin-meta">
-        <span data-es="3 días" data-en="3 days">3 días</span>
-        <span data-es="Enero 2027" data-en="January 2027">Enero 2027</span>
+        <span data-es="8 días" data-en="8 days">8 días</span>
+        <span data-es="Octubre 2026" data-en="October 2026">Octubre 2026</span>
       </div>
       <span class="itin-cta" data-es="Descárgate YOKA para verlo →" data-en="Download YOKA to see it →">Descárgate YOKA para verlo →</span>
     </div>
