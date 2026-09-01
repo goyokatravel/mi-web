@@ -305,6 +305,23 @@
   .mini-amount{font-size:0.55rem; font-weight:700;}
   .mini-amount.pos{color:#1a8a4a;}
   .mini-amount.neg{color:var(--coral);}
+  .mini-map{
+    flex:1; background:var(--blue-tint); border-radius:8px;
+    display:flex; align-items:center; justify-content:center; font-size:1.3rem;
+  }
+  .mini-photo{
+    height:44px; background:var(--blue-tint); border-radius:8px; flex-shrink:0;
+  }
+  .mini-flags{display:flex; gap:4px; flex-wrap:wrap;}
+  .mini-flags span{
+    width:20px; height:20px; border-radius:50%; background:var(--blue-tint);
+    display:flex; align-items:center; justify-content:center; font-size:0.65rem;
+  }
+  .mini-count{font-family:'Baloo 2', sans-serif; font-weight:700; font-size:0.62rem; color:var(--ink); margin-top:auto;}
+  .mini-search{
+    display:flex; align-items:center; gap:5px; background:var(--blue-tint);
+    border-radius:8px; padding:6px 8px; font-size:0.55rem; color:var(--ink-soft); font-weight:700;
+  }
 
   /* ---------- FEATURES SCROLL ---------- */
   .features{
@@ -561,18 +578,17 @@
           <span class="mini-title" data-es="Nuevo viaje" data-en="New trip">Nuevo viaje</span>
           <div class="mini-row">
             <div class="mini-pill" style="margin-top:0; flex:1;" data-es="Crear" data-en="Create">Crear</div>
-            <div class="mini-pill" style="margin-top:0; flex:1; background:var(--blue-tint); color:var(--ink);" data-es="Importar" data-en="Import">Importar</div>
+            <div class="mini-pill" style="margin-top:0; flex:1; background:var(--blue-tint); color:var(--ink);" data-es="Del feed" data-en="From feed">Del feed</div>
           </div>
-          <div class="mini-day">
-            <div class="mini-line"></div>
-            <div class="mini-line short"></div>
+          <div class="mini-feedcard alt">
+            <span class="mini-label" data-es="Grupo · Interrail" data-en="Group · Interrail">Grupo · Interrail</span>
           </div>
         </div>
       </div>
       <div class="hiw-icon">🧳</div>
       <span class="hiw-step" data-es="Paso 1" data-en="Step 1">Paso 1</span>
       <h3 data-es="Crea o importa tu viaje" data-en="Create or import your trip">Crea o importa tu viaje</h3>
-      <p data-es="Arranca un plan desde cero o importa uno que ya tuvieras liado por ahí." data-en="Start a plan from scratch or import one you already had going somewhere else.">Arranca un plan desde cero o importa uno que ya tuvieras liado por ahí.</p>
+      <p data-es="Arranca un plan desde cero o parte de uno que hayas visto en el feed, como plantilla para el tuyo." data-en="Start a plan from scratch, or start from one you saw on the feed, as a template for your own.">Arranca un plan desde cero o parte de uno que hayas visto en el feed, como plantilla para el tuyo.</p>
     </div>
     <div class="hiw-card reveal">
       <div class="mini-phone">
@@ -642,16 +658,17 @@
     <div class="feature-card reveal">
       <div class="mini-phone">
         <div class="mini-screen">
+          <div class="mini-search">🔍 <span data-es="Buscar…" data-en="Search…">Buscar…</span></div>
           <div class="mini-feedcard">
-            <span class="mini-label" data-es="Grupo · Lisboa" data-en="Group · Lisbon">Grupo · Lisboa</span>
+            <span class="mini-label" data-es="Roma · pública" data-en="Rome · public">Roma · pública</span>
           </div>
           <div class="mini-feedcard alt">
-            <span class="mini-label" data-es="Grupo · Interrail" data-en="Group · Interrail">Grupo · Interrail</span>
+            <span class="mini-label" data-es="Vietnam · pública" data-en="Vietnam · public">Vietnam · pública</span>
           </div>
         </div>
       </div>
-      <h3 data-es="Feed en vivo" data-en="Live feed">Feed en vivo</h3>
-      <p data-es="Ve los planes de tu gente según van pasando, no cuando alguien se acuerda de contarlo." data-en="See your people's plans as they happen, not whenever someone remembers to mention it.">Ve los planes de tu gente según van pasando, no cuando alguien se acuerda de contarlo.</p>
+      <h3 data-es="Explorar" data-en="Explore">Explorar</h3>
+      <p data-es="Mira actividades, gente e itinerarios públicos de toda la comunidad, y busca justo lo que te interesa." data-en="Browse activities, people and public itineraries from the whole community, and search for exactly what you're after.">Mira actividades, gente e itinerarios públicos de toda la comunidad, y busca justo lo que te interesa.</p>
     </div>
     <div class="feature-card reveal">
       <div class="mini-phone">
@@ -668,7 +685,17 @@
         </div>
       </div>
       <h3 data-es="Seguir amigos" data-en="Follow friends">Seguir amigos</h3>
-      <p data-es="Descubre a dónde va tu gente antes de que lo cuenten y apúntate al próximo plan." data-en="Find out where your people are headed before they even mention it and join the next plan.">Descubre a dónde va tu gente antes de que lo cuenten y apúntate al próximo plan.</p>
+      <p data-es="Sigue a la gente cuyos itinerarios públicos te gustan, para no perderte los que compartan después." data-en="Follow people whose public itineraries you like, so you don't miss the ones they share next.">Sigue a la gente cuyos itinerarios públicos te gustan, para no perderte los que compartan después.</p>
+    </div>
+    <div class="feature-card reveal">
+      <div class="mini-phone">
+        <div class="mini-screen">
+          <div class="mini-map">📍</div>
+          <div class="mini-pill" data-es="Abrir en Maps" data-en="Open in Maps">Abrir en Maps</div>
+        </div>
+      </div>
+      <h3 data-es="Itinerario en Maps" data-en="Itinerary on Maps">Itinerario en Maps</h3>
+      <p data-es="Abre el plan del día directamente en Maps, con cada actividad ubicada y lista para llegar sin perderte." data-en="Open the day's plan straight in Maps, with every activity pinned and ready so you don't get lost.">Abre el plan del día directamente en Maps, con cada actividad ubicada y lista para llegar sin perderte.</p>
     </div>
     <div class="feature-card reveal">
       <div class="mini-phone">
@@ -683,24 +710,69 @@
           </div>
         </div>
       </div>
-      <h3 data-es="Gastos compartidos" data-en="Shared expenses">Gastos compartidos</h3>
-      <p data-es="Apuntad quién pagó qué y la app hace las cuentas de quién debe a quién." data-en="Log who paid for what and the app works out who owes who.">Apuntad quién pagó qué y la app hace las cuentas de quién debe a quién.</p>
+      <h3 data-es="Tricount integrado" data-en="Built-in Tricount">Tricount integrado</h3>
+      <p data-es="Apuntad quién pagó qué y la app hace las cuentas de quién debe a quién, sin salir de YOKA." data-en="Log who paid for what and the app works out who owes who, without leaving YOKA.">Apuntad quién pagó qué y la app hace las cuentas de quién debe a quién, sin salir de YOKA.</p>
+    </div>
+    <div class="feature-card reveal">
+      <div class="mini-phone">
+        <div class="mini-screen">
+          <div class="mini-row">
+            <div class="mini-pill" style="margin-top:0; flex:1;" data-es="Grupo" data-en="Group">Grupo</div>
+            <div class="mini-pill" style="margin-top:0; flex:1; background:var(--blue-tint); color:var(--ink);" data-es="Personal" data-en="Personal">Personal</div>
+          </div>
+          <span class="mini-label" style="font-size:0.55rem; font-style:italic;" data-es="¿Qué ha sido lo mejor del día?" data-en="What was the best part of today?">¿Qué ha sido lo mejor del día?</span>
+          <div class="mini-line"></div>
+          <div class="mini-line short"></div>
+        </div>
+      </div>
+      <h3 data-es="Diario de viaje" data-en="Trip journal">Diario de viaje</h3>
+      <p data-es="Cada día hay una pregunta a la que puedes responder, o escribir lo que quieras. Con una parte para el grupo y otra solo para ti." data-en="Every day there's a question you can answer, or write freely instead. With a group section and a personal one just for you.">Cada día hay una pregunta a la que puedes responder, o escribir lo que quieras. Con una parte para el grupo y otra solo para ti.</p>
+    </div>
+    <div class="feature-card reveal">
+      <div class="mini-phone">
+        <div class="mini-screen">
+          <div class="mini-day">
+            <span class="mini-daytag" data-es="📁 Museos" data-en="📁 Museums">📁 Museos</span>
+          </div>
+          <div class="mini-day">
+            <span class="mini-daytag" data-es="📁 Restaurantes" data-en="📁 Restaurants">📁 Restaurantes</span>
+          </div>
+        </div>
+      </div>
+      <h3 data-es="Carpetas colaborativas" data-en="Shared folders">Carpetas colaborativas</h3>
+      <p data-es="Cualquiera del grupo puede guardar en las carpetas del viaje museos, restaurantes o planes que haya visto en el feed, para tenerlos todos a mano." data-en="Anyone in the group can save museums, restaurants or plans they've seen on the feed into the trip's folders, to have them all on hand.">Cualquiera del grupo puede guardar en las carpetas del viaje museos, restaurantes o planes que haya visto en el feed, para tenerlos todos a mano.</p>
+    </div>
+    <div class="feature-card reveal">
+      <div class="mini-phone">
+        <div class="mini-screen">
+          <span class="mini-title" data-es="Tu perfil" data-en="Your profile">Tu perfil</span>
+          <div class="mini-flags">
+            <span>🇵🇹</span>
+            <span>🇻🇳</span>
+            <span>🇮🇹</span>
+            <span>🇺🇿</span>
+          </div>
+          <span class="mini-count" data-es="12 países" data-en="12 countries">12 países</span>
+        </div>
+      </div>
+      <h3 data-es="Acumula países en tu perfil" data-en="Collect countries on your profile">Acumula países en tu perfil</h3>
+      <p data-es="Cada viaje que completas suma un país a tu perfil, como un mapa de todos los sitios por los que has pasado con tu gente." data-en="Every trip you complete adds a country to your profile, like a map of everywhere you've been with your people.">Cada viaje que completas suma un país a tu perfil, como un mapa de todos los sitios por los que has pasado con tu gente.</p>
     </div>
     <div class="feature-card reveal">
       <div class="mini-phone">
         <div class="mini-screen">
           <div class="mini-notif">
             <div class="dot"></div>
-            <span class="mini-label" style="font-size:0.5rem;" data-es="Marcos votó" data-en="Marcos voted">Marcos votó</span>
+            <span class="mini-label" style="font-size:0.5rem;" data-es="Nuevo plan propuesto" data-en="New plan proposed">Nuevo plan propuesto</span>
           </div>
           <div class="mini-notif">
             <div class="dot"></div>
-            <span class="mini-label" style="font-size:0.5rem;" data-es="Nuevo plan" data-en="New plan">Nuevo plan</span>
+            <span class="mini-label" style="font-size:0.5rem;" data-es="Marcos se apunta" data-en="Marcos is in">Marcos se apunta</span>
           </div>
         </div>
       </div>
       <h3 data-es="Notificaciones al momento" data-en="Instant notifications">Notificaciones al momento</h3>
-      <p data-es="Entérate en el momento en que alguien vota, propone un plan o confirma su asistencia." data-en="Know the moment someone votes, proposes a plan, or confirms they're in.">Entérate en el momento en que alguien vota, propone un plan o confirma su asistencia.</p>
+      <p data-es="Entérate en el momento en que alguien propone un plan, confirma que se apunta o sube algo al itinerario." data-en="Know the moment someone proposes a plan, confirms they're in, or adds something to the itinerary.">Entérate en el momento en que alguien propone un plan, confirma que se apunta o sube algo al itinerario.</p>
     </div>
   </div>
 </section>
