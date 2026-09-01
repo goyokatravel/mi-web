@@ -52,8 +52,41 @@
   }
   .brand span{color:var(--coral);}
 
+  .nav-menu{
+    display:flex; align-items:center; gap:28px;
+  }
+
   .lang-toggle{
     display:flex; align-items:center; gap:14px;
+  }
+
+  /* ---------- BOTTOM TAB BAR (mobile) ---------- */
+  .bottom-tabs{
+    display:none;
+  }
+
+  @media (max-width:760px){
+    nav{padding:14px 6%;}
+    .brand{font-size:1.25rem;}
+    .nav-links{display:none;}
+    .nav-cta{padding:8px 16px; font-size:0.85rem;}
+
+    .bottom-tabs{
+      display:flex; justify-content:space-around;
+      position:fixed; left:0; right:0; bottom:0; z-index:60;
+      background:var(--ink);
+      padding:9px 4px calc(9px + env(safe-area-inset-bottom));
+      border-top:2px solid var(--ink);
+    }
+    .bottom-tabs a{
+      display:flex; flex-direction:column; align-items:center; gap:2px;
+      color:var(--white); opacity:0.65;
+      font-size:0.62rem; font-weight:700; text-align:center;
+      max-width:80px; line-height:1.15;
+    }
+    .bottom-tabs a.current{opacity:1; color:var(--yellow);}
+    .bottom-tabs .tab-icon{font-size:1.15rem;}
+    body{padding-bottom:66px;}
   }
   .lang-switch{
     display:flex; border:2px solid var(--ink); border-radius:100px;
@@ -479,18 +512,41 @@
 
 <nav>
   <a href="index.html" class="brand">yoka</a>
-  <div class="nav-links">
-    <a href="como-funciona.html" data-es="Cómo funciona" data-en="How it works">Cómo funciona</a>
-    <a href="sobre-nosotros.html" data-es="Sobre nosotros" data-en="About us">Sobre nosotros</a>
-  </div>
-  <div class="lang-toggle">
-    <div class="lang-switch">
-      <button type="button" class="active" data-lang="es" onclick="setLang('es')">ES</button>
-      <button type="button" data-lang="en" onclick="setLang('en')">EN</button>
+  <div class="nav-menu">
+    <div class="nav-links">
+      <a href="como-funciona.html" data-es="Cómo funciona" data-en="How it works">Cómo funciona</a>
+      <a href="sobre-nosotros.html" data-es="Sobre nosotros" data-en="About us">Sobre nosotros</a>
+      <a href="faq.html" data-es="FAQ" data-en="FAQ">FAQ</a>
+      <a href="contacto.html" data-es="Contacto" data-en="Contact">Contacto</a>
     </div>
-    <a href="#download" class="nav-cta" data-es="Descargar" data-en="Download">Descargar</a>
+    <div class="lang-toggle">
+      <div class="lang-switch">
+        <button type="button" class="active" data-lang="es" onclick="setLang('es')">ES</button>
+        <button type="button" data-lang="en" onclick="setLang('en')">EN</button>
+      </div>
+      <a href="#download" class="nav-cta" data-es="Descargar" data-en="Download">Descargar</a>
+    </div>
   </div>
 </nav>
+
+<div class="bottom-tabs">
+  <a href="como-funciona.html">
+    <span class="tab-icon">🧭</span>
+    <span data-es="Cómo funciona" data-en="How it works">Cómo funciona</span>
+  </a>
+  <a href="sobre-nosotros.html">
+    <span class="tab-icon">👋</span>
+    <span data-es="Nosotros" data-en="About">Nosotros</span>
+  </a>
+  <a href="faq.html">
+    <span class="tab-icon">❓</span>
+    <span data-es="FAQ" data-en="FAQ">FAQ</span>
+  </a>
+  <a href="contacto.html">
+    <span class="tab-icon">✉️</span>
+    <span data-es="Contacto" data-en="Contact">Contacto</span>
+  </a>
+</div>
 
 <!-- HERO -->
 <section class="hero">
