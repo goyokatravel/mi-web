@@ -40,7 +40,7 @@
 
   /* ---------- NAV ---------- */
   nav{
-    position:sticky; top:0; z-index:50;
+    position:sticky; top:0; z-index:60;
     display:flex; align-items:center; justify-content:space-between;
     padding:20px 6%;
     background:rgba(255,253,247,0.85);
@@ -52,42 +52,11 @@
   }
   .brand span{color:var(--coral);}
 
-  .nav-menu{
-    display:flex; align-items:center; gap:28px;
-  }
-
   .lang-toggle{
     display:flex; align-items:center; gap:14px;
   }
 
   /* ---------- BOTTOM TAB BAR (mobile) ---------- */
-  .bottom-tabs{
-    display:none;
-  }
-
-  @media (max-width:760px){
-    nav{padding:14px 6%;}
-    .brand{font-size:1.25rem;}
-    .nav-links{display:none;}
-    .nav-cta{padding:8px 16px; font-size:0.85rem;}
-
-    .bottom-tabs{
-      display:flex; justify-content:space-around;
-      position:fixed; left:0; right:0; bottom:0; z-index:60;
-      background:var(--ink);
-      padding:9px 4px calc(9px + env(safe-area-inset-bottom));
-      border-top:2px solid var(--ink);
-    }
-    .bottom-tabs a{
-      display:flex; flex-direction:column; align-items:center; gap:2px;
-      color:var(--white); opacity:0.65;
-      font-size:0.62rem; font-weight:700; text-align:center;
-      max-width:80px; line-height:1.15;
-    }
-    .bottom-tabs a.current{opacity:1; color:var(--yellow);}
-    .bottom-tabs .tab-icon{font-size:1.15rem;}
-    body{padding-bottom:66px;}
-  }
   .lang-switch{
     display:flex; border:2px solid var(--ink); border-radius:100px;
     overflow:hidden; font-family:'Baloo 2', sans-serif; font-weight:700;
@@ -111,6 +80,10 @@
   }
   .nav-links a{opacity:0.75; transition:opacity .15s ease;}
   .nav-links a:hover, .nav-links a.current{opacity:1;}
+
+  .nav-wrap{position:relative;}
+  .nav-right{display:flex; align-items:center; gap:14px;}
+  .nav-menu{display:none;}
 
   section{
     padding:100px 6%;
@@ -506,19 +479,71 @@
     .split, .image-text{gap:48px;}
     .phone{transform:none;}
   }
+  .nav-toggle{
+    display:none;
+    align-items:center; justify-content:center;
+    width:34px; height:34px; border-radius:50%;
+    background:var(--ink); border:none; cursor:pointer; padding:0;
+    flex-shrink:0;
+  }
+  .nav-toggle span{
+    display:block; width:16px; height:2px; background:var(--yellow); border-radius:2px;
+    position:absolute; transition:transform .2s ease, opacity .2s ease;
+  }
+  .nav-toggle span:nth-child(1){transform:translateY(-5px);}
+  .nav-toggle span:nth-child(3){transform:translateY(5px);}
+  .nav-toggle.open{background:var(--blue);}
+  .nav-toggle.open span{background:var(--white);}
+  .nav-toggle.open span:nth-child(1){transform:rotate(45deg);}
+  .nav-toggle.open span:nth-child(2){opacity:0;}
+  .nav-toggle.open span:nth-child(3){transform:rotate(-45deg);}
+
+  .nav-backdrop{
+    display:none;
+    position:fixed; inset:0; z-index:55;
+    background:rgba(20,33,61,0.4);
+  }
+  .nav-backdrop.open{display:block;}
+
+  @media (max-width:760px){
+    nav{padding:14px 6%;}
+    .brand{font-size:1.25rem;}
+    .nav-toggle{display:flex; position:relative;}
+    .nav-menu{
+      display:none;
+      position:absolute; top:100%; left:0; right:0; z-index:56;
+      background:var(--white);
+      border-bottom:2px solid var(--ink);
+      box-shadow:0 12px 24px rgba(20,33,61,0.18);
+      flex-direction:column; align-items:stretch; gap:0;
+      padding:8px 6% 12px;
+    }
+    .nav-menu.open{display:flex;}
+    .nav-links-mobile{
+      display:flex; flex-direction:column; align-items:stretch; gap:0;
+    }
+    .nav-links-mobile a{
+      padding:14px 4px; border-bottom:1px solid var(--blue-tint);
+      font-size:1rem;
+    }
+    .nav-links{display:none;}
+    .lang-switch{font-size:0.8rem;}
+    .nav-cta{padding:8px 14px; font-size:0.8rem;}
+  }
 </style>
 </head>
 <body>
 
+<div class="nav-wrap">
 <nav>
   <a href="index.html" class="brand">yoka</a>
-  <div class="nav-menu">
-    <div class="nav-links">
-      <a href="como-funciona.html" data-es="Cómo funciona" data-en="How it works">Cómo funciona</a>
-      <a href="sobre-nosotros.html" data-es="Sobre nosotros" data-en="About us">Sobre nosotros</a>
-      <a href="faq.html" data-es="FAQ" data-en="FAQ">FAQ</a>
-      <a href="contacto.html" data-es="Contacto" data-en="Contact">Contacto</a>
-    </div>
+  <div class="nav-links">
+    <a href="como-funciona.html" data-es="Cómo funciona" data-en="How it works">Cómo funciona</a>
+    <a href="sobre-nosotros.html" data-es="Sobre nosotros" data-en="About us">Sobre nosotros</a>
+    <a href="faq.html" data-es="FAQ" data-en="FAQ">FAQ</a>
+    <a href="contacto.html" data-es="Contacto" data-en="Contact">Contacto</a>
+  </div>
+  <div class="nav-right">
     <div class="lang-toggle">
       <div class="lang-switch">
         <button type="button" class="active" data-lang="es" onclick="setLang('es')">ES</button>
@@ -526,27 +551,21 @@
       </div>
       <a href="#download" class="nav-cta" data-es="Descargar" data-en="Download">Descargar</a>
     </div>
+    <button class="nav-toggle" type="button" onclick="toggleNav()" aria-label="Abrir menú" aria-expanded="false" id="navToggleBtn">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
-
-<div class="bottom-tabs">
-  <a href="como-funciona.html">
-    <span class="tab-icon">🧭</span>
-    <span data-es="Cómo funciona" data-en="How it works">Cómo funciona</span>
-  </a>
-  <a href="sobre-nosotros.html">
-    <span class="tab-icon">👋</span>
-    <span data-es="Nosotros" data-en="About">Nosotros</span>
-  </a>
-  <a href="faq.html">
-    <span class="tab-icon">❓</span>
-    <span data-es="FAQ" data-en="FAQ">FAQ</span>
-  </a>
-  <a href="contacto.html">
-    <span class="tab-icon">✉️</span>
-    <span data-es="Contacto" data-en="Contact">Contacto</span>
-  </a>
+<div class="nav-menu" id="navMenu">
+  <div class="nav-links-mobile">
+    <a href="como-funciona.html" data-es="Cómo funciona" data-en="How it works">Cómo funciona</a>
+    <a href="sobre-nosotros.html" data-es="Sobre nosotros" data-en="About us">Sobre nosotros</a>
+    <a href="faq.html" data-es="FAQ" data-en="FAQ">FAQ</a>
+    <a href="contacto.html" data-es="Contacto" data-en="Contact">Contacto</a>
+  </div>
 </div>
+</div>
+<div class="nav-backdrop" id="navBackdrop" onclick="toggleNav()"></div>
 
 <!-- HERO -->
 <section class="hero">
@@ -831,6 +850,24 @@
       btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
     });
   }
+
+  // Floating mobile nav menu
+  function toggleNav(){
+    var menu = document.getElementById('navMenu');
+    var btn = document.getElementById('navToggleBtn');
+    var backdrop = document.getElementById('navBackdrop');
+    var isOpen = menu.classList.toggle('open');
+    btn.classList.toggle('open', isOpen);
+    backdrop.classList.toggle('open', isOpen);
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  }
+  document.querySelectorAll('.nav-links a, .nav-cta').forEach(function(link){
+    link.addEventListener('click', function(){
+      var menu = document.getElementById('navMenu');
+      if(menu.classList.contains('open')){ toggleNav(); }
+    });
+  });
 
   // Scroll-in reveal for cards and columns
   var revealObserver = new IntersectionObserver(function(entries){
