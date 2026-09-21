@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.goyokatravel.app",
+      "sha256_cert_fingerprints": [
+        "CC:64:6B:E8:92:8B:27:AB:BA:46:99:EE:28:56:6B:0B:75:A1:F3:F9:ED:13:7D:1D:CC:8A:B8:0E:81:36:93:0B"
+      ]
+    }
+  }
+]
