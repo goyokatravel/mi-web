@@ -3,15 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>YOKA · Política de privacidad</title>
-<meta name="description" content="Qué datos trata YOKA, para qué, durante cuánto tiempo y cómo ejercer tus derechos.">
+<title>YOKA · Política de privacidad / Privacy Policy</title>
+<meta name="description" content="Qué datos trata YOKA, para qué y cómo ejercer tus derechos. What data YOKA processes, why, and how to exercise your rights.">
 <style>
   :root { --blue:#0174D9; --yellow:#FFDC01; --ink:#14213D; --sub:#6B7280; --line:#E6E8EE; --tile:#F6F7F9; }
   * { box-sizing:border-box; }
   body { margin:0; background:var(--blue); color:var(--ink);
          font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; line-height:1.6; }
   .wrap { max-width:760px; margin:0 auto; padding:32px 16px 48px; }
-  .logo { color:var(--yellow); font-weight:900; font-size:34px; letter-spacing:-0.5px; margin:0 0 16px; }
+  .top { display:flex; align-items:center; justify-content:space-between; gap:12px; margin:0 0 16px; }
+  .logo { color:var(--yellow); font-weight:900; font-size:34px; letter-spacing:-0.5px; text-decoration:none; }
+  .langs { display:flex; background:rgba(255,255,255,.18); border-radius:999px; padding:4px; }
+  .langs a { color:#fff; text-decoration:none; font-weight:800; font-size:14px; padding:6px 14px; border-radius:999px; }
+  .langs a.on { background:var(--yellow); color:var(--ink); }
   .card { background:#fff; border-radius:22px; padding:28px 22px; }
   h1 { font-size:26px; margin:0 0 4px; }
   h2 { font-size:18px; margin:30px 0 8px; }
@@ -27,103 +31,134 @@
   .box { background:var(--tile); border:1px solid var(--line); border-radius:14px; padding:14px 16px; }
   a { color:var(--blue); }
   nav a { display:block; margin:3px 0; }
-  hr { border:none; border-top:1px dashed var(--line); margin:32px 0; }
+  .foot { text-align:center; margin-top:18px; font-size:13px; }
+  .foot a { color:#fff; margin:0 8px; }
+  [data-lang] { display:none; }
+  html[data-show="es"] [data-lang="es"], html[data-show="en"] [data-lang="en"] { display:block; }
 </style>
+<script>
+  // Idioma: ?lang=en o #en → inglés; ?lang=es o #es → español; si no, el del navegador.
+  (function () {
+    var q = (location.search.match(/lang=(es|en)/) || [])[1] || (location.hash.match(/^#(es|en)$/) || [])[1];
+    var nav = (navigator.language || 'es').toLowerCase().indexOf('es') === 0 ? 'es' : 'en';
+    var l = q || nav;
+    document.documentElement.setAttribute('data-show', l);
+    document.documentElement.setAttribute('lang', l);
+  })();
+  function setLang(l) {
+    document.documentElement.setAttribute('data-show', l);
+    document.documentElement.setAttribute('lang', l);
+    document.getElementById('b-es').className = l === 'es' ? 'on' : '';
+    document.getElementById('b-en').className = l === 'en' ? 'on' : '';
+    history.replaceState(null, '', '?lang=' + l);
+    return false;
+  }
+  document.addEventListener('DOMContentLoaded', function () { setLang(document.documentElement.getAttribute('data-show')); });
+</script>
 </head>
 <body>
 <div class="wrap">
-  <p class="logo">YOKA</p>
-  <div class="card">
+  <div class="top">
+    <a class="logo" href="/">YOKA</a>
+    <div class="langs"><a id="b-es" href="?lang=es" onclick="return setLang('es')">ES</a><a id="b-en" href="?lang=en" onclick="return setLang('en')">EN</a></div>
+  </div>
+
+  <!-- ═══════════════════════ ESPAÑOL ═══════════════════════ -->
+  <div class="card" data-lang="es" lang="es">
     <h1>Política de privacidad</h1>
-    <p class="sub">Última actualización: 2 de octubre de 2026</p>
+    <p class="sub">Última actualización: 5 de octubre de 2026</p>
 
     <p>En YOKA te ayudamos a organizar viajes en grupo y a descubrir sitios que otros viajeros recomiendan. Para eso necesitamos tratar algunos datos tuyos. Aquí te contamos cuáles, para qué y qué puedes hacer con ellos, conforme al Reglamento General de Protección de Datos (RGPD) y a la Ley Orgánica 3/2018 (LOPDGDD).</p>
 
     <nav class="box">
-      <a href="#responsable">1. Quién es responsable</a>
-      <a href="#datos">2. Qué datos tratamos</a>
-      <a href="#fines">3. Para qué y con qué base legal</a>
-      <a href="#publico">4. Qué ven otras personas</a>
-      <a href="#terceros">5. Con quién se comparten</a>
-      <a href="#transferencias">6. Transferencias fuera de la UE</a>
-      <a href="#conservacion">7. Cuánto tiempo los guardamos</a>
-      <a href="#derechos">8. Tus derechos</a>
-      <a href="#menores">9. Edad mínima</a>
-      <a href="#seguridad">10. Seguridad</a>
-      <a href="#cambios">11. Cambios</a>
+      <a href="#es-responsable">1. Quién es responsable</a>
+      <a href="#es-datos">2. Qué datos tratamos</a>
+      <a href="#es-fines">3. Para qué y con qué base legal</a>
+      <a href="#es-publico">4. Qué ven otras personas</a>
+      <a href="#es-terceros">5. Con quién se comparten</a>
+      <a href="#es-transferencias">6. Transferencias fuera de la UE</a>
+      <a href="#es-conservacion">7. Cuánto tiempo los guardamos</a>
+      <a href="#es-derechos">8. Tus derechos</a>
+      <a href="#es-menores">9. Edad mínima</a>
+      <a href="#es-seguridad">10. Seguridad</a>
+      <a href="#es-cambios">11. Cambios</a>
     </nav>
 
-    <h2 id="responsable">1. Quién es responsable de tus datos</h2>
+    <h2 id="es-responsable">1. Quién es responsable de tus datos</h2>
     <div class="box">
       <p><strong>Responsable:</strong> Cristina Barriopedro Amoraga, titular de YOKA<br>
-      <strong>País:</strong> España<br>
+      <strong>Dirección:</strong> Calle Castillo de Ponferrada, 17, 28691 Villanueva de la Cañada (Madrid), España<br>
       <strong>Correo de contacto:</strong> <a href="mailto:goyokatravel@gmail.com">goyokatravel@gmail.com</a><br>
       <strong>Web:</strong> goyokatravel.com</p>
     </div>
     <p>YOKA no tiene, por ahora, delegado de protección de datos, porque no es obligatorio en su caso. Para cualquier cuestión de privacidad, escríbenos al correo de arriba.</p>
 
-    <h2 id="datos">2. Qué datos tratamos</h2>
+    <h2 id="es-datos">2. Qué datos tratamos</h2>
     <h3>Los que nos das tú</h3>
     <ul>
       <li><strong>Cuenta:</strong> correo electrónico, nombre, nombre de usuario, número de teléfono (si entras con él) y contraseña (la gestiona Firebase de forma cifrada; nosotros no la vemos).</li>
-      <li><strong>Perfil:</strong> foto, biografía, ciudad, país, intereses de viaje y países que has visitado.</li>
-      <li><strong>Viajes:</strong> destinos, fechas, etapas, miembros del grupo, planes del itinerario, alojamiento (nombre, dirección, fechas, precio), gastos (importe, categoría, quién pagó y cómo se reparte), diario, lista de tareas y fotos.</li>
+      <li><strong>Fecha de nacimiento:</strong> la pedimos al crear la cuenta para comprobar que tienes la edad mínima. No se muestra a otros usuarios.</li>
+      <li><strong>Perfil:</strong> foto, biografía, ciudad, país, idioma, intereses de viaje y países que has visitado.</li>
+      <li><strong>Viajes:</strong> destinos, fechas, etapas, miembros del grupo, planes del itinerario (incluidos datos de transporte que añadas, como un número de vuelo), alojamiento (nombre, dirección, fechas, precio), gastos (importe, categoría, quién pagó y cómo se reparte), tu presupuesto personal, diario, lista de tareas y fotos.</li>
       <li><strong>Contenido social:</strong> sitios que compartes, fotos, valoraciones, comentarios, "me gusta", sitios guardados, carpetas, itinerarios que publicas y personas a las que sigues.</li>
       <li><strong>Denuncias y bloqueos:</strong> lo que denuncias, el motivo y a quién bloqueas.</li>
       <li><strong>Comunicaciones:</strong> lo que nos escribas por correo.</li>
     </ul>
     <h3>Los que se generan al usar la app</h3>
     <ul>
-      <li><strong>Ubicación:</strong> solo si nos das permiso y solo mientras usas la app (para detectar dónde estás al añadir un sitio o centrar el mapa). No guardamos tu ubicación en segundo plano ni un historial de dónde has estado.</li>
+      <li><strong>Ubicación:</strong> solo si nos das permiso y solo mientras usas la app (para detectar dónde estás al añadir un sitio, centrar el mapa o indicarte cómo llegar). No guardamos tu ubicación en segundo plano ni un historial de dónde has estado.</li>
       <li><strong>Datos de uso y del dispositivo:</strong> pantallas que visitas, acciones dentro de la app (por ejemplo, crear un viaje), modelo de dispositivo, sistema operativo, idioma e identificadores técnicos de la app. Sirven para mejorar YOKA y no los usamos para mostrarte publicidad.</li>
+      <li><strong>Copia en tu móvil:</strong> la app guarda en tu propio teléfono una copia del viaje en curso (planes de hoy y hotel) para que puedas verlos sin conexión. No sale de tu dispositivo y se borra al desinstalar la app.</li>
       <li><strong>Dirección IP:</strong> la reciben, de forma técnica, los servicios que cargan los mapas y las fotos.</li>
     </ul>
     <h3>Los que nos llegan de otros servicios</h3>
     <ul>
-      <li>Si entras con <strong>Google, Apple o Facebook</strong>, recibimos tu nombre, tu correo y, si lo tienen, tu foto de perfil. Con Apple puedes elegir ocultar tu correo.</li>
+      <li>Si entras con <strong>Apple o Google</strong>, recibimos tu nombre, tu correo y, si lo tienen, tu foto de perfil. Con Apple puedes elegir ocultar tu correo.</li>
     </ul>
     <p><strong>No tratamos</strong> datos especialmente protegidos (salud, ideología, religión, etc.), <strong>no vendemos</strong> tus datos y, por ahora, <strong>YOKA no muestra publicidad ni te rastrea</strong> entre apps y webs de terceros.</p>
 
-    <h2 id="fines">3. Para qué los usamos y con qué base legal</h2>
+    <h2 id="es-fines">3. Para qué los usamos y con qué base legal</h2>
     <div class="tbl">
     <table>
       <tr><th>Para qué</th><th>Base legal</th></tr>
-      <tr><td>Crear y mantener tu cuenta, iniciar sesión y verificar tu correo o teléfono.</td><td>Ejecución del contrato (las condiciones de uso de YOKA).</td></tr>
+      <tr><td>Crear y mantener tu cuenta, iniciar sesión, verificar tu correo o teléfono y comprobar tu edad.</td><td>Ejecución del contrato (las <a href="/terminos">condiciones de uso</a> de YOKA) y obligación legal.</td></tr>
       <tr><td>Que puedas organizar viajes con tu grupo: itinerario, alojamiento, gastos, diario, fotos e ideas.</td><td>Ejecución del contrato.</td></tr>
       <tr><td>Funciones sociales: compartir sitios, comentar, seguir, guardar y publicar itinerarios.</td><td>Ejecución del contrato.</td></tr>
-      <tr><td>Usar tu ubicación y tus fotos.</td><td>Tu consentimiento, que das con el permiso del móvil y puedes retirar en sus ajustes.</td></tr>
+      <tr><td>Usar tu ubicación, tu cámara y tus fotos.</td><td>Tu consentimiento, que das con el permiso del móvil y puedes retirar en sus ajustes.</td></tr>
       <tr><td>Moderar el contenido: revisar denuncias, aplicar bloqueos y retirar lo que incumpla las normas de la comunidad.</td><td>Interés legítimo en mantener una comunidad segura, y cumplimiento de obligaciones legales.</td></tr>
       <tr><td>Medir el uso de la app de forma estadística y corregir fallos.</td><td>Interés legítimo en que YOKA funcione bien. Puedes oponerte escribiéndonos.</td></tr>
       <tr><td>Responder a tus consultas y atender tus derechos.</td><td>Ejecución del contrato y obligación legal.</td></tr>
       <tr><td>Conservar datos cuando lo exija la ley o para defendernos ante reclamaciones.</td><td>Obligación legal e interés legítimo.</td></tr>
     </table>
     </div>
-    <p>No tomamos decisiones automatizadas con efectos jurídicos sobre ti ni elaboramos perfiles con ese fin. Las recomendaciones de sitios o viajeros se basan en lo que tú has indicado (intereses, países, destinos).</p>
+    <p>No tomamos decisiones automatizadas con efectos jurídicos sobre ti ni elaboramos perfiles con ese fin. Las recomendaciones de sitios o viajeros se basan en lo que tú has indicado (intereses, países, destinos y viajes).</p>
 
-    <h2 id="publico">4. Qué ven otras personas</h2>
+    <h2 id="es-publico">4. Qué ven otras personas</h2>
     <ul>
       <li><strong>Cualquier usuario de YOKA</strong> puede ver tu nombre, tu nombre de usuario, tu foto, tu biografía, tus países visitados, los sitios que compartes, tus comentarios, tus valoraciones y los itinerarios que publicas.</li>
       <li><strong>Solo los miembros de cada viaje</strong> ven sus planes, el alojamiento, los gastos, el diario y las fotos del viaje.</li>
+      <li>Tu <strong>fecha de nacimiento</strong> y tu <strong>presupuesto personal</strong> no los ve nadie más.</li>
       <li>Las personas a las que <strong>bloqueas</strong> dejan de ver tu perfil y tu contenido.</li>
       <li>Si compartes algo fuera de YOKA (por ejemplo, una tarjeta en Instagram Stories), se rige por la política de ese servicio.</li>
     </ul>
 
-    <h2 id="terceros">5. Con quién se comparten</h2>
+    <h2 id="es-terceros">5. Con quién se comparten</h2>
     <p>Solo con los proveedores que necesitamos para que YOKA funcione. Tratan tus datos por cuenta nuestra y con contrato de encargo de tratamiento:</p>
     <ul>
-      <li><strong>Google Firebase</strong> (Google Ireland Ltd.): inicio de sesión, verificación por correo o teléfono y estadísticas de uso.</li>
+      <li><strong>Google Firebase</strong> (Google Ireland Ltd.): inicio de sesión, verificación por correo o teléfono, funciones del servidor y estadísticas de uso.</li>
       <li><strong>Supabase</strong> (Supabase Inc.): base de datos y almacenamiento de fotos.</li>
+      <li><strong>Resend</strong>: envío de los correos de verificación y de cambio de contraseña.</li>
       <li><strong>Stadia Maps</strong> y <strong>OpenStreetMap</strong>: mapas y búsqueda de direcciones. Reciben tu IP y la zona del mapa que miras.</li>
       <li><strong>Unsplash</strong>: fotos de referencia de los sitios. No recibe datos tuyos más allá de los técnicos de la conexión.</li>
-      <li><strong>Google, Apple y Meta (Facebook)</strong>: solo si eliges entrar con ellos.</li>
+      <li><strong>Apple y Google</strong>: solo si eliges entrar con ellos.</li>
     </ul>
-    <p>Cuando tocas "Cómo llegar" se abre Google Maps, y cuando tocas un enlace de reserva se abre la web de ese proveedor. A partir de ese momento se aplica su propia política de privacidad.</p>
+    <p>Cuando tocas "Cómo llegar" se abre Google Maps o Apple Maps, y cuando tocas un enlace de reserva se abre la web de ese proveedor (por ejemplo, Booking o Civitatis). A partir de ese momento se aplica su propia política de privacidad.</p>
     <p>También podremos comunicar datos a autoridades y tribunales cuando la ley lo exija.</p>
 
-    <h2 id="transferencias">6. Transferencias fuera de la UE</h2>
+    <h2 id="es-transferencias">6. Transferencias fuera de la UE</h2>
     <p>Algunos de estos proveedores tienen sede o servidores en Estados Unidos. En esos casos, la transferencia se ampara en el Marco de Privacidad de Datos UE–EE. UU., cuando el proveedor está adherido, o en las cláusulas contractuales tipo aprobadas por la Comisión Europea.</p>
 
-    <h2 id="conservacion">7. Cuánto tiempo los guardamos</h2>
+    <h2 id="es-conservacion">7. Cuánto tiempo los guardamos</h2>
     <ul>
       <li><strong>Mientras tengas cuenta</strong>, guardamos tus datos para darte el servicio.</li>
       <li><strong>Si borras la cuenta</strong>, eliminamos tu perfil y tu contenido. Los viajes compartidos siguen existiendo para los demás miembros, sin tu nombre.</li>
@@ -133,39 +168,158 @@
       <li><strong>Lo que exija la ley</strong> lo conservamos, bloqueado, durante los plazos de prescripción que correspondan.</li>
     </ul>
 
-    <h2 id="derechos">8. Tus derechos</h2>
+    <h2 id="es-derechos">8. Tus derechos</h2>
     <p>Puedes pedirnos en cualquier momento:</p>
     <ul>
       <li><strong>Acceso:</strong> saber qué datos tuyos tratamos.</li>
       <li><strong>Rectificación:</strong> corregirlos (muchos los puedes editar tú en tu perfil).</li>
-      <li><strong>Supresión:</strong> borrarlos. Puedes hacerlo tú mismo en <strong>Perfil → Ajustes → Eliminar cuenta</strong>, o en <a href="https://goyokatravel.com/borrar-cuenta">goyokatravel.com/borrar-cuenta</a>.</li>
+      <li><strong>Supresión:</strong> borrarlos. Puedes hacerlo tú mismo en <strong>Perfil → Ajustes → Eliminar cuenta</strong>, o en <a href="https://goyokatravel.com/borrar-cuenta/">goyokatravel.com/borrar-cuenta</a>.</li>
       <li><strong>Oposición</strong> y <strong>limitación</strong> del tratamiento.</li>
       <li><strong>Portabilidad:</strong> recibir tus datos en un formato que puedas llevarte.</li>
-      <li><strong>Retirar tu consentimiento</strong> (ubicación, fotos) desde los ajustes del móvil.</li>
+      <li><strong>Retirar tu consentimiento</strong> (ubicación, cámara, fotos) desde los ajustes del móvil.</li>
     </ul>
     <p>Para ejercerlos, escríbenos a <a href="mailto:goyokatravel@gmail.com">goyokatravel@gmail.com</a> desde el correo de tu cuenta. Te responderemos en un máximo de un mes.</p>
     <p>Si crees que no hemos tratado bien tus datos, puedes reclamar ante la <strong>Agencia Española de Protección de Datos</strong> (<a href="https://www.aepd.es">aepd.es</a>).</p>
 
-    <h2 id="menores">9. Edad mínima</h2>
-    <p>Para usar YOKA tienes que tener al menos <strong>14 años</strong>, que es la edad mínima en España para consentir el tratamiento de tus datos. Si sabemos que una persona menor de esa edad ha creado una cuenta, la eliminaremos.</p>
+    <h2 id="es-menores">9. Edad mínima</h2>
+    <p>Para usar YOKA tienes que tener al menos <strong>16 años</strong>. Al crear la cuenta te pedimos tu fecha de nacimiento y declaras que es real. Si sabemos que una cuenta es de una persona menor de 16 años, o que la fecha es falsa, la eliminaremos.</p>
 
-    <h2 id="seguridad">10. Seguridad</h2>
-    <p>Usamos conexiones cifradas (HTTPS), contraseñas gestionadas por Firebase y acceso restringido a la base de datos. Ningún sistema es infalible: si detectamos una brecha que te afecte, te avisaremos y lo comunicaremos a la AEPD cuando corresponda.</p>
+    <h2 id="es-seguridad">10. Seguridad</h2>
+    <p>Usamos conexiones cifradas (HTTPS), contraseñas gestionadas por Firebase y acceso restringido a la base de datos: cada usuario solo puede leer y modificar lo que le corresponde. Ningún sistema es infalible: si detectamos una brecha que te afecte, te avisaremos y lo comunicaremos a la AEPD cuando corresponda.</p>
 
-    <h2 id="cambios">11. Cambios en esta política</h2>
+    <h2 id="es-cambios">11. Cambios en esta política</h2>
     <p>Si cambiamos algo importante, por ejemplo si en el futuro YOKA incluye publicidad, te lo diremos en la app antes de que se aplique y actualizaremos la fecha de arriba.</p>
-
-    <hr>
-
-    <div lang="en">
-      <h2>Summary in English</h2>
-      <p><strong>Controller:</strong> Cristina Barriopedro Amoraga, owner of YOKA, Spain · <a href="mailto:goyokatravel@gmail.com">goyokatravel@gmail.com</a>.</p>
-      <p><strong>What we collect:</strong> account data (email, name, username, phone if used), profile, trips (plans, stays, expenses, journal, photos), social content (places, comments, likes, follows), reports and blocks, location only while using the app and only with your permission, and app usage data.</p>
-      <p><strong>Why:</strong> to provide the service (contract), use location and photos (consent), keep the community safe and improve the app (legitimate interest), and meet legal obligations. No ads, no tracking, no selling of data.</p>
-      <p><strong>Processors:</strong> Google Firebase, Supabase, Stadia Maps, OpenStreetMap, Unsplash, and Google, Apple or Meta if you sign in with them. Transfers outside the EU rely on the EU–US Data Privacy Framework or standard contractual clauses.</p>
-      <p><strong>Your rights:</strong> access, rectification, erasure (Profile → Settings → Delete account, or goyokatravel.com/borrar-cuenta), objection, restriction and portability. Email us; you can also complain to the Spanish DPA (aepd.es). Minimum age: 14.</p>
-    </div>
   </div>
+
+  <!-- ═══════════════════════ ENGLISH ═══════════════════════ -->
+  <div class="card" data-lang="en" lang="en">
+    <h1>Privacy Policy</h1>
+    <p class="sub">Last updated: 5 October 2026</p>
+
+    <p>YOKA helps you plan group trips and discover places recommended by other travelers. To do that, we need to process some of your personal data. This policy explains what data we process, why, and what you can do about it, in accordance with the EU General Data Protection Regulation (GDPR) and Spanish Organic Law 3/2018 (LOPDGDD).</p>
+
+    <nav class="box">
+      <a href="#en-controller">1. Who is responsible</a>
+      <a href="#en-data">2. What data we process</a>
+      <a href="#en-purposes">3. Why, and on what legal basis</a>
+      <a href="#en-public">4. What other people can see</a>
+      <a href="#en-processors">5. Who we share it with</a>
+      <a href="#en-transfers">6. Transfers outside the EU</a>
+      <a href="#en-retention">7. How long we keep it</a>
+      <a href="#en-rights">8. Your rights</a>
+      <a href="#en-age">9. Minimum age</a>
+      <a href="#en-security">10. Security</a>
+      <a href="#en-changes">11. Changes</a>
+    </nav>
+
+    <h2 id="en-controller">1. Who is responsible for your data</h2>
+    <div class="box">
+      <p><strong>Controller:</strong> Cristina Barriopedro Amoraga, owner of YOKA<br>
+      <strong>Address:</strong> Calle Castillo de Ponferrada, 17, 28691 Villanueva de la Cañada (Madrid), Spain<br>
+      <strong>Contact email:</strong> <a href="mailto:goyokatravel@gmail.com">goyokatravel@gmail.com</a><br>
+      <strong>Website:</strong> goyokatravel.com</p>
+    </div>
+    <p>YOKA does not currently have a Data Protection Officer, as it is not legally required to. For any privacy question, please email us at the address above.</p>
+
+    <h2 id="en-data">2. What data we process</h2>
+    <h3>Data you give us</h3>
+    <ul>
+      <li><strong>Account:</strong> email address, name, username, phone number (if you sign in with it) and password (stored encrypted by Firebase; we never see it).</li>
+      <li><strong>Date of birth:</strong> we ask for it when you create your account to check that you meet the minimum age. It is never shown to other users.</li>
+      <li><strong>Profile:</strong> photo, bio, city, country, language, travel interests and countries you have visited.</li>
+      <li><strong>Trips:</strong> destinations, dates, legs, group members, itinerary plans (including any transport details you add, such as a flight number), accommodation (name, address, dates, price), expenses (amount, category, who paid and how it is split), your personal budget, journal, to-do list and photos.</li>
+      <li><strong>Social content:</strong> places you share, photos, ratings, comments, likes, saved places, folders, itineraries you publish and people you follow.</li>
+      <li><strong>Reports and blocks:</strong> what you report, the reason, and who you block.</li>
+      <li><strong>Communications:</strong> anything you send us by email.</li>
+    </ul>
+    <h3>Data generated when you use the app</h3>
+    <ul>
+      <li><strong>Location:</strong> only if you allow it, and only while you are using the app (to detect where you are when adding a place, center the map or give you directions). We do not collect your location in the background or keep a history of where you have been.</li>
+      <li><strong>Usage and device data:</strong> screens you visit, actions in the app (for example, creating a trip), device model, operating system, language and technical app identifiers. We use them to improve YOKA, never to show you ads.</li>
+      <li><strong>Copy on your phone:</strong> the app stores on your own device a copy of your current trip (today's plans and hotel) so you can see it offline. It never leaves your device and is deleted when you uninstall the app.</li>
+      <li><strong>IP address:</strong> received, for technical reasons, by the services that load maps and photos.</li>
+    </ul>
+    <h3>Data we receive from other services</h3>
+    <ul>
+      <li>If you sign in with <strong>Apple or Google</strong>, we receive your name, email address and, if available, your profile photo. With Apple you can choose to hide your email address.</li>
+    </ul>
+    <p>We do <strong>not</strong> process special categories of data (health, beliefs, religion, etc.), we do <strong>not sell</strong> your data and, for now, <strong>YOKA shows no ads and does not track you</strong> across other companies' apps and websites.</p>
+
+    <h2 id="en-purposes">3. Why we use your data, and on what legal basis</h2>
+    <div class="tbl">
+    <table>
+      <tr><th>Purpose</th><th>Legal basis</th></tr>
+      <tr><td>Creating and maintaining your account, signing you in, verifying your email or phone and checking your age.</td><td>Performance of the contract (YOKA's <a href="/terminos">Terms of Use</a>) and legal obligation.</td></tr>
+      <tr><td>Letting you plan trips with your group: itinerary, accommodation, expenses, journal, photos and ideas.</td><td>Performance of the contract.</td></tr>
+      <tr><td>Social features: sharing places, commenting, following, saving and publishing itineraries.</td><td>Performance of the contract.</td></tr>
+      <tr><td>Using your location, camera and photos.</td><td>Your consent, given through your phone's permission prompt, which you can withdraw in its settings.</td></tr>
+      <tr><td>Moderating content: reviewing reports, applying blocks and removing anything that breaks the community guidelines.</td><td>Legitimate interest in keeping the community safe, and compliance with legal obligations.</td></tr>
+      <tr><td>Measuring app usage statistically and fixing bugs.</td><td>Legitimate interest in making YOKA work well. You can object by emailing us.</td></tr>
+      <tr><td>Answering your questions and handling your rights requests.</td><td>Performance of the contract and legal obligation.</td></tr>
+      <tr><td>Keeping data when required by law or to defend ourselves against claims.</td><td>Legal obligation and legitimate interest.</td></tr>
+    </table>
+    </div>
+    <p>We do not make automated decisions with legal effects on you, nor do we build profiles for that purpose. Place and traveler suggestions are based on what you have told us (interests, countries, destinations and trips).</p>
+
+    <h2 id="en-public">4. What other people can see</h2>
+    <ul>
+      <li><strong>Any YOKA user</strong> can see your name, username, photo, bio, visited countries, the places you share, your comments, your ratings and the itineraries you publish.</li>
+      <li><strong>Only the members of each trip</strong> can see its plans, accommodation, expenses, journal and photos.</li>
+      <li>Your <strong>date of birth</strong> and your <strong>personal budget</strong> are never shown to anyone else.</li>
+      <li>People you <strong>block</strong> can no longer see your profile or your content.</li>
+      <li>If you share something outside YOKA (for example, a card on Instagram Stories), that service's own policy applies.</li>
+    </ul>
+
+    <h2 id="en-processors">5. Who we share it with</h2>
+    <p>Only with the providers we need to run YOKA. They process your data on our behalf under a data processing agreement:</p>
+    <ul>
+      <li><strong>Google Firebase</strong> (Google Ireland Ltd.): sign-in, email or phone verification, server functions and usage analytics.</li>
+      <li><strong>Supabase</strong> (Supabase Inc.): database and photo storage.</li>
+      <li><strong>Resend</strong>: sending verification and password-reset emails.</li>
+      <li><strong>Stadia Maps</strong> and <strong>OpenStreetMap</strong>: maps and address search. They receive your IP address and the map area you are viewing.</li>
+      <li><strong>Unsplash</strong>: reference photos of places. It receives no data about you beyond technical connection data.</li>
+      <li><strong>Apple and Google</strong>: only if you choose to sign in with them.</li>
+    </ul>
+    <p>When you tap "Directions", Google Maps or Apple Maps opens, and when you tap a booking link, that provider's website opens (for example, Booking.com or Civitatis). From that moment on, their own privacy policy applies.</p>
+    <p>We may also disclose data to authorities and courts when required by law.</p>
+
+    <h2 id="en-transfers">6. Transfers outside the EU</h2>
+    <p>Some of these providers are based in, or have servers in, the United States. In those cases, the transfer relies on the EU–US Data Privacy Framework, where the provider is certified, or on the Standard Contractual Clauses approved by the European Commission.</p>
+
+    <h2 id="en-retention">7. How long we keep it</h2>
+    <ul>
+      <li><strong>While you have an account</strong>, we keep your data to provide the service.</li>
+      <li><strong>If you delete your account</strong>, we delete your profile and your content. Shared trips remain available to the other members, without your name.</li>
+      <li><strong>Reports:</strong> up to 6 months after they are resolved.</li>
+      <li><strong>Usage analytics:</strong> 14 months at most.</li>
+      <li><strong>Backups:</strong> deleted automatically within 30 days.</li>
+      <li><strong>Anything required by law</strong> is kept, restricted, for the applicable limitation periods.</li>
+    </ul>
+
+    <h2 id="en-rights">8. Your rights</h2>
+    <p>At any time you can ask us for:</p>
+    <ul>
+      <li><strong>Access:</strong> to know what data of yours we process.</li>
+      <li><strong>Rectification:</strong> to correct it (you can edit much of it yourself in your profile).</li>
+      <li><strong>Erasure:</strong> to delete it. You can do it yourself in <strong>Profile → Settings → Delete account</strong>, or at <a href="https://goyokatravel.com/borrar-cuenta/">goyokatravel.com/borrar-cuenta</a>.</li>
+      <li><strong>Objection</strong> and <strong>restriction</strong> of processing.</li>
+      <li><strong>Portability:</strong> to receive your data in a format you can take with you.</li>
+      <li><strong>Withdrawal of consent</strong> (location, camera, photos) from your phone's settings.</li>
+    </ul>
+    <p>To exercise them, email us at <a href="mailto:goyokatravel@gmail.com">goyokatravel@gmail.com</a> from the email address linked to your account. We will reply within one month.</p>
+    <p>If you believe we have not handled your data properly, you can file a complaint with the <strong>Spanish Data Protection Agency</strong> (<a href="https://www.aepd.es">aepd.es</a>) or with the data protection authority of your country.</p>
+
+    <h2 id="en-age">9. Minimum age</h2>
+    <p>You must be at least <strong>16 years old</strong> to use YOKA. When you create an account, we ask for your date of birth and you confirm that it is real. If we learn that an account belongs to someone under 16, or that the date is false, we will delete it.</p>
+
+    <h2 id="en-security">10. Security</h2>
+    <p>We use encrypted connections (HTTPS), passwords managed by Firebase and restricted database access: each user can only read and change what belongs to them. No system is infallible: if we detect a breach that affects you, we will let you know and report it to the Spanish Data Protection Agency where required.</p>
+
+    <h2 id="en-changes">11. Changes to this policy</h2>
+    <p>If we change anything important, for example if YOKA ever includes advertising, we will tell you in the app before it applies and update the date above.</p>
+  </div>
+
+  <p class="foot"><a href="/terminos">Términos · Terms</a><a href="/cookies">Cookies</a><a href="/borrar-cuenta/">Borrar cuenta · Delete account</a></p>
 </div>
 </body>
 </html>
