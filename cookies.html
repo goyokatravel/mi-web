@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YOKA · Política de cookies / Cookie Policy</title>
+<meta name="description" content="Qué cookies usa YOKA. Which cookies YOKA uses.">
+<style>
+  :root { --blue:#0174D9; --yellow:#FFDC01; --ink:#14213D; --sub:#6B7280; --line:#E6E8EE; --tile:#F6F7F9; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--blue); color:var(--ink);
+         font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; line-height:1.6; }
+  .wrap { max-width:760px; margin:0 auto; padding:32px 16px 48px; }
+  .top { display:flex; align-items:center; justify-content:space-between; gap:12px; margin:0 0 16px; }
+  .logo { color:var(--yellow); font-weight:900; font-size:34px; letter-spacing:-0.5px; text-decoration:none; }
+  .langs { display:flex; background:rgba(255,255,255,.18); border-radius:999px; padding:4px; }
+  .langs a { color:#fff; text-decoration:none; font-weight:800; font-size:14px; padding:6px 14px; border-radius:999px; }
+  .langs a.on { background:var(--yellow); color:var(--ink); }
+  .card { background:#fff; border-radius:22px; padding:28px 22px; }
+  h1 { font-size:26px; margin:0 0 4px; }
+  h2 { font-size:18px; margin:30px 0 8px; }
+  h3 { font-size:15px; margin:18px 0 4px; }
+  p, li, td, th { font-size:15px; }
+  .sub { color:var(--sub); margin:0 0 18px; }
+  ul { padding-left:20px; margin:8px 0; }
+  li { margin:4px 0; }
+  table { width:100%; border-collapse:collapse; margin:8px 0; }
+  th, td { text-align:left; vertical-align:top; padding:9px 8px; border-bottom:1px solid var(--line); }
+  th { background:var(--tile); font-size:13px; }
+  .tbl { overflow-x:auto; }
+  .box { background:var(--tile); border:1px solid var(--line); border-radius:14px; padding:14px 16px; }
+  a { color:var(--blue); }
+  nav a { display:block; margin:3px 0; }
+  .foot { text-align:center; margin-top:18px; font-size:13px; }
+  .foot a { color:#fff; margin:0 8px; }
+  .alert { background:#FFF8CC; border:1px solid #F2D600; border-radius:14px; padding:14px 16px; }
+  [data-lang] { display:none; }
+  html[data-show="es"] [data-lang="es"], html[data-show="en"] [data-lang="en"] { display:block; }
+</style>
+<script>
+  // Idioma: ?lang=en o #en → inglés; ?lang=es o #es → español; si no, el del navegador.
+  (function () {
+    var q = (location.search.match(/lang=(es|en)/) || [])[1] || (location.hash.match(/^#(es|en)$/) || [])[1];
+    var nav = (navigator.language || 'es').toLowerCase().indexOf('es') === 0 ? 'es' : 'en';
+    var l = q || nav;
+    document.documentElement.setAttribute('data-show', l);
+    document.documentElement.setAttribute('lang', l);
+  })();
+  function setLang(l) {
+    document.documentElement.setAttribute('data-show', l);
+    document.documentElement.setAttribute('lang', l);
+    document.getElementById('b-es').className = l === 'es' ? 'on' : '';
+    document.getElementById('b-en').className = l === 'en' ? 'on' : '';
+    // En la vista previa (iframe) cambiar la URL no está permitido: se ignora.
+    try { history.replaceState(null, '', '?lang=' + l); } catch (e) {}
+    return false;
+  }
+  document.addEventListener('DOMContentLoaded', function () { setLang(document.documentElement.getAttribute('data-show')); });
+</script>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <a class="logo" href="/">YOKA</a>
+    <div class="langs"><a id="b-es" href="?lang=es" onclick="return setLang('es')">ES</a><a id="b-en" href="?lang=en" onclick="return setLang('en')">EN</a></div>
+  </div>
+
+  <div class="card" data-lang="es" lang="es">
+    <h1>Política de cookies</h1>
+    <p class="sub">Última actualización: 5 de octubre de 2026</p>
+
+    <p>Las cookies son pequeños archivos que una web guarda en tu navegador. Aquí te contamos cuáles usa goyokatravel.com y qué guarda la app de YOKA en tu móvil, conforme al artículo 22.2 de la Ley 34/2002 de servicios de la sociedad de la información (LSSI) y al RGPD.</p>
+
+    <div class="box">
+      <p><strong>En resumen:</strong> la web de YOKA <strong>no usa cookies de análisis, de publicidad ni de seguimiento</strong>, por eso no te pedimos que aceptes cookies. La app tampoco te rastrea entre apps y webs de otras empresas.</p>
+    </div>
+
+    <h2>1. Cookies de la web goyokatravel.com</h2>
+    <p>La web es una página informativa: no tiene registro ni herramientas de estadística o publicidad, y no instala cookies propias.</p>
+    <p>Para mostrar el texto con nuestra tipografía, la web carga las fuentes desde <strong>Google Fonts</strong>, que recibe tu dirección IP como parte de la conexión. Google Fonts no instala cookies. El servicio de alojamiento de la web también puede registrar datos técnicos de la conexión, como la IP, por seguridad.</p>
+    <p>Si en el futuro añadimos cookies que no sean técnicas, por ejemplo para medir visitas, te pediremos permiso antes de instalarlas con un aviso en la web y actualizaremos esta política.</p>
+
+    <h2>2. Qué guarda la app en tu móvil</h2>
+    <p>La app no usa cookies, pero guarda en tu móvil algunos datos que necesita para funcionar. Son técnicos, no se comparten con terceros para publicidad y se borran al desinstalar la app.</p>
+    <div class="tbl">
+    <table>
+      <tr><th>Qué</th><th>Para qué</th><th>Cuánto dura</th></tr>
+      <tr><td>Sesión de inicio (Firebase Authentication)</td><td>Que no tengas que entrar cada vez que abres la app.</td><td>Hasta que cierres sesión o borres la app.</td></tr>
+      <tr><td>Preferencias (idioma, vista del feed y similares)</td><td>Recordar cómo te gusta usar la app.</td><td>Hasta que las cambies o borres la app.</td></tr>
+      <tr><td>Copia sin conexión del viaje en curso (planes de hoy y hotel)</td><td>Que puedas consultarlos aunque no tengas internet.</td><td>Se sustituye cada vez que se actualiza; se borra al borrar la app.</td></tr>
+      <tr><td>Caché de imágenes y mapas</td><td>Cargar más rápido y gastar menos datos.</td><td>Se renueva sola; se borra al borrar la app.</td></tr>
+      <tr><td>Identificador de instalación de Firebase Analytics</td><td>Estadísticas de uso de la app (qué pantallas se usan) para mejorarla. No se usa para publicidad.</td><td>Hasta 14 meses o hasta que borres la app.</td></tr>
+    </table>
+    </div>
+    <p>YOKA no usa el identificador de publicidad de tu móvil (IDFA) ni te muestra anuncios.</p>
+
+    <h2>3. Servicios de terceros que abres desde YOKA</h2>
+    <p>Cuando tocas un enlace que lleva fuera de YOKA, como Google Maps, una web de reservas o Instagram, ese servicio puede usar sus propias cookies. Se rigen por su política, no por esta.</p>
+
+    <h2>4. Cómo controlar las cookies</h2>
+    <p>Puedes ver y borrar las cookies desde los ajustes de tu navegador:</p>
+    <ul>
+      <li><a href="https://support.apple.com/es-es/105082">Safari (iPhone, iPad y Mac)</a></li>
+      <li><a href="https://support.google.com/chrome/answer/95647?hl=es">Google Chrome</a></li>
+      <li><a href="https://support.mozilla.org/es/kb/Borrar%20cookies">Mozilla Firefox</a></li>
+      <li><a href="https://support.microsoft.com/es-es/microsoft-edge">Microsoft Edge</a></li>
+    </ul>
+    <p>En la app, puedes borrar todo lo que guarda en tu móvil desinstalándola, y borrar tu cuenta en Perfil → Ajustes → Eliminar cuenta.</p>
+
+    <h2>5. Contacto</h2>
+    <p>Para cualquier duda, escríbenos a <a href="mailto:goyokatravel@gmail.com">goyokatravel@gmail.com</a>. Tienes más información sobre tus datos en la <a href="/privacidad?lang=es">política de privacidad</a>.</p>
+  </div>
+
+  <div class="card" data-lang="en" lang="en">
+    <h1>Cookie Policy</h1>
+    <p class="sub">Last updated: 5 October 2026</p>
+
+    <p>Cookies are small files that a website stores in your browser. This policy explains which ones goyokatravel.com uses and what the YOKA app stores on your phone, in accordance with article 22.2 of Spanish Law 34/2002 on Information Society Services (LSSI) and the GDPR.</p>
+
+    <div class="box">
+      <p><strong>In short:</strong> the YOKA website <strong>does not use analytics, advertising or tracking cookies</strong>, which is why we do not ask you to accept cookies. The app does not track you across other companies' apps and websites either.</p>
+    </div>
+
+    <h2>1. Cookies on goyokatravel.com</h2>
+    <p>The website is informational: it has no sign-up, analytics or advertising tools, and it does not set any cookies of its own.</p>
+    <p>To display text in our typeface, the website loads fonts from <strong>Google Fonts</strong>, which receives your IP address as part of the connection. Google Fonts does not set cookies. The website's hosting provider may also log technical connection data, such as your IP address, for security purposes.</p>
+    <p>If we ever add non-essential cookies, for example to measure visits, we will ask for your permission with a notice on the website before setting them, and we will update this policy.</p>
+
+    <h2>2. What the app stores on your phone</h2>
+    <p>The app does not use cookies, but it stores some data on your phone that it needs to work. This data is technical, is not shared with third parties for advertising, and is deleted when you uninstall the app.</p>
+    <div class="tbl">
+    <table>
+      <tr><th>What</th><th>Why</th><th>How long</th></tr>
+      <tr><td>Sign-in session (Firebase Authentication)</td><td>So you don't have to sign in every time you open the app.</td><td>Until you sign out or delete the app.</td></tr>
+      <tr><td>Preferences (language, feed view and similar)</td><td>To remember how you like to use the app.</td><td>Until you change them or delete the app.</td></tr>
+      <tr><td>Offline copy of your current trip (today's plans and hotel)</td><td>So you can check them even without internet.</td><td>Replaced each time it updates; deleted when you delete the app.</td></tr>
+      <tr><td>Image and map cache</td><td>To load faster and use less data.</td><td>Refreshed automatically; deleted when you delete the app.</td></tr>
+      <tr><td>Firebase Analytics installation ID</td><td>App usage statistics (which screens are used) to improve it. Never used for advertising.</td><td>Up to 14 months or until you delete the app.</td></tr>
+    </table>
+    </div>
+    <p>YOKA does not use your phone's advertising identifier (IDFA) and does not show you ads.</p>
+
+    <h2>3. Third-party services you open from YOKA</h2>
+    <p>When you tap a link that takes you outside YOKA, such as Google Maps, a booking website or Instagram, that service may use its own cookies. They are governed by its policy, not this one.</p>
+
+    <h2>4. How to control cookies</h2>
+    <p>You can view and delete cookies in your browser settings:</p>
+    <ul>
+      <li><a href="https://support.apple.com/en-us/105082">Safari (iPhone, iPad and Mac)</a></li>
+      <li><a href="https://support.google.com/chrome/answer/95647?hl=en">Google Chrome</a></li>
+      <li><a href="https://support.mozilla.org/en-US/kb/clear-cookies-and-site-data-firefox">Mozilla Firefox</a></li>
+      <li><a href="https://support.microsoft.com/en-us/microsoft-edge">Microsoft Edge</a></li>
+    </ul>
+    <p>In the app, you can delete everything it stores on your phone by uninstalling it, and you can delete your account in Profile → Settings → Delete account.</p>
+
+    <h2>5. Contact</h2>
+    <p>For any question, email us at <a href="mailto:goyokatravel@gmail.com">goyokatravel@gmail.com</a>. You can find more about your data in our <a href="/privacidad?lang=en">Privacy Policy</a>.</p>
+  </div>
+
+  <p class="foot"><a href="/privacidad">Privacidad · Privacy</a><a href="/terminos">Términos · Terms</a><a href="/cookies">Cookies</a><a href="/borrar-cuenta/">Borrar cuenta · Delete account</a></p>
+</div>
+</body>
+</html>
