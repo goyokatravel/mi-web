@@ -898,9 +898,10 @@
       </div>
       <div class="footer-col">
         <h4 data-es="Legal" data-en="Legal">Legal</h4>
-        <a href="#" data-es="Términos" data-en="Terms">Términos</a>
-        <a href="#" data-es="Privacidad" data-en="Privacy">Privacidad</a>
-        <a href="#" data-es="Cookies" data-en="Cookies">Cookies</a>
+        <a href="terminos" class="js-legal" data-es="Términos" data-en="Terms">Términos</a>
+        <a href="privacidad" class="js-legal" data-es="Privacidad" data-en="Privacy">Privacidad</a>
+        <a href="borrar-cuenta/" data-es="Borrar cuenta" data-en="Delete account">Borrar cuenta</a>
+        <a href="cookies" class="js-legal" data-es="Cookies" data-en="Cookies">Cookies</a>
       </div>
     </div>
   </div>
@@ -923,7 +924,12 @@
     document.querySelectorAll('.lang-switch button').forEach(function(btn){
       btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
     });
+    // Las páginas legales se abren en el idioma elegido aquí.
+    document.querySelectorAll('.js-legal').forEach(function(a){
+      a.href = a.getAttribute('href').split('?')[0] + '?lang=' + lang;
+    });
   }
+  setLang(document.documentElement.lang || 'es');
 
   // Floating mobile nav menu
   function toggleNav(){
