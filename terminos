@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YOKA · Condiciones de uso / Terms of Use</title>
+<meta name="description" content="Condiciones de uso y normas de la comunidad de YOKA. YOKA Terms of Use and community guidelines.">
+<style>
+  :root { --blue:#0174D9; --yellow:#FFDC01; --ink:#14213D; --sub:#6B7280; --line:#E6E8EE; --tile:#F6F7F9; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--blue); color:var(--ink);
+         font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; line-height:1.6; }
+  .wrap { max-width:760px; margin:0 auto; padding:32px 16px 48px; }
+  .top { display:flex; align-items:center; justify-content:space-between; gap:12px; margin:0 0 16px; }
+  .logo { color:var(--yellow); font-weight:900; font-size:34px; letter-spacing:-0.5px; text-decoration:none; }
+  .langs { display:flex; background:rgba(255,255,255,.18); border-radius:999px; padding:4px; }
+  .langs a { color:#fff; text-decoration:none; font-weight:800; font-size:14px; padding:6px 14px; border-radius:999px; }
+  .langs a.on { background:var(--yellow); color:var(--ink); }
+  .card { background:#fff; border-radius:22px; padding:28px 22px; }
+  h1 { font-size:26px; margin:0 0 4px; }
+  h2 { font-size:18px; margin:30px 0 8px; }
+  h3 { font-size:15px; margin:18px 0 4px; }
+  p, li, td, th { font-size:15px; }
+  .sub { color:var(--sub); margin:0 0 18px; }
+  ul { padding-left:20px; margin:8px 0; }
+  li { margin:4px 0; }
+  table { width:100%; border-collapse:collapse; margin:8px 0; }
+  th, td { text-align:left; vertical-align:top; padding:9px 8px; border-bottom:1px solid var(--line); }
+  th { background:var(--tile); font-size:13px; }
+  .tbl { overflow-x:auto; }
+  .box { background:var(--tile); border:1px solid var(--line); border-radius:14px; padding:14px 16px; }
+  a { color:var(--blue); }
+  nav a { display:block; margin:3px 0; }
+  .foot { text-align:center; margin-top:18px; font-size:13px; }
+  .foot a { color:#fff; margin:0 8px; }
+  .alert { background:#FFF8CC; border:1px solid #F2D600; border-radius:14px; padding:14px 16px; }
+  [data-lang] { display:none; }
+  html[data-show="es"] [data-lang="es"], html[data-show="en"] [data-lang="en"] { display:block; }
+</style>
+<script>
+  // Idioma: ?lang=en o #en → inglés; ?lang=es o #es → español; si no, el del navegador.
+  (function () {
+    var q = (location.search.match(/lang=(es|en)/) || [])[1] || (location.hash.match(/^#(es|en)$/) || [])[1];
+    var nav = (navigator.language || 'es').toLowerCase().indexOf('es') === 0 ? 'es' : 'en';
+    var l = q || nav;
+    document.documentElement.setAttribute('data-show', l);
+    document.documentElement.setAttribute('lang', l);
+  })();
+  function setLang(l) {
+    document.documentElement.setAttribute('data-show', l);
+    document.documentElement.setAttribute('lang', l);
+    document.getElementById('b-es').className = l === 'es' ? 'on' : '';
+    document.getElementById('b-en').className = l === 'en' ? 'on' : '';
+    // En la vista previa (iframe) cambiar la URL no está permitido: se ignora.
+    try { history.replaceState(null, '', '?lang=' + l); } catch (e) {}
+    return false;
+  }
+  document.addEventListener('DOMContentLoaded', function () { setLang(document.documentElement.getAttribute('data-show')); });
+</script>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <a class="logo" href="/">YOKA</a>
+    <div class="langs"><a id="b-es" href="?lang=es" onclick="return setLang('es')">ES</a><a id="b-en" href="?lang=en" onclick="return setLang('en')">EN</a></div>
+  </div>
+
+  <div class="card" data-lang="es" lang="es">
+    <h1>Condiciones de uso</h1>
+    <p class="sub">Última actualización: 5 de octubre de 2026</p>
+
+    <p>Estas condiciones regulan el uso de la app YOKA y de la web goyokatravel.com. Al crear una cuenta o usar YOKA aceptas estas condiciones, las <a href="#es-normas">normas de la comunidad</a> y la <a href="/privacidad?lang=es">política de privacidad</a>. Si no estás de acuerdo, no uses YOKA.</p>
+
+    <nav class="box">
+      <a href="#es-titular">1. Quién está detrás de YOKA</a>
+      <a href="#es-servicio">2. Qué es YOKA</a>
+      <a href="#es-edad">3. Edad mínima</a>
+      <a href="#es-cuenta">4. Tu cuenta</a>
+      <a href="#es-normas">5. Normas de la comunidad (tolerancia cero)</a>
+      <a href="#es-contenido">6. Tu contenido</a>
+      <a href="#es-moderacion">7. Denuncias, bloqueos y moderación</a>
+      <a href="#es-viajes">8. Viajes en grupo y gastos</a>
+      <a href="#es-terceros">9. Servicios y enlaces de terceros</a>
+      <a href="#es-propiedad">10. Propiedad intelectual</a>
+      <a href="#es-precio">11. Precio</a>
+      <a href="#es-responsabilidad">12. Responsabilidad</a>
+      <a href="#es-baja">13. Baja y cierre de cuentas</a>
+      <a href="#es-apple">14. Si descargas YOKA desde la App Store</a>
+      <a href="#es-cambios">15. Cambios en estas condiciones</a>
+      <a href="#es-ley">16. Ley aplicable y reclamaciones</a>
+    </nav>
+
+    <h2 id="es-titular">1. Quién está detrás de YOKA</h2>
+    <div class="box">
+      <p><strong>Titular:</strong> Cristina Barriopedro Amoraga<br>
+      <strong>Dirección:</strong> Calle Castillo de Ponferrada, 17, 28691 Villanueva de la Cañada (Madrid), España<br>
+      <strong>Contacto:</strong> <a href="mailto:goyokatravel@gmail.com">goyokatravel@gmail.com</a><br>
+      <strong>Web:</strong> goyokatravel.com</p>
+    </div>
+
+    <h2 id="es-servicio">2. Qué es YOKA</h2>
+    <p>YOKA es una app para organizar viajes en grupo (itinerario, alojamiento, gastos, ideas, diario y fotos) y para descubrir y compartir sitios con otros viajeros. Podemos mejorar, cambiar o retirar funciones con el tiempo. Si un cambio te afecta de forma importante, te avisaremos en la app.</p>
+
+    <h2 id="es-edad">3. Edad mínima</h2>
+    <p>Para usar YOKA tienes que tener <strong>al menos 16 años</strong>. Al registrarte declaras que la fecha de nacimiento que indicas es real. Si comprobamos que una cuenta pertenece a una persona menor de 16 años, o que la fecha es falsa, podremos <strong>borrar la cuenta</strong>.</p>
+
+    <h2 id="es-cuenta">4. Tu cuenta</h2>
+    <ul>
+      <li>Puedes entrar con correo y contraseña, con tu número de teléfono, o con Apple o Google.</li>
+      <li>Los datos que nos des tienen que ser ciertos. No puedes hacerte pasar por otra persona.</li>
+      <li>Eres responsable de lo que se haga con tu cuenta. Guarda tu contraseña y avísanos si crees que alguien ha entrado en ella.</li>
+      <li>La cuenta es personal: no la vendas, prestes ni cedas.</li>
+    </ul>
+
+    <h2 id="es-normas">5. Normas de la comunidad: tolerancia cero</h2>
+    <div class="alert">
+      <p><strong>En YOKA no hay tolerancia con el contenido ofensivo ni con los usuarios abusivos.</strong> Quien incumpla estas normas verá su contenido retirado y su cuenta podrá cerrarse, sin previo aviso en los casos graves.</p>
+    </div>
+    <p>No está permitido publicar, enviar ni compartir en YOKA:</p>
+    <ul>
+      <li>Insultos, acoso, amenazas, intimidación o discursos de odio hacia cualquier persona o grupo.</li>
+      <li>Contenido sexual, pornográfico o que sexualice a menores de cualquier forma.</li>
+      <li>Violencia explícita, apología del terrorismo, autolesiones o actividades ilegales.</li>
+      <li>Spam, publicidad no autorizada, estafas o información falsa sobre sitios.</li>
+      <li>Datos personales o fotos de otras personas sin su permiso.</li>
+      <li>Contenido que infrinja derechos de autor, marcas u otros derechos de terceros.</li>
+      <li>Virus, código malicioso o cualquier intento de atacar, saturar o acceder sin permiso a YOKA o a cuentas ajenas.</li>
+    </ul>
+
+    <h2 id="es-contenido">6. Tu contenido</h2>
+    <ul>
+      <li>Lo que publicas (sitios, fotos, comentarios, valoraciones, itinerarios) sigue siendo tuyo.</li>
+      <li>Al publicarlo nos das permiso, gratuito, no exclusivo y mundial, para alojarlo, mostrarlo dentro de YOKA, adaptarlo al formato de la app (por ejemplo, recortar una foto) y, si lo haces público, para que otros usuarios lo vean, lo guarden o usen tu itinerario público como base de su viaje. Este permiso termina cuando lo borras o borras tu cuenta, salvo copias que otros usuarios ya hayan hecho de itinerarios públicos y lo que ya se haya compartido fuera de YOKA.</li>
+      <li>Solo puedes publicar contenido que sea tuyo o que tengas derecho a usar.</li>
+      <li>Las opiniones y valoraciones son de quien las publica, no de YOKA.</li>
+    </ul>
+
+    <h2 id="es-moderacion">7. Denuncias, bloqueos y moderación</h2>
+    <ul>
+      <li>Puedes <strong>denunciar</strong> cualquier sitio, comentario o usuario desde el menú <strong>···</strong>. Lo denunciado deja de verse para ti al momento.</li>
+      <li>Puedes <strong>bloquear</strong> a cualquier usuario: dejarás de ver su contenido y él el tuyo. Puedes desbloquearlo en Ajustes → Usuarios bloqueados.</li>
+      <li>Revisamos las denuncias en un plazo máximo de <strong>24 horas</strong>. Si el contenido incumple estas normas, lo retiramos y podemos expulsar a quien lo publicó.</li>
+      <li>También puedes escribirnos a <a href="mailto:goyokatravel@gmail.com">goyokatravel@gmail.com</a>.</li>
+    </ul>
+
+    <h2 id="es-viajes">8. Viajes en grupo y gastos</h2>
+    <ul>
+      <li>Los miembros de un viaje pueden ver y editar sus planes, fechas, alojamiento, gastos, ideas y fotos. Invita solo a personas de confianza.</li>
+      <li>La sección de gastos es una ayuda para llevar las cuentas. <strong>YOKA no procesa pagos</strong> ni cobra, guarda o transfiere dinero, y no responde de las deudas entre los miembros del grupo.</li>
+      <li>Si sales de un viaje o borras tu cuenta, el viaje sigue existiendo para los demás miembros.</li>
+    </ul>
+
+    <h2 id="es-terceros">9. Servicios y enlaces de terceros</h2>
+    <p>YOKA enlaza con servicios de otras empresas, como mapas, Google Maps para "Cómo llegar" o webs de reserva de hoteles y actividades. YOKA no vende ni reserva nada: cualquier reserva o compra la haces directamente con ese proveedor y se rige por sus condiciones. Algunos de esos enlaces pueden ser de afiliado, lo que no cambia el precio que pagas. La información de horarios, precios o direcciones puede no estar al día; compruébala antes de ir.</p>
+
+    <h2 id="es-propiedad">10. Propiedad intelectual</h2>
+    <p>La marca YOKA, el logo, el diseño de la app y su código pertenecen a su titular. Las fotos de referencia proceden de Unsplash y de sus autores, con su crédito. Los mapas son de Stadia Maps y OpenStreetMap. No puedes copiar, modificar ni distribuir la app ni intentar obtener su código fuente.</p>
+
+    <h2 id="es-precio">11. Precio</h2>
+    <p>Hoy YOKA es gratuita. Si en el futuro hay funciones de pago, sus condiciones y su precio se mostrarán con claridad antes de que las contrates, y no se cobrará nada sin tu confirmación.</p>
+
+    <h2 id="es-responsabilidad">12. Responsabilidad</h2>
+    <ul>
+      <li>Trabajamos para que YOKA funcione bien, pero puede haber interrupciones, errores o pérdidas de datos. Te recomendamos guardar aparte la información esencial de tu viaje (billetes, reservas).</li>
+      <li>No respondemos del contenido que publican otros usuarios ni de los servicios de terceros enlazados.</li>
+      <li>Nada de lo anterior limita los derechos que te reconoce la ley como consumidor, ni nuestra responsabilidad en los casos en que la ley no permite limitarla.</li>
+    </ul>
+
+    <h2 id="es-baja">13. Baja y cierre de cuentas</h2>
+    <ul>
+      <li>Puedes borrar tu cuenta cuando quieras en <strong>Perfil → Ajustes → Eliminar cuenta</strong> o desde <a href="/borrar-cuenta/">goyokatravel.com/borrar-cuenta</a>.</li>
+      <li>Podemos suspender o cerrar una cuenta que incumpla estas condiciones o las normas de la comunidad, que ponga en riesgo a otros usuarios o cuando lo exija la ley.</li>
+    </ul>
+
+    <h2 id="es-apple">14. Si descargas YOKA desde la App Store</h2>
+    <ul>
+      <li>Estas condiciones son un acuerdo entre tú y el titular de YOKA, no con Apple. Apple no es responsable de YOKA ni de su contenido.</li>
+      <li>Apple no tiene obligación de dar mantenimiento ni soporte a la app. Para cualquier duda o reclamación, escríbenos a nosotros.</li>
+      <li>Si la app no cumple alguna garantía aplicable, puedes avisar a Apple y, en su caso, te devolverá el precio pagado (YOKA es gratuita). En la medida en que lo permita la ley, Apple no tendrá ninguna otra obligación de garantía.</li>
+      <li>Apple no responde de reclamaciones relacionadas con la app (responsabilidad por producto, incumplimiento legal o de normativa de consumo) ni de reclamaciones de terceros por propiedad intelectual. De ellas respondemos nosotros en los términos de estas condiciones.</li>
+      <li>Declaras que no estás en un país sometido a embargo de EE. UU. ni en ninguna lista de personas sancionadas por el Gobierno de EE. UU.</li>
+      <li>Apple y sus filiales son terceros beneficiarios de estas condiciones y pueden exigir su cumplimiento.</li>
+      <li>También se aplican las condiciones de uso de la App Store.</li>
+    </ul>
+
+    <h2 id="es-cambios">15. Cambios en estas condiciones</h2>
+    <p>Si cambiamos algo importante, te avisaremos en la app antes de que se aplique y actualizaremos la fecha de arriba. Si no estás de acuerdo con el cambio, puedes borrar tu cuenta.</p>
+
+    <h2 id="es-ley">16. Ley aplicable y reclamaciones</h2>
+    <p>Estas condiciones se rigen por la ley española. Si tienes un problema, escríbenos primero a <a href="mailto:goyokatravel@gmail.com">goyokatravel@gmail.com</a> e intentaremos resolverlo. Si eres consumidor, puedes acudir a los juzgados de tu domicilio.</p>
+  </div>
+
+  <div class="card" data-lang="en" lang="en">
+    <h1>Terms of Use</h1>
+    <p class="sub">Last updated: 5 October 2026</p>
+
+    <p>These terms govern your use of the YOKA app and the goyokatravel.com website. By creating an account or using YOKA, you accept these terms, the <a href="#en-rules">community guidelines</a> and the <a href="/privacidad?lang=en">Privacy Policy</a>. If you do not agree, please do not use YOKA.</p>
+
+    <nav class="box">
+      <a href="#en-owner">1. Who is behind YOKA</a>
+      <a href="#en-service">2. What YOKA is</a>
+      <a href="#en-age">3. Minimum age</a>
+      <a href="#en-account">4. Your account</a>
+      <a href="#en-rules">5. Community guidelines (zero tolerance)</a>
+      <a href="#en-content">6. Your content</a>
+      <a href="#en-moderation">7. Reports, blocking and moderation</a>
+      <a href="#en-trips">8. Group trips and expenses</a>
+      <a href="#en-third">9. Third-party services and links</a>
+      <a href="#en-ip">10. Intellectual property</a>
+      <a href="#en-price">11. Price</a>
+      <a href="#en-liability">12. Liability</a>
+      <a href="#en-closing">13. Closing accounts</a>
+      <a href="#en-apple">14. If you download YOKA from the App Store</a>
+      <a href="#en-changes">15. Changes to these terms</a>
+      <a href="#en-law">16. Governing law and complaints</a>
+    </nav>
+
+    <h2 id="en-owner">1. Who is behind YOKA</h2>
+    <div class="box">
+      <p><strong>Owner:</strong> Cristina Barriopedro Amoraga<br>
+      <strong>Address:</strong> Calle Castillo de Ponferrada, 17, 28691 Villanueva de la Cañada (Madrid), Spain<br>
+      <strong>Contact:</strong> <a href="mailto:goyokatravel@gmail.com">goyokatravel@gmail.com</a><br>
+      <strong>Website:</strong> goyokatravel.com</p>
+    </div>
+
+    <h2 id="en-service">2. What YOKA is</h2>
+    <p>YOKA is an app for planning group trips (itinerary, accommodation, expenses, ideas, journal and photos) and for discovering and sharing places with other travelers. We may improve, change or remove features over time. If a change affects you significantly, we will let you know in the app.</p>
+
+    <h2 id="en-age">3. Minimum age</h2>
+    <p>You must be <strong>at least 16 years old</strong> to use YOKA. When you sign up, you confirm that the date of birth you provide is real. If we find that an account belongs to someone under 16, or that the date is false, we may <strong>delete the account</strong>.</p>
+
+    <h2 id="en-account">4. Your account</h2>
+    <ul>
+      <li>You can sign in with email and password, with your phone number, or with Apple or Google.</li>
+      <li>The information you give us must be accurate. You may not impersonate anyone else.</li>
+      <li>You are responsible for what happens on your account. Keep your password safe and let us know if you think someone else has accessed it.</li>
+      <li>Your account is personal: do not sell, lend or transfer it.</li>
+    </ul>
+
+    <h2 id="en-rules">5. Community guidelines: zero tolerance</h2>
+    <div class="alert">
+      <p><strong>YOKA has zero tolerance for objectionable content and abusive users.</strong> Anyone who breaks these rules will have their content removed and their account may be closed, without prior notice in serious cases.</p>
+    </div>
+    <p>You may not post, send or share on YOKA:</p>
+    <ul>
+      <li>Insults, harassment, threats, intimidation or hate speech against any person or group.</li>
+      <li>Sexual or pornographic content, or anything that sexualizes minors in any way.</li>
+      <li>Graphic violence, glorification of terrorism, self-harm or illegal activities.</li>
+      <li>Spam, unauthorized advertising, scams or false information about places.</li>
+      <li>Other people's personal data or photos without their permission.</li>
+      <li>Content that infringes copyright, trademarks or other third-party rights.</li>
+      <li>Viruses, malicious code, or any attempt to attack, overload or gain unauthorized access to YOKA or other people's accounts.</li>
+    </ul>
+
+    <h2 id="en-content">6. Your content</h2>
+    <ul>
+      <li>What you post (places, photos, comments, ratings, itineraries) remains yours.</li>
+      <li>By posting it, you give us a free, non-exclusive, worldwide license to host it, display it inside YOKA, adapt it to the app's format (for example, cropping a photo) and, if you make it public, to let other users view it, save it or use your public itinerary as the basis for their trip. This license ends when you delete the content or your account, except for copies of public itineraries that other users have already made and anything already shared outside YOKA.</li>
+      <li>You may only post content that is yours or that you have the right to use.</li>
+      <li>Opinions and ratings belong to whoever posts them, not to YOKA.</li>
+    </ul>
+
+    <h2 id="en-moderation">7. Reports, blocking and moderation</h2>
+    <ul>
+      <li>You can <strong>report</strong> any place, comment or user from the <strong>···</strong> menu. Reported content is hidden from you immediately.</li>
+      <li>You can <strong>block</strong> any user: you will stop seeing their content and they will stop seeing yours. You can unblock them in Settings → Blocked users.</li>
+      <li>We review reports within <strong>24 hours</strong>. If the content breaks these rules, we remove it and may ban the user who posted it.</li>
+      <li>You can also email us at <a href="mailto:goyokatravel@gmail.com">goyokatravel@gmail.com</a>.</li>
+    </ul>
+
+    <h2 id="en-trips">8. Group trips and expenses</h2>
+    <ul>
+      <li>Trip members can view and edit the trip's plans, dates, accommodation, expenses, ideas and photos. Only invite people you trust.</li>
+      <li>The expenses section is a tool to help you keep track of costs. <strong>YOKA does not process payments</strong> and does not collect, hold or transfer money, nor is it responsible for debts between group members.</li>
+      <li>If you leave a trip or delete your account, the trip remains available to the other members.</li>
+    </ul>
+
+    <h2 id="en-third">9. Third-party services and links</h2>
+    <p>YOKA links to services from other companies, such as maps, Google Maps for "Directions", or hotel and activity booking websites. YOKA does not sell or book anything: any booking or purchase is made directly with that provider and is governed by its terms. Some of these links may be affiliate links, which does not change the price you pay. Information about opening hours, prices or addresses may be out of date; please check it before you go.</p>
+
+    <h2 id="en-ip">10. Intellectual property</h2>
+    <p>The YOKA brand, logo, app design and code belong to its owner. Reference photos come from Unsplash and their authors, with credit. Maps are provided by Stadia Maps and OpenStreetMap. You may not copy, modify or distribute the app, or attempt to obtain its source code.</p>
+
+    <h2 id="en-price">11. Price</h2>
+    <p>YOKA is currently free. If paid features are introduced in the future, their terms and price will be shown clearly before you sign up, and nothing will be charged without your confirmation.</p>
+
+    <h2 id="en-liability">12. Liability</h2>
+    <ul>
+      <li>We work hard to keep YOKA running smoothly, but there may be interruptions, errors or data loss. We recommend keeping essential trip information (tickets, bookings) somewhere else as well.</li>
+      <li>We are not responsible for content posted by other users or for linked third-party services.</li>
+      <li>Nothing in these terms limits your statutory rights as a consumer, or our liability where the law does not allow it to be limited.</li>
+    </ul>
+
+    <h2 id="en-closing">13. Closing accounts</h2>
+    <ul>
+      <li>You can delete your account at any time in <strong>Profile → Settings → Delete account</strong> or at <a href="/borrar-cuenta/">goyokatravel.com/borrar-cuenta</a>.</li>
+      <li>We may suspend or close an account that breaks these terms or the community guidelines, puts other users at risk, or when required by law.</li>
+    </ul>
+
+    <h2 id="en-apple">14. If you download YOKA from the App Store</h2>
+    <ul>
+      <li>These terms are an agreement between you and the owner of YOKA, not Apple. Apple is not responsible for YOKA or its content.</li>
+      <li>Apple has no obligation to provide any maintenance or support for the app. For any question or claim, please contact us.</li>
+      <li>If the app fails to conform to any applicable warranty, you may notify Apple, and Apple may refund the purchase price (YOKA is free). To the maximum extent permitted by law, Apple will have no other warranty obligation.</li>
+      <li>Apple is not responsible for addressing any claims relating to the app (product liability, failure to meet legal or regulatory requirements, or consumer protection claims), nor for third-party intellectual property claims. We are responsible for them under these terms.</li>
+      <li>You confirm that you are not located in a country subject to a U.S. Government embargo and are not on any U.S. Government list of prohibited or restricted parties.</li>
+      <li>Apple and its subsidiaries are third-party beneficiaries of these terms and may enforce them.</li>
+      <li>The App Store Terms of Service also apply.</li>
+    </ul>
+
+    <h2 id="en-changes">15. Changes to these terms</h2>
+    <p>If we change anything important, we will let you know in the app before it applies and update the date above. If you do not agree with the change, you can delete your account.</p>
+
+    <h2 id="en-law">16. Governing law and complaints</h2>
+    <p>These terms are governed by Spanish law. If you have a problem, please email us first at <a href="mailto:goyokatravel@gmail.com">goyokatravel@gmail.com</a> and we will try to solve it. If you are a consumer, you may also bring a claim before the courts of your place of residence.</p>
+  </div>
+
+  <p class="foot"><a href="/privacidad">Privacidad · Privacy</a><a href="/terminos">Términos · Terms</a><a href="/cookies">Cookies</a><a href="/borrar-cuenta/">Borrar cuenta · Delete account</a></p>
+</div>
+</body>
+</html>
