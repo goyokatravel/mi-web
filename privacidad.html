@@ -50,7 +50,8 @@
     document.documentElement.setAttribute('lang', l);
     document.getElementById('b-es').className = l === 'es' ? 'on' : '';
     document.getElementById('b-en').className = l === 'en' ? 'on' : '';
-    history.replaceState(null, '', '?lang=' + l);
+    // En la vista previa (iframe) cambiar la URL no está permitido: se ignora.
+    try { history.replaceState(null, '', '?lang=' + l); } catch (e) {}
     return false;
   }
   document.addEventListener('DOMContentLoaded', function () { setLang(document.documentElement.getAttribute('data-show')); });
@@ -319,7 +320,7 @@
     <p>If we change anything important, for example if YOKA ever includes advertising, we will tell you in the app before it applies and update the date above.</p>
   </div>
 
-  <p class="foot"><a href="/terminos">Términos · Terms</a><a href="/cookies">Cookies</a><a href="/borrar-cuenta/">Borrar cuenta · Delete account</a></p>
+  <p class="foot"><a href="/privacidad">Privacidad · Privacy</a><a href="/terminos">Términos · Terms</a><a href="/cookies">Cookies</a><a href="/borrar-cuenta/">Borrar cuenta · Delete account</a></p>
 </div>
 </body>
 </html>
