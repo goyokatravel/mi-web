@@ -733,20 +733,16 @@
         <textarea id="message" name="message" placeholder="Cuéntanos en qué podemos ayudarte" required></textarea>
         <button type="submit" class="btn-primary" data-es="Enviar mensaje" data-en="Send message">Enviar mensaje</button>
       </form>
-      <div class="form-success" id="form-success" data-es="¡Gracias! Te contestamos en menos de 24h." data-en="Thanks! We'll get back to you within 24h.">¡Gracias! Te contestamos en menos de 24h.</div>
+      <div class="form-success" id="form-success" data-es="Se ha abierto tu app de correo con el mensaje listo. Solo te falta darle a enviar." data-en="Your email app has opened with the message ready. Just hit send.">Se ha abierto tu app de correo con el mensaje listo. Solo te falta darle a enviar.</div>
     </div>
     <div class="contact-info reveal">
       <div class="info-card">
         <div class="info-label" data-es="Email" data-en="Email">Email</div>
-        <div class="info-value">hola@yoka.app</div>
+        <div class="info-value"><a href="mailto:goyokatravel@gmail.com" style="color:inherit">goyokatravel@gmail.com</a></div>
       </div>
       <div class="info-card">
         <div class="info-label" data-es="Soporte" data-en="Support">Soporte</div>
-        <div class="info-value" data-es="Respondemos en menos de 24h, todos los días." data-en="We reply within 24h, every day.">Respondemos en menos de 24h, todos los días.</div>
-      </div>
-      <div class="info-card">
-        <div class="info-label" data-es="Redes" data-en="Social">Redes</div>
-        <div class="info-value">@yoka.app · Instagram · TikTok</div>
+        <div class="info-value" data-es="Te respondemos lo antes posible." data-en="We'll get back to you as soon as we can.">Te respondemos lo antes posible.</div>
       </div>
     </div>
   </div>
@@ -766,30 +762,25 @@
         <h4 data-es="Producto" data-en="Product">Producto</h4>
         <a href="como-funciona.html" data-es="Cómo funciona" data-en="How it works">Cómo funciona</a>
         <a href="faq.html" data-es="Preguntas frecuentes" data-en="FAQ">Preguntas frecuentes</a>
-        <a href="#" data-es="Descargar iOS" data-en="Download iOS">Descargar iOS</a>
-        <a href="#" data-es="Descargar Android" data-en="Download Android">Descargar Android</a>
+        <a href="https://testflight.apple.com/join/E4zUBVyx" target="_blank" rel="noopener" data-es="Beta para iPhone" data-en="iPhone beta">Beta para iPhone</a>
+        <a href="android.html" data-es="Android: avísame" data-en="Android: notify me">Android: avísame</a>
       </div>
       <div class="footer-col">
         <h4 data-es="Empresa" data-en="Company">Empresa</h4>
         <a href="sobre-nosotros.html" data-es="Sobre nosotros" data-en="About us">Sobre nosotros</a>
-        <a href="#" data-es="Empleo" data-en="Careers">Empleo</a>
         <a href="contacto.html" data-es="Contacto" data-en="Contact">Contacto</a>
       </div>
       <div class="footer-col">
         <h4 data-es="Legal" data-en="Legal">Legal</h4>
-        <a href="#" data-es="Términos" data-en="Terms">Términos</a>
-        <a href="#" data-es="Privacidad" data-en="Privacy">Privacidad</a>
-        <a href="#" data-es="Cookies" data-en="Cookies">Cookies</a>
+        <a href="terminos" class="js-legal" data-es="Términos" data-en="Terms">Términos</a>
+        <a href="privacidad" class="js-legal" data-es="Privacidad" data-en="Privacy">Privacidad</a>
+        <a href="borrar-cuenta" data-es="Borrar cuenta" data-en="Delete account">Borrar cuenta</a>
+        <a href="cookies" class="js-legal" data-es="Cookies" data-en="Cookies">Cookies</a>
       </div>
     </div>
   </div>
   <div class="footer-bottom">
     <span data-es="© 2026 YOKA. Hecho para viajar en grupo." data-en="© 2026 YOKA. Made for traveling together.">© 2026 YOKA. Hecho para viajar en grupo.</span>
-    <div class="socials">
-      <a href="#">IG</a>
-      <a href="#">TT</a>
-      <a href="#">X</a>
-    </div>
   </div>
 </footer>
 
@@ -801,6 +792,10 @@
     });
     document.querySelectorAll('.lang-switch button').forEach(function(btn){
       btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+    });
+    // Las páginas legales se abren en el idioma elegido aquí.
+    document.querySelectorAll('.js-legal').forEach(function(a){
+      a.href = a.getAttribute('href').split('?')[0] + '?lang=' + lang;
     });
   }
 
@@ -868,8 +863,14 @@
   if(contactForm){
     contactForm.addEventListener('submit', function(e){
       e.preventDefault();
+      // Sin servidor: abrimos el correo del usuario con el mensaje ya escrito.
+      var nombre = document.getElementById('name').value.trim();
+      var correo = document.getElementById('email').value.trim();
+      var mensaje = document.getElementById('message').value.trim();
+      var asunto = 'Mensaje desde la web de YOKA' + (nombre ? ' · ' + nombre : '');
+      var cuerpo = mensaje + '\n\n— ' + nombre + ' (' + correo + ')';
+      window.location.href = 'mailto:goyokatravel@gmail.com?subject=' + encodeURIComponent(asunto) + '&body=' + encodeURIComponent(cuerpo);
       document.getElementById('form-success').style.display = 'block';
-      contactForm.reset();
     });
   }
 </script>

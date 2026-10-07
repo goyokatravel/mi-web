@@ -774,7 +774,7 @@
         <span class="faq-plus">+</span>
       </button>
       <div class="faq-answer">
-        <p data-es="YOKA está disponible para iOS y Android, gratis en App Store y Google Play." data-en="YOKA is available for iOS and Android, free on the App Store and Google Play.">YOKA está disponible para iOS y Android, gratis en App Store y Google Play.</p>
+        <p data-es="Ahora mismo puedes probar YOKA gratis en iPhone con la beta de TestFlight. La versión de Android llega muy pronto: apúntate en goyokatravel.com/android y te avisamos." data-en="Right now you can try YOKA for free on iPhone through the TestFlight beta. The Android version is coming very soon: sign up at goyokatravel.com/android and we'll let you know.">Ahora mismo puedes probar YOKA gratis en iPhone con la beta de TestFlight. La versión de Android llega muy pronto: apúntate en goyokatravel.com/android y te avisamos.</p>
       </div>
     </div>
   </div>
@@ -802,30 +802,25 @@
         <h4 data-es="Producto" data-en="Product">Producto</h4>
         <a href="como-funciona.html" data-es="Cómo funciona" data-en="How it works">Cómo funciona</a>
         <a href="faq.html" data-es="Preguntas frecuentes" data-en="FAQ">Preguntas frecuentes</a>
-        <a href="#" data-es="Descargar iOS" data-en="Download iOS">Descargar iOS</a>
-        <a href="#" data-es="Descargar Android" data-en="Download Android">Descargar Android</a>
+        <a href="https://testflight.apple.com/join/E4zUBVyx" target="_blank" rel="noopener" data-es="Beta para iPhone" data-en="iPhone beta">Beta para iPhone</a>
+        <a href="android.html" data-es="Android: avísame" data-en="Android: notify me">Android: avísame</a>
       </div>
       <div class="footer-col">
         <h4 data-es="Empresa" data-en="Company">Empresa</h4>
         <a href="sobre-nosotros.html" data-es="Sobre nosotros" data-en="About us">Sobre nosotros</a>
-        <a href="#" data-es="Empleo" data-en="Careers">Empleo</a>
         <a href="contacto.html" data-es="Contacto" data-en="Contact">Contacto</a>
       </div>
       <div class="footer-col">
         <h4 data-es="Legal" data-en="Legal">Legal</h4>
-        <a href="#" data-es="Términos" data-en="Terms">Términos</a>
-        <a href="#" data-es="Privacidad" data-en="Privacy">Privacidad</a>
-        <a href="#" data-es="Cookies" data-en="Cookies">Cookies</a>
+        <a href="terminos" class="js-legal" data-es="Términos" data-en="Terms">Términos</a>
+        <a href="privacidad" class="js-legal" data-es="Privacidad" data-en="Privacy">Privacidad</a>
+        <a href="borrar-cuenta" data-es="Borrar cuenta" data-en="Delete account">Borrar cuenta</a>
+        <a href="cookies" class="js-legal" data-es="Cookies" data-en="Cookies">Cookies</a>
       </div>
     </div>
   </div>
   <div class="footer-bottom">
     <span data-es="© 2026 YOKA. Hecho para viajar en grupo." data-en="© 2026 YOKA. Made for traveling together.">© 2026 YOKA. Hecho para viajar en grupo.</span>
-    <div class="socials">
-      <a href="#">IG</a>
-      <a href="#">TT</a>
-      <a href="#">X</a>
-    </div>
   </div>
 </footer>
 
@@ -837,6 +832,10 @@
     });
     document.querySelectorAll('.lang-switch button').forEach(function(btn){
       btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+    });
+    // Las páginas legales se abren en el idioma elegido aquí.
+    document.querySelectorAll('.js-legal').forEach(function(a){
+      a.href = a.getAttribute('href').split('?')[0] + '?lang=' + lang;
     });
   }
 
