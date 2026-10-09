@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>YOKA para Android</title>
-<meta name="description" content="Apúntate para probar YOKA en Android antes que nadie.">
-<meta property="og:title" content="YOKA para Android · Apúntate">
-<meta property="og:description" content="Organiza viajes con amigos. Déjanos tu correo y te avisamos para probarla antes que nadie.">
+<meta name="description" content="Únete a la beta cerrada de YOKA en Android.">
+<meta property="og:title" content="YOKA para Android · Beta cerrada">
+<meta property="og:description" content="Organiza viajes con amigos. Únete a la beta cerrada en Google Play en tres pasos.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -37,6 +37,17 @@
   .hero h1 mark{background:var(--yellow);color:#14213D;padding:0 .18em;border-radius:8px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
   .hero p{margin:0 0 24px;color:var(--muted);font-size:17px}
 
+  .steps{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+  .step{background:var(--card);border:2px solid var(--line);border-radius:22px;padding:20px 18px;display:grid;grid-template-columns:40px 1fr;gap:14px;align-items:start}
+  .num{width:40px;height:40px;border-radius:12px;background:var(--yellow);color:#14213D;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:20px;display:grid;place-items:center}
+  .step h2{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:19px;margin:6px 0 6px}
+  .step p{margin:0 0 14px;color:var(--muted);font-size:15px}
+  .step p:last-child{margin-bottom:0}
+  .btn{display:block;text-align:center;text-decoration:none;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:17px;color:#14213D;background:var(--yellow);border-radius:14px;padding:14px;transition:filter .15s}
+  .btn:hover{filter:brightness(.97)}
+  .btn.alt{background:var(--blue);color:#fff}
+  .note{margin:18px 0 0;background:var(--chip);border-radius:16px;padding:14px 16px;font-size:14px;color:var(--muted)}
+  .note strong{color:var(--ink)}
   form{background:var(--card);border:2px solid var(--line);border-radius:22px;padding:22px 18px}
   .field{margin-bottom:20px}
   label.q,legend.q{display:block;font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:16px;margin-bottom:8px;padding:0}
@@ -75,128 +86,44 @@
 <div class="wrap">
   <header>
     <a class="logo" href="https://goyokatravel.com">yoka</a>
-    <span class="pill">Android · muy pronto</span>
+    <span class="pill">Android · beta cerrada</span>
   </header>
 
-  <section class="hero" id="hero">
+  <section class="hero">
     <h1>Pruébala en Android <mark>antes que nadie</mark></h1>
-    <p>YOKA ya está en iPhone y estamos preparando la versión de Android. Déjanos tu correo y te avisamos en cuanto puedas probarla.</p>
+    <p>YOKA está en beta cerrada en Google Play. Entrar es gratis y te lleva un minuto: sigue estos tres pasos desde tu móvil Android.</p>
   </section>
 
-  <form id="f" novalidate>
-    <div class="field">
-      <label class="q" for="email">Tu correo</label>
-      <input id="email" name="email" type="email" autocomplete="email" placeholder="tu@correo.com" required maxlength="254">
-    </div>
-
-    <div class="field">
-      <label class="q" for="nombre">¿Cómo te llamas? <span class="opt">(opcional)</span></label>
-      <input id="nombre" name="nombre" type="text" autocomplete="given-name" maxlength="80">
-    </div>
-
-    <fieldset>
-      <legend class="q">¿Con quién sueles viajar? <span class="opt">(puedes marcar varias)</span></legend>
-      <div class="chips">
-        <input type="checkbox" id="c1" name="con_quien" value="amigos"><label for="c1">Amigos</label>
-        <input type="checkbox" id="c2" name="con_quien" value="pareja"><label for="c2">Pareja</label>
-        <input type="checkbox" id="c3" name="con_quien" value="familia"><label for="c3">Familia</label>
-        <input type="checkbox" id="c4" name="con_quien" value="solo"><label for="c4">Solo/a</label>
+  <ol class="steps">
+    <li class="step">
+      <span class="num">1</span>
+      <div>
+        <h2>Únete al grupo de testers</h2>
+        <p>Entra con la <strong>misma cuenta de Google</strong> que usas en Google Play en tu móvil y pulsa «Unirse al grupo».</p>
+        <a class="btn" href="https://groups.google.com/g/yoka-testers" target="_blank" rel="noopener">Unirme al grupo</a>
       </div>
-    </fieldset>
-
-    <fieldset>
-      <legend class="q">¿Cuántos viajes haces al año?</legend>
-      <div class="chips">
-        <input type="radio" id="f1" name="frecuencia" value="1"><label for="f1">1</label>
-        <input type="radio" id="f2" name="frecuencia" value="2-3"><label for="f2">2–3</label>
-        <input type="radio" id="f3" name="frecuencia" value="4+"><label for="f3">4 o más</label>
+    </li>
+    <li class="step">
+      <span class="num">2</span>
+      <div>
+        <h2>Acepta la invitación</h2>
+        <p>Abre este enlace y pulsa «Hazte tester». Si te dice que no está disponible, espera un par de minutos tras unirte al grupo y vuelve a probar.</p>
+        <a class="btn alt" href="https://play.google.com/apps/testing/com.goyokatravel.app" target="_blank" rel="noopener">Hazme tester</a>
       </div>
-    </fieldset>
+    </li>
+    <li class="step">
+      <span class="num">3</span>
+      <div>
+        <h2>Descarga YOKA</h2>
+        <p>Ya puedes instalarla desde Google Play como cualquier otra app.</p>
+        <a class="btn" href="https://play.google.com/store/apps/details?id=com.goyokatravel.app" target="_blank" rel="noopener">Abrir en Google Play</a>
+      </div>
+    </li>
+  </ol>
 
-    <div class="field">
-      <label class="q" for="destinos">¿A dónde sueles viajar? <span class="opt">(opcional)</span></label>
-      <input id="destinos" name="destinos" type="text" placeholder="Ej.: escapadas por España, Europa…" maxlength="200">
-    </div>
-
-    <div class="hp" aria-hidden="true">
-      <label for="web">Web</label><input id="web" name="web" type="text" tabindex="-1" autocomplete="off">
-    </div>
-
-    <label class="consent">
-      <input type="checkbox" id="ok" required>
-      <span>Acepto que YOKA use mi correo para avisarme de la versión de Android, según la <a href="https://goyokatravel.com/privacidad" target="_blank" rel="noopener">política de privacidad</a>. Puedo pedir que lo borréis cuando quiera.</span>
-    </label>
-
-    <button type="submit" id="btn">Apuntarme</button>
-    <p class="err" id="err" role="alert"></p>
-  </form>
-
-  <div class="done" id="done">
-    <div class="big">💙💛</div>
-    <h2 id="doneTitle">¡Ya estás dentro!</h2>
-    <p>Te escribiremos en cuanto YOKA esté lista para Android. Mientras, cuéntaselo a tu grupo de viaje 😉</p>
-    <a class="ios" href="https://goyokatravel.com">Conoce YOKA</a>
-  </div>
+  <p class="note"><strong>Un favor enorme:</strong> no salgas del grupo ni de la prueba durante las próximas semanas. Google nos pide que los testers sigan dentro un tiempo antes de poder lanzar YOKA para todo el mundo. ¿Algo no va? Escríbenos a <a href="mailto:goyokatravel@gmail.com">goyokatravel@gmail.com</a>.</p>
 
   <footer>© 2026 YOKA · <a href="https://goyokatravel.com/privacidad">Privacidad</a></footer>
 </div>
-
-<script>
-  // ⚙️ Pon aquí tus datos de Supabase (Project Settings → API).
-  // La "anon public key" es pública: es seguro ponerla en la web, la tabla solo permite apuntarse.
-  const SUPABASE_URL = 'https://eakkhownxkicmrbdxsrn.supabase.co';
-  const SUPABASE_ANON_KEY = 'sb_publishable_R6G1aXpGMaTcnICAzTpozA_2mr4YxiD';
-
-  const DEMO = SUPABASE_ANON_KEY.startsWith('PEGA_');
-  const $ = id => document.getElementById(id);
-  const origen = (new URLSearchParams(location.search).get('ref') || '').slice(0, 40) || null;
-
-  $('f').addEventListener('submit', async e => {
-    e.preventDefault();
-    const err = $('err'); err.textContent = '';
-    if ($('web').value) return; // bot
-
-    const email = $('email').value.trim();
-    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { err.textContent = 'Revisa el correo, parece que falta algo.'; $('email').focus(); return; }
-    if (!$('ok').checked) { err.textContent = 'Necesitamos que aceptes la política de privacidad para poder avisarte.'; return; }
-
-    const body = {
-      email,
-      nombre: $('nombre').value.trim() || null,
-      destinos: $('destinos').value.trim() || null,
-      con_quien: [...document.querySelectorAll('input[name=con_quien]:checked')].map(i => i.value),
-      frecuencia: (document.querySelector('input[name=frecuencia]:checked') || {}).value || null,
-      origen,
-      acepta_privacidad: true
-    };
-
-    const btn = $('btn'); btn.disabled = true; btn.textContent = 'Enviando…';
-    try {
-      if (!DEMO) {
-        const r = await fetch(`${SUPABASE_URL}/rest/v1/android_waitlist`, {
-          method: 'POST',
-          headers: {
-            'apikey': SUPABASE_ANON_KEY,
-            'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
-            'Content-Type': 'application/json',
-            'Prefer': 'return=minimal'
-          },
-          body: JSON.stringify(body)
-        });
-        if (r.status === 409) { $('doneTitle').textContent = '¡Ya estabas apuntado/a!'; }
-        else if (!r.ok) throw new Error(r.status);
-      } else {
-        await new Promise(res => setTimeout(res, 500));
-      }
-      $('f').style.display = 'none';
-      $('hero').style.display = 'none';
-      $('done').style.display = 'block';
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    } catch (_) {
-      err.textContent = 'Uy, no se ha podido enviar. Prueba otra vez en un momento.';
-      btn.disabled = false; btn.textContent = 'Apuntarme';
-    }
-  });
-</script>
 </body>
 </html>
