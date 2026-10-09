@@ -46,6 +46,8 @@
   .btn{display:block;text-align:center;text-decoration:none;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:17px;color:#14213D;background:var(--yellow);border-radius:14px;padding:14px;transition:filter .15s}
   .btn:hover{filter:brightness(.97)}
   .btn.alt{background:var(--blue);color:#fff}
+  .step p.wait{background:var(--chip);border-radius:12px;padding:10px 12px;font-size:14px}
+  .step p.wait strong{color:var(--ink)}
   .note{margin:18px 0 0;background:var(--chip);border-radius:16px;padding:14px 16px;font-size:14px;color:var(--muted)}
   .note strong{color:var(--ink)}
   form{background:var(--card);border:2px solid var(--line);border-radius:22px;padding:22px 18px}
@@ -107,7 +109,8 @@
       <span class="num">2</span>
       <div>
         <h2>Acepta la invitación</h2>
-        <p>Abre este enlace y pulsa «Hazte tester». Si te dice que no está disponible, espera un par de minutos tras unirte al grupo y vuelve a probar.</p>
+        <p>Abre este enlace y pulsa «Hazte tester».</p>
+        <p class="wait"><strong>⏳ ¿Te sale «App not available»?</strong> Es normal: Google tarda un rato en reconocer a los nuevos miembros del grupo, normalmente <strong>hasta una hora</strong> (a veces algo más). Espera y vuelve a abrir el enlace con la misma cuenta de Google con la que te uniste.</p>
         <a class="btn alt" href="https://play.google.com/apps/testing/com.goyokatravel.app" target="_blank" rel="noopener">Hazme tester</a>
       </div>
     </li>
