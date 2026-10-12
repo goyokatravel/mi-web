@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Internal vs Subcontracting</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; background: #1B2433; overflow: hidden; }
+  body { font-family: 'IBM Plex Sans', Arial, sans-serif; }
+  #stage { position: absolute; left: 50%; top: 50%; width: 1920px; height: 1080px; transform-origin: center center; }
+  .slide { position: absolute; inset: 0; width: 1920px; height: 1080px; display: none; overflow: hidden; }
+  .slide.active { display: flex; }
+  ul { padding-left: 36px; }
+  li { margin-bottom: 6px; }
+  .icon { flex: none; }
+  #nav { position: fixed; bottom: 16px; right: 20px; color: #BFC7D3; font: 14px 'IBM Plex Sans', Arial, sans-serif; user-select: none; }
+  #nav button { background: #2A3547; color: #F5F4EF; border: 0; border-radius: 6px; padding: 6px 12px; margin-left: 6px; cursor: pointer; font: inherit; }
+  @media print {
+    html, body { overflow: visible; background: none; }
+    #stage { position: static; transform: none !important; }
+    .slide { position: relative; display: flex !important; page-break-after: always; }
+    #nav { display: none; }
+    @page { size: 1920px 1080px; margin: 0; }
+  }
+</style>
+</head>
+<body>
+<div id="stage">
+
+<!-- ============ SLIDE 1: Internal vs Subcontracting ============ -->
+<section class="slide active" style="background:#F5F4EF;color:#1B2433;padding:112px 128px 128px;flex-direction:column;gap:40px">
+  <div style="display:flex;flex-direction:column;gap:8px">
+    <p style="font-size:24px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#5A6577">Digital tool · Delivery model</p>
+    <h2 style="font-size:64px;font-weight:700;line-height:1.1">Internal development vs Subcontracting</h2>
+  </div>
+  <div style="flex:1;display:flex;gap:24px;align-items:stretch">
+    <div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#FFFFFF;padding:40px;border:1px solid #E2DED4;border-top:8px solid #C4572A;border-radius:16px">
+      <p style="font-size:24px;font-weight:600;letter-spacing:2px;color:#C4572A">OPTION A</p>
+      <h3 style="font-size:44px;font-weight:700;line-height:1.2">Develop it in-house</h3>
+      <p style="font-size:24px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#5A6577">Lessons learned</p>
+      <ul style="font-size:28px;line-height:1.4;color:#3A4558">
+        <li>Key experts pulled off critical projects to build the tool</li>
+        <li>Lack of dedicated digital resources</li>
+        <li>Internal team lacked the digital skills needed for development</li>
+        <li>Long lead times: many departments, approvals and filters to go through</li>
+      </ul>
+      <div style="flex:1"></div>
+      <div style="display:flex;align-items:center;gap:16px;background:#FBE9E1;padding:20px 24px;border-radius:12px">
+        <svg class="icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#B04A20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <p style="font-size:30px;font-weight:700;color:#8F3A17">Outcome: Failure</p>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:center;align-items:center;width:72px">
+      <p style="font-size:28px;font-weight:700;color:#F5F4EF;background:#1B2433;padding:16px 12px;border-radius:36px">VS</p>
+    </div>
+    <div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#FFFFFF;padding:40px;border:1px solid #E2DED4;border-top:8px solid #2763A8;border-radius:16px">
+      <p style="font-size:24px;font-weight:600;letter-spacing:2px;color:#2763A8">OPTION B</p>
+      <h3 style="font-size:44px;font-weight:700;line-height:1.2">Subcontract + act as PMO</h3>
+      <p style="font-size:24px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#5A6577">How it worked</p>
+      <ul style="font-size:28px;line-height:1.4;color:#3A4558">
+        <li>Secure the budget for an external partner</li>
+        <li>Take a stronger PMO role: steer scope, timeline and quality</li>
+        <li>Experts are consulted for domain input but are not part of the delivery team</li>
+        <li>Proven partner with established knowledge of the department's needs, processes and deliverables</li>
+      </ul>
+      <div style="flex:1"></div>
+      <div style="display:flex;align-items:center;gap:16px;background:#E3EDF8;padding:20px 24px;border-radius:12px">
+        <svg class="icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#1F5592" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg>
+        <p style="font-size:30px;font-weight:700;color:#174578">Outcome: Success</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 2: Knowledge Management Tool mockup ============ -->
+<section class="slide" style="background:#F5F4EF;color:#1B2433;padding:96px 128px 112px;flex-direction:column;gap:32px">
+  <h2 style="font-size:60px;font-weight:700;line-height:1.1">Knowledge Management Tool: search every case, ask the AI</h2>
+  <div style="flex:1;display:flex;flex-direction:column;background:#FFFFFF;border:1px solid #DCD8CD;border-radius:16px;overflow:hidden;box-shadow:0 12px 40px rgba(27,36,51,0.12)">
+    <div style="display:flex;align-items:center;gap:24px;padding:18px 28px;background:#FBFAF7;border-bottom:1px solid #E5E1D7">
+      <div style="display:flex;gap:10px">
+        <div style="width:16px;height:16px;background:#E0866A;border-radius:50%"></div>
+        <div style="width:16px;height:16px;background:#E8C35C;border-radius:50%"></div>
+        <div style="width:16px;height:16px;background:#7DB37A;border-radius:50%"></div>
+      </div>
+      <p style="font-size:28px;font-weight:700;color:#2763A8;white-space:nowrap">AeroKnow</p>
+      <div style="flex:1;display:flex;align-items:center;gap:16px;background:#FFFFFF;border:2px solid #2763A8;border-radius:12px;padding:10px 20px">
+        <svg class="icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2763A8" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.2" y2="16.2"/></svg>
+        <p style="font-size:28px">smoke in engine</p>
+      </div>
+      <p style="font-size:24px;font-weight:600;color:#FFFFFF;background:#2763A8;padding:12px 28px;border-radius:12px">Search</p>
+    </div>
+    <div style="flex:1;display:flex;gap:24px;padding:24px 28px">
+      <div style="flex:1.4;display:flex;flex-direction:column;gap:14px">
+        <div style="display:flex;align-items:center;gap:12px">
+          <p style="font-size:24px;font-weight:600">128 cases found</p>
+          <div style="flex:1"></div>
+          <p style="font-size:24px;color:#2763A8;background:#E3EDF8;padding:4px 16px;border-radius:20px">All fleets</p>
+          <p style="font-size:24px;color:#2763A8;background:#E3EDF8;padding:4px 16px;border-radius:20px">Last 3 years</p>
+          <p style="font-size:24px;color:#2763A8;background:#E3EDF8;padding:4px 16px;border-radius:20px">Resolved</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px;padding:16px 20px;border:1px solid #E5E1D7;border-left:6px solid #2763A8;border-radius:10px">
+          <p style="font-size:26px;font-weight:600">Smoke in cockpit after engine start · A320, ENG 2</p>
+          <p style="font-size:24px;color:#5A6577">#MX-24817 · Mar 2026 · Root cause: oil seal leak · Resolved</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px;padding:16px 20px;border:1px solid #E5E1D7;border-left:6px solid #2763A8;border-radius:10px">
+          <p style="font-size:26px;font-weight:600">Burning smell and smoke via bleed air · B737-800</p>
+          <p style="font-size:24px;color:#5A6577">#MX-23590 · Nov 2025 · Root cause: bleed contamination · Resolved</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px;padding:16px 20px;border:1px solid #E5E1D7;border-left:6px solid #2763A8;border-radius:10px">
+          <p style="font-size:26px;font-weight:600">Engine smoke on taxi-in after de-icing · A321neo</p>
+          <p style="font-size:24px;color:#5A6577">#MX-22104 · Jan 2025 · Root cause: fluid ingestion · Closed</p>
+        </div>
+      </div>
+      <div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#1B2433;padding:24px;border-radius:14px">
+        <div style="display:flex;align-items:center;gap:12px">
+          <svg class="icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8FB8E8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7V16h8v-1.3A7 7 0 0 0 12 2z"/></svg>
+          <p style="font-size:26px;font-weight:700;color:#F5F4EF">AI Assistant</p>
+          <div style="flex:1"></div>
+          <p style="font-size:24px;color:#1B2433;background:#8FB8E8;padding:2px 14px;border-radius:20px">Generative AI</p>
+        </div>
+        <p style="font-size:24px;line-height:1.4;color:#1B2433;background:#E3EDF8;padding:12px 16px;border-radius:12px">What usually causes engine smoke, and what should we check first?</p>
+        <p style="font-size:24px;line-height:1.4;color:#E1E6EE">Across 128 similar cases, the most common causes are:</p>
+        <ul style="font-size:24px;line-height:1.4;color:#E1E6EE">
+          <li>Oil seal or bearing leaks</li>
+          <li>Bleed air contamination</li>
+          <li>De-icing fluid ingestion</li>
+        </ul>
+        <p style="font-size:24px;line-height:1.4;color:#8FB8E8">Sources: MX-24817, MX-23590 +14</p>
+        <div style="flex:1"></div>
+        <p style="font-size:24px;color:#8A96A8;border:1px solid #3A4558;padding:10px 16px;border-radius:12px">Ask a follow-up…</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<div id="nav"><span id="count">1 / 2</span><button id="prev">←</button><button id="next">→</button></div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const stage = document.getElementById('stage');
+  let i = 0;
+  function show(n) {
+    i = Math.max(0, Math.min(slides.length - 1, n));
+    slides.forEach((s, k) => s.classList.toggle('active', k === i));
+    document.getElementById('count').textContent = (i + 1) + ' / ' + slides.length;
+  }
+  function fit() {
+    const s = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+    stage.style.transform = 'translate(-50%, -50%) scale(' + s + ')';
+  }
+  document.getElementById('prev').onclick = () => show(i - 1);
+  document.getElementById('next').onclick = () => show(i + 1);
+  document.addEventListener('keydown', e => {
+    if (['ArrowRight', 'PageDown', ' '].includes(e.key)) show(i + 1);
+    if (['ArrowLeft', 'PageUp'].includes(e.key)) show(i - 1);
+  });
+  window.addEventListener('resize', fit);
+  fit();
+</script>
+</body>
+</html>
