@@ -66,10 +66,7 @@
   </div>
 
   <script>
-    // TODO: sustituye por el link real de TestFlight en cuanto lo tengas —
-    // no llegó a pasarse en la conversación, así que de momento apunta a
-    // un marcador de posición.
-    const TESTFLIGHT_URL = 'https://testflight.apple.com/join/E4zUBVyx';
+    const APP_STORE_URL = 'https://apps.apple.com/es/app/yoka-viaja-con-amigos/id6808558555';
     const PLAY_INTERNAL_TEST_URL = 'https://goyokatravel.com/android';
 
     const params = new URLSearchParams(window.location.search);
@@ -80,7 +77,7 @@
     const isAndroid = /android/i.test(ua);
 
     const cta = document.getElementById('cta');
-    cta.href = isAndroid ? PLAY_INTERNAL_TEST_URL : TESTFLIGHT_URL;
+    cta.href = isAndroid ? PLAY_INTERNAL_TEST_URL : APP_STORE_URL;
   </script>
 </body>
 </html>
