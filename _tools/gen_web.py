@@ -157,12 +157,61 @@ def head(title, desc, url, og_img, ld, og_type="website", extra_css=""):
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-{extra_css}<link rel="stylesheet" href="/itinerarios/itinerario.css">
+<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+{extra_css}<link rel="stylesheet" href="/site-nav.css">
+<link rel="stylesheet" href="/itinerarios/itinerario.css">
 </head>"""
 
 
-NAV = f'<nav><a class="brand js-lang" href="/">yoka</a><div class="navr">{LANG_UI}<a class="navcta js-lang" href="/descarga">{t("Descargar", "Download")}</a></div></nav>'
+NAV = """<div class="nav-wrap">
+<nav>
+  <a href="/" class="brand js-lang">yoka</a>
+  <div class="nav-links">
+    <a class="js-lang" href="/como-funciona.html" data-es="Cómo funciona" data-en="How it works">Cómo funciona</a>
+    <a class="js-lang" href="/sobre-nosotros.html" data-es="Sobre nosotros" data-en="About us">Sobre nosotros</a>
+    <a class="js-lang current" href="/itinerarios/" data-es="Itinerarios" data-en="Itineraries">Itinerarios</a>
+    <a class="js-lang" href="/faq.html" data-es="FAQ" data-en="FAQ">FAQ</a>
+    <a class="js-lang" href="/contacto.html" data-es="Contacto" data-en="Contact">Contacto</a>
+  </div>
+  <div class="nav-right">
+    <div class="lang-toggle">
+      <div class="lang-switch"><button type="button" class="active" data-lang="es">ES</button><button type="button" data-lang="en">EN</button></div>
+      <div class="store-badges nav-stores">
+        <a href="https://apps.apple.com/es/app/yoka-viaja-con-amigos/id6808558555" target="_blank" rel="noopener" class="store-badge" aria-label="Descargar YOKA en la App Store">
+          <svg viewBox="0 0 24 24" class="store-icon" fill="currentColor"><path d="M16.7 12.4c0-2.5 2-3.7 2.1-3.8-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.8 0-1.9-.9-3.2-.8-1.6 0-3.1.9-4 2.4-1.7 3-.4 7.4 1.2 9.8.8 1.2 1.8 2.5 3 2.5 1.2 0 1.7-.8 3.1-.8 1.4 0 1.8.8 3.1.8 1.3 0 2.1-1.2 2.9-2.3.9-1.3 1.3-2.6 1.3-2.7-.1 0-2.3-.9-2.3-3.6M14.5 5c.7-.8 1.1-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1 3 1.1.1 2.2-.6 2.9-1.4"/></svg>
+          <span class="store-text"><span class="store-name">iPhone</span></span>
+        </a>
+        <a href="/android.html" class="store-badge" aria-label="Probar YOKA en Android (beta cerrada en Google Play)">
+          <svg viewBox="0 0 24 24" class="store-icon" fill="currentColor"><path d="M3.6 2.2c-.4.4-.6.9-.6 1.6v16.4c0 .7.2 1.2.6 1.6l.1.1L13 12.5v-.1L3.7 2.1l-.1.1M16.3 15.8l-3-3v-.1l3-3 3.6 2c1 .6 1 1.5 0 2.1l-3.6 2M4.3 21.4 14 12.5l2.3 2.3-11.4 6.5c-.2.1-.4.1-.6.1M14 11.5 4.3 2.6c.2 0 .4 0 .6.1L16.3 9.2 14 11.5"/></svg>
+          <span class="store-text"><span class="store-name">Android</span></span>
+        </a>
+      </div>
+    </div>
+    <button class="nav-toggle" type="button" onclick="toggleNav()" aria-label="Abrir menú" aria-expanded="false" id="navToggleBtn">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav-menu" id="navMenu">
+  <div class="nav-links-mobile">
+    <a class="js-lang" href="/como-funciona.html" data-es="Cómo funciona" data-en="How it works">Cómo funciona</a>
+    <a class="js-lang" href="/sobre-nosotros.html" data-es="Sobre nosotros" data-en="About us">Sobre nosotros</a>
+    <a class="js-lang current" href="/itinerarios/" data-es="Itinerarios" data-en="Itineraries">Itinerarios</a>
+    <a class="js-lang" href="/faq.html" data-es="FAQ" data-en="FAQ">FAQ</a>
+    <a class="js-lang" href="/contacto.html" data-es="Contacto" data-en="Contact">Contacto</a>
+  </div>
+</div>
+</div>
+<div class="nav-backdrop" id="navBackdrop" onclick="toggleNav()"></div>
+<script>
+function toggleNav(){
+  var menu = document.getElementById('navMenu'), btn = document.getElementById('navToggleBtn'), bd = document.getElementById('navBackdrop');
+  var isOpen = menu.classList.toggle('open');
+  btn.classList.toggle('open', isOpen); bd.classList.toggle('open', isOpen);
+  btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+}
+</script>"""
 
 
 def footer(extra_links=""):
@@ -266,7 +315,7 @@ def page(it, extra):
   {tx(desc, "p", "lead")}
   <div class="facts">{"".join(facts)}</div>
 
-  <div class="open">
+  <div class="openapp">
     <a class="btn js-lang" id="open-in-app" href="/descarga" data-app-path="/itinerarios/{e(slug)}">{t("Ábrelo en YOKA", "Open it in YOKA")}</a>
     {t(open_es, open_en, "p")}
   </div>

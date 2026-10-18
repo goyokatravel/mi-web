@@ -1,0 +1,129 @@
+/* Cabecera común de goyokatravel.com (copiada de index.html). La usan las páginas de itinerarios. */
+:root{--yellow:#FFDC01;--blue:#0174D9;--blue-tint:#CDE8FF;--ink:#14213D;--white:#FFFDF7;--coral:#FF6B57}
+  .brand{
+    font-family:'Bagel Fat One', 'Baloo 2', sans-serif;
+    text-transform:uppercase;
+  }
+  nav{
+    position:sticky; top:0; z-index:60;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:20px 6%;
+    background:rgba(255,253,247,0.85);
+    backdrop-filter:blur(8px);
+    border-bottom:2px solid var(--ink);
+  }
+  .brand{
+    font-weight:700; font-size:1.5rem; letter-spacing:-0.01em;
+  }
+  .brand span{color:var(--coral);}
+
+  .lang-toggle{
+    display:flex; align-items:center; gap:14px;
+  }
+
+  /* ---------- BOTTOM TAB BAR (mobile) ---------- */
+  .lang-switch{
+    display:flex; border:2px solid var(--ink); border-radius:100px;
+    overflow:hidden; font-family:'Baloo 2', sans-serif; font-weight:700;
+    font-size:0.85rem;
+  }
+  .lang-switch button{
+    border:none; background:none; padding:6px 14px; cursor:pointer;
+    color:var(--ink); font-family:inherit; font-weight:inherit; font-size:inherit;
+  }
+  .lang-switch button.active{background:var(--ink); color:var(--yellow);}
+  .nav-cta{
+    background:var(--coral); color:var(--white);
+    padding:10px 22px; border-radius:100px;
+    font-weight:600; font-size:0.95rem;
+    transition:transform .2s ease;
+  }
+  .nav-cta:hover{transform:translateY(-2px);}
+  .nav-links{
+    display:flex; align-items:center; gap:28px;
+    font-weight:700; font-size:0.95rem;
+  }
+  .nav-links a{opacity:0.75; transition:opacity .15s ease;}
+  .nav-links a:hover, .nav-links a.current{opacity:1;}
+
+  .nav-wrap{position:relative;}
+  .nav-right{display:flex; align-items:center; gap:14px;}
+  .nav-menu{display:none;}
+  .store-badges{
+    display:flex; gap:12px; flex-wrap:wrap;
+  }
+  .store-badge{
+    display:flex; align-items:center; gap:10px;
+    background:var(--ink); color:var(--white);
+    padding:10px 20px 10px 16px; border-radius:14px;
+    box-shadow:0 6px 0 rgba(0,0,0,0.2);
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .store-badge:hover{transform:translateY(-3px); box-shadow:0 9px 0 rgba(0,0,0,0.2);}
+  .store-icon{width:26px; height:26px; flex-shrink:0;}
+  .store-text{display:flex; flex-direction:column; line-height:1.15;}
+  .store-eyebrow{font-size:0.68rem; color:#CFE3FF;}
+  .store-name{font-family:'Baloo 2', sans-serif; font-weight:700; font-size:1.05rem;}
+
+  /* ---------- BADGES DE TIENDA EN CABECERA Y HERO ---------- */
+  .nav-stores{display:flex; gap:8px; flex-wrap:nowrap;}
+  .nav-stores .store-badge{padding:6px 12px 6px 10px; border-radius:10px; gap:6px; box-shadow:0 3px 0 rgba(0,0,0,0.2);}
+  .nav-stores .store-badge:hover{transform:translateY(-2px); box-shadow:0 5px 0 rgba(0,0,0,0.2);}
+  .nav-stores .store-icon{width:18px; height:18px;}
+  .nav-stores .store-name{font-size:0.85rem;}
+  .nav-toggle{
+    display:none;
+    align-items:center; justify-content:center;
+    width:34px; height:34px; border-radius:50%;
+    background:var(--ink); border:none; cursor:pointer; padding:0;
+    flex-shrink:0;
+  }
+  .nav-toggle span{
+    display:block; width:16px; height:2px; background:var(--yellow); border-radius:2px;
+    position:absolute; transition:transform .2s ease, opacity .2s ease;
+  }
+  .nav-toggle span:nth-child(1){transform:translateY(-5px);}
+  .nav-toggle span:nth-child(3){transform:translateY(5px);}
+  .nav-toggle.open{background:var(--blue);}
+  .nav-toggle.open span{background:var(--white);}
+  .nav-toggle.open span:nth-child(1){transform:rotate(45deg);}
+  .nav-toggle.open span:nth-child(2){opacity:0;}
+  .nav-toggle.open span:nth-child(3){transform:rotate(-45deg);}
+
+  .nav-backdrop{
+    display:none;
+    position:fixed; inset:0; z-index:55;
+    background:rgba(20,33,61,0.4);
+  }
+  .nav-backdrop.open{display:block;}
+  @media (max-width:760px){
+    nav{padding:14px 6%;}
+    .brand{font-size:1.25rem;}
+    .nav-toggle{display:flex; position:relative;}
+    .nav-menu{
+      display:none;
+      position:absolute; top:100%; left:0; right:0; z-index:56;
+      background:var(--white);
+      border-bottom:2px solid var(--ink);
+      box-shadow:0 12px 24px rgba(20,33,61,0.18);
+      flex-direction:column; align-items:stretch; gap:0;
+      padding:8px 6% 12px;
+    }
+    .nav-menu.open{display:flex;}
+    .nav-links-mobile{
+      display:flex; flex-direction:column; align-items:stretch; gap:0;
+    }
+    .nav-links-mobile a{
+      padding:14px 4px; border-bottom:1px solid var(--blue-tint);
+      font-size:1rem;
+    }
+    .nav-links{display:none;}
+    .lang-switch{font-size:0.8rem;}
+    .nav-cta{padding:8px 14px; font-size:0.8rem;}
+    /* en móvil, en la cabecera solo los iconos de las tiendas */
+    .nav-stores .store-name{display:none;}
+    .nav-stores .store-badge{padding:7px;}
+    .nav-right, .lang-toggle{gap:8px;}
+  }
+nav a, .nav-menu a{text-decoration:none;color:inherit}
+nav, .nav-menu{font-family:'Nunito',sans-serif}

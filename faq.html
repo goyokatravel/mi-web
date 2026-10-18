@@ -990,5 +990,16 @@
   }
 </script>
 
+<script>
+/* Recuerda el idioma elegido en toda la web (también en las páginas de itinerarios) */
+(function(){
+  var l = null;
+  try { l = new URLSearchParams(location.search).get('lang') || localStorage.getItem('yoka_lang'); } catch (e) {}
+  if ((l === 'en' || l === 'es') && typeof setLang === 'function') setLang(l);
+  document.querySelectorAll('.lang-switch button').forEach(function(b){
+    b.addEventListener('click', function(){ try { localStorage.setItem('yoka_lang', b.getAttribute('data-lang')); } catch (e) {} });
+  });
+})();
+</script>
 </body>
 </html>
