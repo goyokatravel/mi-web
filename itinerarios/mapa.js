@@ -8,7 +8,8 @@
     var icon = L.divIcon({ className: '', html: '<div class="num" style="background:' + D.colors[m.day % D.colors.length] + '">' + m.n + '</div>', iconSize: [24, 24], iconAnchor: [12, 12] });
     var mk = L.marker([m.lat, m.lng], { icon: icon }).bindPopup(function () {
       var day = document.documentElement.lang === 'en' ? 'Day ' : 'Día ';
-      return '<strong>' + m.name + '</strong><br>' + day + (m.day + 1) + (m.time ? ' · ' + m.time : '');
+      var nm = document.documentElement.lang === 'en' ? (m.name_en || m.name) : m.name;
+      return '<strong>' + nm + '</strong><br>' + day + (m.day + 1) + (m.time ? ' · ' + m.time : '');
     });
     (groups[m.day] = groups[m.day] || []).push(mk); all.push(mk); mk.addTo(map);
   });

@@ -27,6 +27,30 @@ COUNTRY_EN = {"Brasil y Argentina": "Brazil and Argentina", "Chequia": "Czechia"
               "Tailandia": "Thailand", "Uzbekistán": "Uzbekistan"}
 
 
+def _load(folder):
+    out = {}
+    for f in sorted(glob.glob(f"_tools/itinerarios/{folder}/*.json")):
+        out.update(json.load(open(f, encoding="utf-8")))
+    return out
+
+
+TR_EN = _load("en")   # textos de la app en español → inglés
+TR_ES = _load("es")   # textos de la app en inglés → español (p. ej. Nueva York)
+
+
+def es_of(s):
+    return TR_ES.get(s, s) if s else s
+
+
+def en_of(s):
+    return TR_EN.get(s, s) if s else s
+
+
+def tx(s, tag="span", cls=""):
+    """Texto que viene de la app, en los dos idiomas."""
+    return t(es_of(s), en_of(s), tag, cls) if s else ""
+
+
 def t(es, en, tag="span", cls=""):
     """Texto que cambia con el botón ES/EN."""
     c = f' class="{cls}"' if cls else ""
@@ -78,8 +102,13 @@ def money_t(it):
     return t(a, money(it.get("budget_per_person"), it.get("currency"), True)) if a else ""
 
 
+def h1_both(title):
+    return (f'<span class="l-es">{h1_html(es_of(title))}</span>'
+            f'<span class="l-en">{h1_html(en_of(title))}</span>')
+
+
 def h1_html(title):
-    m = re.search(r"\b(en \d+ (?:días|dias|semanas|day|days))", title)
+    m = re.search(r"\b((?:en|in) \d+ (?:días|dias|semanas|days|weeks))", title)
     if not m:
         return e(title)
     a, b = title[:m.start()], m.group(1)
@@ -148,7 +177,8 @@ def page(it, extra):
     nplans = sum(len(d.get("plans") or []) for d in days)
     flag = it.get("country_flag") or ""
     desc = (extra.get("description") or it.get("description") or "").strip()
-    meta_desc = desc if len(desc) > 60 else f"{it['title']}: plan día a día para viajar en grupo, con mapa, horarios y consejos."
+    title_es = es_of(it["title"])
+    meta_desc = es_of(desc) if len(desc) > 60 else f"{title_es}: plan día a día para viajar en grupo, con mapa, horarios y consejos."
 
     markers, seen = [], {}
     for di, d in enumerate(days):
@@ -160,30 +190,31 @@ def page(it, extra):
                 continue
             seen[key] = len(seen) + 1
             markers.append(dict(n=seen[key], lat=float(p["lat"]), lng=float(p["lng"]), day=di,
-                                name=p["name"], time=p.get("time") or ""))
+                                name=es_of(p["name"]), name_en=en_of(p["name"]), time=p.get("time") or ""))
 
     def plan_html(p):
         tm = e(p.get("time") or "")
         price = (f'<span class="price">{e(int(p["price"]) if float(p["price"]).is_integer() else p["price"])} {e(p.get("currency") or "€")}</span>'
                  if p.get("price") else "")
-        note = f'<p class="note">{e(p["note"])}</p>' if p.get("note") else ""
+        note = tx(p.get("note"), "p", "note")
         if is_transport(p):
-            return f'<li class="plan transport"><span class="time">{tm}</span><div class="pbody"><h4>{e(p["name"])}</h4>{note}</div></li>'
+            return f'<li class="plan transport"><span class="time">{tm}</span><div class="pbody">{tx(p["name"], "h4")}{note}</div></li>'
         city = city_of(p)
         cat = p.get("category") or ""
         cat_html = t(CAT.get(cat, cat), CAT_EN.get(cat, cat))
         return (f'<li class="plan"><span class="time">{tm}</span><div class="pbody">'
-                f'<h4>{e(p["name"])}</h4>'
-                f'<p class="where">{e(city)}{" " if city else ""}<span class="cat">{cat_html}</span>{price}</p>{note}</div></li>')
+                f'{tx(p["name"], "h4")}'
+                f'<p class="where">{tx(city)}{" " if city else ""}<span class="cat">{cat_html}</span>{price}</p>{note}</div></li>')
 
     def day_title(d):
-        rest = f' · {d["title"]}' if d.get("title") else ""
-        return t(f'Día {d["day"]}{rest}', f'Day {d["day"]}{rest}', "h3")
+        r_es = f' · {es_of(d["title"])}' if d.get("title") else ""
+        r_en = f' · {en_of(d["title"])}' if d.get("title") else ""
+        return t(f'Día {d["day"]}{r_es}', f'Day {d["day"]}{r_en}', "h3")
 
     days_html = "".join(
         f'<section class="day" id="dia-{d["day"]}"><div class="dayhead"><span class="dot" style="background:{DAY_COLORS[i % 7]}"></span>'
         f'{day_title(d)}</div>'
-        f'{"<p class=daynote>" + e(d["notes"]) + "</p>" if d.get("notes") else ""}'
+        f'{tx(d.get("notes"), "p", "daynote")}'
         f'<ol class="plans">{"".join(plan_html(p) for p in d.get("plans") or [])}</ol></section>'
         for i, d in enumerate(days))
     legend = "".join(f'<button type="button" class="chip" data-day="{i}"><span class="dot" style="background:{DAY_COLORS[i % 7]}"></span>'
@@ -206,7 +237,7 @@ def page(it, extra):
         facts.append(t(extra["stay_fact"], extra.get("stay_fact_en") or extra["stay_fact"]))
 
     ld = {"@context": "https://schema.org", "@graph": [
-        {"@type": "TouristTrip", "name": it["title"], "description": meta_desc, "url": url, "inLanguage": "es",
+        {"@type": "TouristTrip", "name": title_es, "description": meta_desc, "url": url, "inLanguage": "es",
          "touristType": "Grupos de amigos", **({"image": it["photo"]} if it.get("photo") else {}),
          "provider": {"@type": "Organization", "name": "YOKA", "url": BASE + "/"},
          "itinerary": {"@type": "ItemList", "numberOfItems": len(markers), "itemListElement": [
@@ -215,23 +246,24 @@ def page(it, extra):
         {"@type": "BreadcrumbList", "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "YOKA", "item": BASE + "/"},
             {"@type": "ListItem", "position": 2, "name": "Itinerarios", "item": BASE + "/itinerarios/"},
-            {"@type": "ListItem", "position": 3, "name": it["title"], "item": url}]}]}
+            {"@type": "ListItem", "position": 3, "name": title_es, "item": url}]}]}
 
     open_es = (f"Gratis en iPhone (beta en Android). En la app, búscalo en Explorar → Itinerarios: «{it['title']}». "
                "Cópialo a tu viaje, votad los planes y repartid los gastos.")
-    open_en = (f"Free on iPhone (beta on Android). In the app, find it in Explore → Itineraries: “{it['title']}”. "
+    open_en = (f"Free on iPhone (beta on Android). In the app, find it in Explore → Itineraries: “{it['title']}” ({en_of(it['title'])}). "
+               if en_of(it['title']) != it['title'] else
+               f"Free on iPhone (beta on Android). In the app, find it in Explore → Itineraries: “{it['title']}”. "
                "Copy it to your trip, vote on the plans and split the costs.")
 
-    return head(f"{it['title']} · Plan día a día con mapa | YOKA", meta_desc, url, it.get("photo") or f"{BASE}/og-image.png", ld, "article",
+    return head(f"{title_es} · Plan día a día con mapa | YOKA", meta_desc, url, it.get("photo") or f"{BASE}/og-image.png", ld, "article",
                 '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">\n') + f"""
 <body>
 {NAV}
 <main class="wrap">
   <p class="crumbs"><a class="js-lang" href="/">YOKA</a> › <a class="js-lang" href="/itinerarios/">{t("Itinerarios", "Itineraries")}</a> › {country_t(it)}</p>
   {photo_html(it)}
-  <h1>{flag + " " if flag else ""}{h1_html(it['title'])}</h1>
-  <p class="lead">{e(desc)}</p>
-  <p class="only-en">This itinerary was written in Spanish. Plan names and notes appear as the author wrote them.</p>
+  <h1>{flag + " " if flag else ""}{h1_both(it['title'])}</h1>
+  {tx(desc, "p", "lead")}
   <div class="facts">{"".join(facts)}</div>
 
   <div class="open">
@@ -268,7 +300,7 @@ def card(it):
         chips.append(money_t(it))
     return (f'<a class="card js-lang" href="/itinerarios/{e(it["slug"])}" data-region="{e(region(it))}">{photo}<span class="cbody">'
             f'<span class="country">{e(it.get("country_flag") or "")} {country_t(it)}</span>'
-            f'<h2>{e(it["title"])}</h2><p>{e(it.get("description") or "")}</p>'
+            f'{tx(it["title"], "h2")}{tx(it.get("description") or "", "p")}'
             f'<span class="chips">{"".join(chips)}</span>'
             f'<span class="cta">{t("Ver el plan →", "See the plan →")}</span></span></a>')
 
@@ -294,7 +326,6 @@ def index(items):
   {h1}
   {t("Planes día a día con mapa, horarios, presupuesto y los trucos de quien ya ha ido. Ábrelos en YOKA, copiadlos a vuestro viaje y cambiad lo que queráis.",
      "Day-by-day plans with a map, times, budget and tips from people who've been there. Open them in YOKA, copy them to your trip and change whatever you like.", "p", "lead")}
-  <p class="only-en">The itineraries are written in Spanish.</p>
   <div class="filters"><button type="button" class="chip on" data-f="todos">{t(f"Todos ({len(items)})", f"All ({len(items)})")}</button><button type="button" class="chip" data-f="escapada">{t(f"Escapadas ({len(escapadas)})", f"Short breaks ({len(escapadas)})")}</button><button type="button" class="chip" data-f="ruta">{t(f"Grandes rutas ({len(rutas)})", f"Big trips ({len(rutas)})")}</button></div>
   <div class="grid" id="grid">{"".join(card(i) for i in items)}</div>
   <section class="why">

@@ -74,3 +74,6 @@ footer{text-align:center;font-size:.85rem;color:var(--muted);padding:10px 16px 4
 .lang-switch button.active{background:var(--ink);color:var(--yellow)}
 .only-en{display:none;font-size:.9rem;color:var(--muted);background:var(--chip);border-radius:12px;padding:8px 12px;margin:-6px 0 18px}
 html[lang="en"] .only-en{display:block}
+.l-en{display:none}
+html[lang="en"] .l-es{display:none}
+html[lang="en"] .l-en{display:inline}
