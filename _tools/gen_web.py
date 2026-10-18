@@ -67,9 +67,12 @@ LANG_JS = '''<script>
     document.querySelectorAll('a.js-lang').forEach(function(a){ a.href = a.getAttribute('href').split('?')[0] + (l === 'en' ? '?lang=en' : ''); });
     if (window.YOKA_ON_LANG) window.YOKA_ON_LANG(l);
   }
-  document.querySelectorAll('.lang-switch button').forEach(function(b){ b.addEventListener('click', function(){ setLang(b.dataset.lang); }); });
+  document.querySelectorAll('.lang-switch button').forEach(function(b){ b.addEventListener('click', function(){ setLang(b.dataset.lang); try { sessionStorage.setItem('yoka_lang_visita', b.dataset.lang); } catch (err) {} }); });
   try { localStorage.removeItem('yoka_lang'); } catch (err) {}
-  if (new URLSearchParams(location.search).get('lang') === 'en') setLang('en');
+  var l = new URLSearchParams(location.search).get('lang');
+  try { l = l || sessionStorage.getItem('yoka_lang_visita'); } catch (err) {}
+  if (l !== 'es' && l !== 'en') l = /^(es|ca|gl|eu)\\b/i.test(navigator.language || 'es') ? 'es' : 'en';
+  if (l === 'en') setLang('en');
 })();
 </script>'''
 

@@ -1000,5 +1000,17 @@
   });
 </script>
 
+<script>
+/* Idioma: el que se elija en la visita (solo mientras dure) o, si no, el del dispositivo */
+(function(){
+  var l = new URLSearchParams(location.search).get('lang');
+  try { l = l || sessionStorage.getItem('yoka_lang_visita'); } catch (e) {}
+  if (l !== 'es' && l !== 'en') l = /^(es|ca|gl|eu)\b/i.test(navigator.language || 'es') ? 'es' : 'en';
+  if (typeof setLang === 'function') setLang(l);
+  document.querySelectorAll('.lang-switch button').forEach(function(b){
+    b.addEventListener('click', function(){ try { sessionStorage.setItem('yoka_lang_visita', b.getAttribute('data-lang')); } catch (e) {} });
+  });
+})();
+</script>
 </body>
 </html>
