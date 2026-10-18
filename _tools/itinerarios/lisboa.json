@@ -8,12 +8,16 @@
   "description": "Plan de 3 días en Lisboa para ir en grupo: miradores, tranvía 28, pastéis de nata, fado y un día en Sintra. Con horarios, mapa y consejos.",
   "intro": "Miradores, tranvía 28, pastéis de nata y fado, con un día entero en Sintra. Un plan pensado para ir en grupo, con horarios realistas y los trucos para no hacer colas.",
   "budget": "~220 €/persona",
-  "stay": "Baixa o Chiado",
   "tips": [
     "Comprad la tarjeta Navegante: sirve para metro, tranvía y el tren a Sintra.",
     "Sacad online las entradas de los Jerónimos y del Palacio da Pena; en temporada alta las colas son largas.",
     "Para coger sitio en el tranvía 28, subid en Martim Moniz, al principio de la línea.",
     "El Elevador de Santa Justa tiene mucha cola: subiendo andando por el Carmo veis lo mismo.",
     "Presupuesto aproximado sin alojamiento ni vuelos: unos 220 € por persona."
-  ]
+  ],
+  "stay_fact": "Dormir en Baixa o Chiado",
+  "emoji": "🚋",
+  "card_line": "Miradores, tranvía 28, pastéis y un día en Sintra",
+  "days": 3,
+  "order": 1
 }

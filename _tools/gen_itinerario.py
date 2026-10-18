@@ -26,9 +26,20 @@ def rows(block):
 def parse(md):
     sites_block = re.search(r"## SITIOS.*?\n(.*?)\n## ", md, re.S).group(1)
     sites = {}
-    for c in rows(sites_block):
-        sites[int(c[0])] = dict(n=int(c[0]), name=c[1], cat=c[2], zone=c[3], lat=float(c[4]), lng=float(c[5]),
-                                stars=int(c[6]) if c[6].isdigit() else None, note=c[7])
+    city = ""
+    for line in sites_block.splitlines():
+        h = re.match(r"###\s+(.+)", line.strip())
+        if h:
+            city = h.group(1).strip(); continue
+        for c in rows("|h|\n" + line):
+            if not c[0].isdigit():
+                continue
+            if len(c) >= 8:   # con columna Zona
+                n, name, cat, zone, lat, lng, st, note = c[:8]
+            else:             # viajes por etapas: la zona es la ciudad del bloque
+                n, name, cat, lat, lng, st, note = c[:7]; zone = city
+            sites[int(n)] = dict(n=int(n), name=name, cat=cat, zone=zone, lat=float(lat), lng=float(lng),
+                                 stars=int(st) if st.isdigit() else None, note=note)
     days = []
     for m in re.finditer(r"### (Día \d+) · (.*?)\n(.*?)(?=\n### |\Z)", md, re.S):
         plans = []
@@ -189,11 +200,11 @@ def build(md, meta):
 <body>
 <nav><a class="brand" href="/">yoka</a><a class="navcta" href="/descarga">Descargar</a></nav>
 <main class="wrap">
-  <p class="crumbs"><a href="/">YOKA</a> › Itinerarios › {e(meta['country'])}</p>
+  <p class="crumbs"><a href="/">YOKA</a> › <a href="/itinerarios/">Itinerarios</a> › {e(meta['country'])}</p>
   <h1>{e(meta['h1_a'])} <mark>{e(meta['h1_b'])}</mark></h1>
   <p class="lead">{e(meta['intro'])}</p>
   <div class="facts">
-    <span>{len(days)} días</span><span>{nplans} planes</span><span>{e(meta['budget'])}</span><span>Dormir en {e(meta['stay'])}</span>
+    <span>{len(days)} días</span><span>{nplans} planes</span><span>{e(meta['budget'])}</span><span>{e(meta['stay_fact'])}</span>
   </div>
 
   <div class="open">
