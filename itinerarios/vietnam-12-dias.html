@@ -111,14 +111,11 @@ function toggleNav(){
     document.querySelectorAll('[data-' + l + ']').forEach(function(el){ el.textContent = el.getAttribute('data-' + l); });
     document.querySelectorAll('.lang-switch button').forEach(function(b){ b.classList.toggle('active', b.dataset.lang === l); });
     document.querySelectorAll('a.js-lang').forEach(function(a){ a.href = a.getAttribute('href').split('?')[0] + (l === 'en' ? '?lang=en' : ''); });
-    try { localStorage.setItem('yoka_lang', l); } catch (err) {}
     if (window.YOKA_ON_LANG) window.YOKA_ON_LANG(l);
   }
   document.querySelectorAll('.lang-switch button').forEach(function(b){ b.addEventListener('click', function(){ setLang(b.dataset.lang); }); });
-  var q = new URLSearchParams(location.search).get('lang'), saved = null;
-  try { saved = localStorage.getItem('yoka_lang'); } catch (err) {}
-  var l = q || saved || 'es';
-  if (l === 'en') setLang('en');
+  try { localStorage.removeItem('yoka_lang'); } catch (err) {}
+  if (new URLSearchParams(location.search).get('lang') === 'en') setLang('en');
 })();
 </script>
 </body>
