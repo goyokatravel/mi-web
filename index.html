@@ -633,8 +633,8 @@
   <a href="index.html" class="brand">yoka</a>
   <div class="nav-links">
     <a href="como-funciona.html" data-es="Cómo funciona" data-en="How it works">Cómo funciona</a>
-    <a href="itinerarios/" data-es="Itinerarios" data-en="Itineraries">Itinerarios</a>
     <a href="sobre-nosotros.html" data-es="Sobre nosotros" data-en="About us">Sobre nosotros</a>
+    <a href="itinerarios/" class="js-lang" data-es="Itinerarios" data-en="Itineraries">Itinerarios</a>
     <a href="faq.html" data-es="FAQ" data-en="FAQ">FAQ</a>
     <a href="contacto.html" data-es="Contacto" data-en="Contact">Contacto</a>
   </div>
@@ -663,8 +663,8 @@
 <div class="nav-menu" id="navMenu">
   <div class="nav-links-mobile">
     <a href="como-funciona.html" data-es="Cómo funciona" data-en="How it works">Cómo funciona</a>
-    <a href="itinerarios/" data-es="Itinerarios" data-en="Itineraries">Itinerarios</a>
     <a href="sobre-nosotros.html" data-es="Sobre nosotros" data-en="About us">Sobre nosotros</a>
+    <a href="itinerarios/" class="js-lang" data-es="Itinerarios" data-en="Itineraries">Itinerarios</a>
     <a href="faq.html" data-es="FAQ" data-en="FAQ">FAQ</a>
     <a href="contacto.html" data-es="Contacto" data-en="Contact">Contacto</a>
   </div>
@@ -819,7 +819,7 @@
     <h2 data-es="Itinerarios listos para copiar" data-en="Itineraries ready to copy">Itinerarios listos para copiar</h2>
   </div>
   <div class="itin-grid">
-    <a class="itin-card reveal" href="itinerarios/lisboa-3-dias">
+    <a class="itin-card reveal js-lang" href="itinerarios/lisboa-3-dias">
       <div class="itin-days">
         <span class="day-chip" data-es="Día 1 · Baixa, Alfama y miradores" data-en="Day 1 · Baixa, Alfama and viewpoints">Día 1 · Baixa, Alfama y miradores</span>
         <span class="day-chip" data-es="Día 3 · Excursión a Sintra" data-en="Day 3 · Day trip to Sintra">Día 3 · Excursión a Sintra</span>
@@ -834,7 +834,7 @@
       </div>
       <span class="itin-cta" data-es="Ver el plan día a día →" data-en="See the day-by-day plan →">Ver el plan día a día →</span>
     </a>
-    <a class="itin-card reveal" href="itinerarios/vietnam-12-dias">
+    <a class="itin-card reveal js-lang" href="itinerarios/vietnam-12-dias">
       <div class="itin-days">
         <span class="day-chip" data-es="Día 1 · Casco antiguo de Hanói" data-en="Day 1 · Hanoi's Old Quarter">Día 1 · Casco antiguo de Hanói</span>
         <span class="day-chip" data-es="Día 3 · Noche en barco en Ha Long" data-en="Day 3 · Night on a boat in Ha Long Bay">Día 3 · Noche en barco en Ha Long</span>
@@ -849,7 +849,7 @@
       </div>
       <span class="itin-cta" data-es="Ver el plan día a día →" data-en="See the day-by-day plan →">Ver el plan día a día →</span>
     </a>
-    <a class="itin-card reveal" href="itinerarios/uzbekistan-ruta-de-la-seda-9-dias">
+    <a class="itin-card reveal js-lang" href="itinerarios/uzbekistan-ruta-de-la-seda-9-dias">
       <div class="itin-days">
         <span class="day-chip" data-es="Día 1 · Tashkent y el bazar Chorsu" data-en="Day 1 · Tashkent and Chorsu bazaar">Día 1 · Tashkent y el bazar Chorsu</span>
         <span class="day-chip" data-es="Día 2 · Tren bala a Samarcanda" data-en="Day 2 · Bullet train to Samarkand">Día 2 · Tren bala a Samarcanda</span>
@@ -865,7 +865,7 @@
       <span class="itin-cta" data-es="Ver el plan día a día →" data-en="See the day-by-day plan →">Ver el plan día a día →</span>
     </a>
   </div>
-  <div class="itin-all-wrap"><a class="itin-all" href="itinerarios/" data-es="Ver todos los itinerarios →" data-en="See all itineraries →">Ver todos los itinerarios →</a></div>
+  <div class="itin-all-wrap"><a class="itin-all js-lang" href="itinerarios/" data-es="Ver todos los itinerarios →" data-en="See all itineraries →">Ver todos los itinerarios →</a></div>
 </section>
 
 <!-- FOOTER -->
@@ -882,7 +882,7 @@
       <div class="footer-col">
         <h4 data-es="Producto" data-en="Product">Producto</h4>
         <a href="como-funciona.html" data-es="Cómo funciona" data-en="How it works">Cómo funciona</a>
-    <a href="itinerarios/" data-es="Itinerarios" data-en="Itineraries">Itinerarios</a>
+    <a href="itinerarios/" class="js-lang" data-es="Itinerarios" data-en="Itineraries">Itinerarios</a>
         <a href="faq.html" data-es="Preguntas frecuentes" data-en="FAQ">Preguntas frecuentes</a>
         <a href="https://apps.apple.com/es/app/yoka-viaja-con-amigos/id6808558555" target="_blank" rel="noopener" data-es="Descargar en iPhone" data-en="Get it on iPhone">Descargar en iPhone</a>
         <a href="android.html" data-es="Android: pruébala" data-en="Android: try it">Android: pruébala</a>
@@ -917,7 +917,7 @@
       btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
     });
     // Las páginas legales se abren en el idioma elegido aquí.
-    document.querySelectorAll('.js-legal').forEach(function(a){
+    document.querySelectorAll('.js-legal, .js-lang').forEach(function(a){
       a.href = a.getAttribute('href').split('?')[0] + '?lang=' + lang;
     });
   }

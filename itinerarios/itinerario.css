@@ -68,3 +68,9 @@ footer{text-align:center;font-size:.85rem;color:var(--muted);padding:10px 16px 4
 .chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px}
 .chips span{background:var(--chip);border-radius:100px;padding:4px 10px;font-weight:700;font-size:.82rem}
 .cta{margin-top:auto;padding-top:10px;font-weight:800;color:var(--coral)}
+.navr{display:flex;align-items:center;gap:10px}
+.lang-switch{display:flex;border:2px solid var(--ink);border-radius:100px;overflow:hidden;font-weight:800;font-size:.8rem}
+.lang-switch button{border:0;background:none;padding:5px 11px;cursor:pointer;color:var(--ink);font:inherit}
+.lang-switch button.active{background:var(--ink);color:var(--yellow)}
+.only-en{display:none;font-size:.9rem;color:var(--muted);background:var(--chip);border-radius:12px;padding:8px 12px;margin:-6px 0 18px}
+html[lang="en"] .only-en{display:block}

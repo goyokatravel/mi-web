@@ -6,7 +6,10 @@
   var groups = {}, all = [];
   D.markers.forEach(function (m) {
     var icon = L.divIcon({ className: '', html: '<div class="num" style="background:' + D.colors[m.day % D.colors.length] + '">' + m.n + '</div>', iconSize: [24, 24], iconAnchor: [12, 12] });
-    var mk = L.marker([m.lat, m.lng], { icon: icon }).bindPopup('<strong>' + m.name + '</strong><br>Día ' + (m.day + 1) + (m.time ? ' · ' + m.time : ''));
+    var mk = L.marker([m.lat, m.lng], { icon: icon }).bindPopup(function () {
+      var day = document.documentElement.lang === 'en' ? 'Day ' : 'Día ';
+      return '<strong>' + m.name + '</strong><br>' + day + (m.day + 1) + (m.time ? ' · ' + m.time : '');
+    });
     (groups[m.day] = groups[m.day] || []).push(mk); all.push(mk); mk.addTo(map);
   });
   var fitAll = function () { map.fitBounds(L.featureGroup(all).getBounds(), { padding: [24, 24], maxZoom: 14 }); };

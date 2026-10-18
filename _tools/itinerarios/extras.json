@@ -6,6 +6,13 @@
       "Sacad online las entradas de los Jerónimos y del Palacio da Pena; en temporada alta las colas son largas.",
       "Para coger sitio en el tranvía 28, subid en Martim Moniz, al principio de la línea.",
       "El Elevador de Santa Justa tiene mucha cola: subiendo andando por el Carmo veis lo mismo."
+    ],
+    "stay_fact_en": "Stay in Baixa or Chiado",
+    "tips_en": [
+      "Get the Navegante card: it works on the metro, trams and the train to Sintra.",
+      "Book the Jerónimos Monastery and Pena Palace online; in high season the queues are long.",
+      "To get a seat on tram 28, board at Martim Moniz, where the line starts.",
+      "The Santa Justa Lift has a long queue: walk up through Carmo and you get the same view."
     ]
   },
   "vietnam-12-dias": {
@@ -16,6 +23,14 @@
       "En Ha Long, dormid una noche en el barco: al amanecer la bahía está vacía.",
       "El Mausoleo de Ho Chi Minh solo abre por la mañana y cierra lunes y viernes. Hombros y rodillas tapados.",
       "En Hoi An encargad la ropa a medida el primer día: tardan entre 24 y 48 horas."
+    ],
+    "stay_fact_en": "5 stops",
+    "tips_en": [
+      "The best time to travel the whole country is March to May.",
+      "Get around with Grab (the taxi and motorbike app) and pay in dong.",
+      "In Ha Long, spend a night on the boat: at sunrise the bay is empty.",
+      "The Ho Chi Minh Mausoleum only opens in the morning and closes on Mondays and Fridays. Cover shoulders and knees.",
+      "In Hoi An, order tailored clothes on your first day: they take 24 to 48 hours."
     ]
   },
   "uzbekistan-ruta-de-la-seda-9-dias": {
@@ -26,6 +41,14 @@
       "Llevad efectivo: la moneda es el som y en muchos sitios no aceptan tarjeta.",
       "El plov del Centro del Plov se acaba por la tarde: id a mediodía.",
       "Volved al Registán de noche, cuando está iluminado."
+    ],
+    "stay_fact_en": "4 stops",
+    "tips_en": [
+      "Best time: April–May and September–October.",
+      "Book trains in advance on railway.uz: the Afrosiyob fills up.",
+      "Bring cash: the currency is the som and many places don't take cards.",
+      "The plov at the Plov Centre runs out in the afternoon: go at lunchtime.",
+      "Go back to the Registan at night, when it's lit up."
     ]
   }
 }
