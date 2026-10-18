@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Descarga YOKA</title>
+<script>
+  // Manda a cada móvil a su tienda antes de pintar nada.
+  (function(){
+    var ua = navigator.userAgent || '';
+    var iOS = /iPhone|iPad|iPod/i.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    var android = /Android/i.test(ua);
+    if (iOS) location.replace('https://apps.apple.com/es/app/yoka-viaja-con-amigos/id6808558555');
+    else if (android) location.replace('/android.html');
+  })();
+</script>
+<meta name="description" content="Descarga YOKA, la app para organizar viajes con amigos. Gratis en iPhone y en beta en Android.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --yellow:#FFDC01; --blue:#0174D9; --ink:#14213D;
+    --bg:#FFFBEA; --card:#FFFFFF; --line:#E9E3CC; --muted:#5B6478;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){ --bg:#0F182E; --card:#16213D; --ink:#F5F3EA; --line:#26345A; --muted:#A8B1C7; }
+  }
+  :root[data-theme="dark"]{ --bg:#0F182E; --card:#16213D; --ink:#F5F3EA; --line:#26345A; --muted:#A8B1C7; }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{background:var(--bg);color:var(--ink);font-family:Nunito,system-ui,sans-serif;line-height:1.45;min-height:100vh}
+  .wrap{max-width:520px;margin:0 auto;padding:32px 16px 48px;text-align:center}
+  .logo{width:88px;height:88px;border-radius:20px;display:block;margin:0 auto 22px}
+  h1{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(28px,7vw,38px);line-height:1.08;margin:0 0 10px;letter-spacing:-.5px}
+  h1 mark{background:var(--yellow);color:#14213D;padding:0 .18em;border-radius:8px}
+  .sub{margin:0 0 26px;color:var(--muted);font-size:17px}
+  .btns{display:grid;gap:12px;margin-bottom:28px}
+  .btn{display:flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:18px;border-radius:16px;padding:16px;transition:filter .15s}
+  .btn:hover{filter:brightness(.96)}
+  .btn svg{width:22px;height:22px;flex:none}
+  .ios{background:#14213D;color:#fff}
+  .and{background:var(--yellow);color:#14213D}
+  .and small{font-family:Nunito,sans-serif;font-weight:800;font-size:12px;background:#14213D;color:var(--yellow);border-radius:999px;padding:3px 8px}
+  .qr{background:var(--card);border:2px solid var(--line);border-radius:22px;padding:20px}
+  .qr img{width:200px;height:200px;display:block;margin:0 auto 10px;border-radius:12px}
+  .qr p{margin:0;color:var(--muted);font-size:15px}
+  footer{margin-top:28px;font-size:13px;color:var(--muted)}
+  footer a{color:inherit}
+</style>
+<!-- SEO:start -->
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://www.goyokatravel.com/descarga">
+<meta name="apple-itunes-app" content="app-id=6808558555">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0174D9">
+<meta property="og:title" content="Descarga YOKA · Viajes en grupo, sin el caos">
+<meta property="og:description" content="Gratis en iPhone y en beta en Android.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="YOKA">
+<meta property="og:locale" content="es_ES">
+<meta property="og:url" content="https://www.goyokatravel.com/descarga">
+<meta property="og:image" content="https://www.goyokatravel.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.goyokatravel.com/og-image.png">
+<!-- SEO:end -->
+</head>
+<body>
+<main class="wrap">
+  <a href="/"><img class="logo" src="/logo-512.png" alt="YOKA"></a>
+  <h1>Descarga YOKA y planead el viaje <mark>sin caos</mark></h1>
+  <p class="sub">Itinerario, gastos y feed social de viajes, todo en una app.</p>
+
+  <div class="btns">
+    <a class="btn ios" href="https://apps.apple.com/es/app/yoka-viaja-con-amigos/id6808558555">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.7 12.4c0-2.5 2-3.7 2.1-3.8-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.8 0-1.9-.9-3.2-.8-1.6 0-3.1.9-4 2.4-1.7 3-.4 7.4 1.2 9.8.8 1.2 1.8 2.5 3 2.5 1.2 0 1.7-.8 3.1-.8 1.4 0 1.8.8 3.1.8 1.3 0 2.1-1.2 2.9-2.3.9-1.3 1.3-2.6 1.3-2.7-.1 0-2.3-.9-2.3-3.6M14.5 5c.7-.8 1.1-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1 3 1.1.1 2.2-.6 2.9-1.4"/></svg>
+      Descargar en iPhone
+    </a>
+    <a class="btn and" href="/android.html">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 2.2c-.4.4-.6.9-.6 1.6v16.4c0 .7.2 1.2.6 1.6l.1.1L13 12.5v-.1L3.7 2.1l-.1.1M16.3 15.8l-3-3v-.1l3-3 3.6 2c1 .6 1 1.5 0 2.1l-3.6 2M4.3 21.4 14 12.5l2.3 2.3-11.4 6.5c-.2.1-.4.1-.6.1M14 11.5 4.3 2.6c.2 0 .4 0 .6.1L16.3 9.2 14 11.5"/></svg>
+      Probar en Android <small>BETA</small>
+    </a>
+  </div>
+
+  <div class="qr">
+    <img src="/qr-descarga.png" alt="Código QR para descargar YOKA">
+    <p>¿Estás en el ordenador? Escanea con el móvil y te llevamos a tu tienda.</p>
+  </div>
+
+  <footer>© 2026 YOKA · <a href="/">goyokatravel.com</a> · <a href="/privacidad">Privacidad</a></footer>
+</main>
+</body>
+</html>
