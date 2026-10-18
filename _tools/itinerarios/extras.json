@@ -1,0 +1,31 @@
+{
+  "lisboa-3-dias": {
+    "stay_fact": "Dormir en Baixa o Chiado",
+    "tips": [
+      "Comprad la tarjeta Navegante: sirve para metro, tranvía y el tren a Sintra.",
+      "Sacad online las entradas de los Jerónimos y del Palacio da Pena; en temporada alta las colas son largas.",
+      "Para coger sitio en el tranvía 28, subid en Martim Moniz, al principio de la línea.",
+      "El Elevador de Santa Justa tiene mucha cola: subiendo andando por el Carmo veis lo mismo."
+    ]
+  },
+  "vietnam-12-dias": {
+    "stay_fact": "5 etapas",
+    "tips": [
+      "La mejor época para recorrer todo el país es de marzo a mayo.",
+      "Moveos con Grab (la app de taxis y motos) y pagad en dong.",
+      "En Ha Long, dormid una noche en el barco: al amanecer la bahía está vacía.",
+      "El Mausoleo de Ho Chi Minh solo abre por la mañana y cierra lunes y viernes. Hombros y rodillas tapados.",
+      "En Hoi An encargad la ropa a medida el primer día: tardan entre 24 y 48 horas."
+    ]
+  },
+  "uzbekistan-ruta-de-la-seda-9-dias": {
+    "stay_fact": "4 etapas",
+    "tips": [
+      "Mejor época: abril–mayo y septiembre–octubre.",
+      "Reservad los trenes con antelación en railway.uz: los Afrosiyob se llenan.",
+      "Llevad efectivo: la moneda es el som y en muchos sitios no aceptan tarjeta.",
+      "El plov del Centro del Plov se acaba por la tarde: id a mediodía.",
+      "Volved al Registán de noche, cuando está iluminado."
+    ]
+  }
+}

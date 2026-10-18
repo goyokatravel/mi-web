@@ -1,0 +1,52 @@
+# Cada día trae de Supabase los itinerarios marcados con show_on_web
+# y regenera las páginas de goyokatravel.com/itinerarios.
+# Necesita dos secretos del repositorio: SUPABASE_URL y SUPABASE_ANON_KEY.
+name: Actualizar itinerarios
+
+on:
+  schedule:
+    - cron: "17 4 * * *"   # todos los días a las 4:17 UTC (6:17 en Madrid en verano)
+  workflow_dispatch:        # botón "Run workflow" para lanzarlo a mano
+
+permissions:
+  contents: write
+
+concurrency:
+  group: itinerarios
+  cancel-in-progress: false
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Descargar itinerarios de Supabase
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+        run: |
+          set -euo pipefail
+          curl -sS --fail-with-body -X POST "$SUPABASE_URL/rest/v1/rpc/web_itineraries" \
+            -H "apikey: $SUPABASE_ANON_KEY" \
+            -H "Authorization: Bearer $SUPABASE_ANON_KEY" \
+            -H "Content-Type: application/json" \
+            -d '{}' -o /tmp/web_itineraries.json
+          # Si algo sale raro (vacío o no es una lista), no tocamos la web
+          python3 -c "import json,sys; d=json.load(open('/tmp/web_itineraries.json')); assert isinstance(d,list) and len(d)>0, 'respuesta vacía'; print(len(d),'itinerarios')"
+          cp /tmp/web_itineraries.json _tools/data/web_itineraries.json
+
+      - name: Generar páginas
+        run: python3 _tools/gen_web.py
+
+      - name: Publicar si hay cambios
+        run: |
+          git config user.name "YOKA bot"
+          git config user.email "goyokatravel@gmail.com"
+          git add -A itinerarios sitemap.xml _tools/data/web_itineraries.json
+          if git diff --cached --quiet; then
+            echo "Sin cambios"
+          else
+            git commit -m "Itinerarios actualizados desde la app"
+            git push
+          fi
