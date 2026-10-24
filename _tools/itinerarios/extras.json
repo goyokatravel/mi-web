@@ -50,5 +50,133 @@
       "The plov at the Plov Centre runs out in the afternoon: go at lunchtime.",
       "Go back to the Registan at night, when it's lit up."
     ]
+  },
+  "granada-finde": {
+    "stay_fact": "Dormir en el Centro o el Realejo",
+    "stay_fact_en": "Stay in the Centre or Realejo",
+    "tips": [
+      "Reservad la Alhambra con semanas de antelación: la hora de los Palacios Nazaríes no se puede cambiar.",
+      "En muchos bares de Granada la tapa va gratis con cada bebida.",
+      "Llevad calzado cómodo: el Albaicín es todo cuestas.",
+      "Mejor época: primavera y otoño."
+    ],
+    "tips_en": [
+      "Book the Alhambra weeks ahead: the Nasrid Palaces time slot can't be changed.",
+      "In many Granada bars a tapa comes free with every drink.",
+      "Wear comfy shoes: the Albaicín is all hills.",
+      "Best time to go: spring and autumn."
+    ]
+  },
+  "malaga-finde": {
+    "stay_fact": "Dormir en el Centro o el Soho",
+    "stay_fact_en": "Stay in the Centre or Soho",
+    "tips": [
+      "Sacad la entrada conjunta de Alcazaba y Gibralfaro.",
+      "Si alargáis un día, el Caminito del Rey está a 1 hora, pero hay que reservar con mucha antelación.",
+      "Málaga funciona bien todo el año."
+    ],
+    "tips_en": [
+      "Get the combined Alcazaba and Gibralfaro ticket.",
+      "If you stay an extra day, the Caminito del Rey is an hour away, but book well in advance.",
+      "Málaga works all year round."
+    ]
+  },
+  "mallorca-3-dias": {
+    "stay_fact": "Dormir en Palma (casco antiguo o Santa Catalina)",
+    "stay_fact_en": "Stay in Palma (old town or Santa Catalina)",
+    "tips": [
+      "Alquilad coche: sin él no se llega a los pueblos ni a las calas.",
+      "Id muy temprano a las calas famosas o fuera de temporada.",
+      "Mejor época: mayo, junio y septiembre."
+    ],
+    "tips_en": [
+      "Hire a car: without one you won't reach the villages or the coves.",
+      "Go very early to the famous coves, or outside high season.",
+      "Best time to go: May, June and September."
+    ]
+  },
+  "san-sebastian-finde": {
+    "stay_fact": "Dormir en la Parte Vieja o Gros",
+    "stay_fact_en": "Stay in the Old Town or Gros",
+    "tips": [
+      "En los bares de pintxos se pide uno o dos en cada sitio y se cambia de bar.",
+      "Los pintxos de cocina (los que no están en la barra) suelen ser los mejores.",
+      "Mejor época: de mayo a octubre."
+    ],
+    "tips_en": [
+      "At pintxo bars, order one or two in each place and move on.",
+      "The kitchen pintxos (the ones not on the counter) are usually the best.",
+      "Best time to go: May to October."
+    ]
+  },
+  "tenerife-3-dias": {
+    "stay_fact": "Dormir en La Laguna o Puerto de la Cruz",
+    "stay_fact_en": "Stay in La Laguna or Puerto de la Cruz",
+    "tips": [
+      "Alquilad coche: las distancias son cortas pero no hay otra forma de verlo todo.",
+      "Llevad abrigo para el Teide, aunque abajo haga calor.",
+      "El teleférico se reserva online; subir al pico necesita un permiso aparte."
+    ],
+    "tips_en": [
+      "Hire a car: distances are short but there's no other way to see it all.",
+      "Bring a jacket for Teide, even if it's warm at sea level.",
+      "Book the cable car online; climbing to the summit needs a separate permit."
+    ]
+  },
+  "despedida-en-cadiz": {
+    "stay_fact": "Dormir en el casco antiguo",
+    "stay_fact_en": "Stay in the old town",
+    "tips": [
+      "Para un grupo grande, reservad las cenas con antelación.",
+      "El atardecer en La Caleta es gratis y es el mejor plan del día.",
+      "Pedid cartuchos variados para compartir: así probáis de todo."
+    ],
+    "tips_en": [
+      "For a big group, book dinners ahead.",
+      "Sunset at La Caleta is free and the best plan of the day.",
+      "Order mixed cones of fried fish to share so you try a bit of everything."
+    ]
+  },
+  "mercadillos-navidad-alsacia": {
+    "stay_fact": "Dormir en Estrasburgo y moverse en tren o coche",
+    "stay_fact_en": "Stay in Strasbourg and get around by train or car",
+    "tips": [
+      "Los mercadillos suelen abrir de finales de noviembre a finales de diciembre: comprobad las fechas.",
+      "Reservad alojamiento pronto: en diciembre se llena.",
+      "Llevad ropa de abrigo, por la tarde hace mucho frío."
+    ],
+    "tips_en": [
+      "The markets usually run from late November to late December: check the dates.",
+      "Book accommodation early: it fills up in December.",
+      "Bring warm clothes, evenings get very cold."
+    ]
+  },
+  "ibiza-fin-de-carrera-4-dias": {
+    "stay_fact": "Dormir en Ibiza ciudad o Sant Antoni",
+    "stay_fact_en": "Stay in Ibiza Town or Sant Antoni",
+    "tips": [
+      "Alquilad coche o moto: el bus no llega bien a las calas.",
+      "Mirad qué día cae el mercadillo de Las Dalias y los tambores de Benirràs.",
+      "Llegad pronto a las calas pequeñas: el aparcamiento es limitado."
+    ],
+    "tips_en": [
+      "Hire a car or scooter: buses don't reach the coves well.",
+      "Check which days the Las Dalias market and the Benirràs drums fall on.",
+      "Get to the small coves early: parking is limited."
+    ]
+  },
+  "asturias-picos-de-europa": {
+    "stay_fact": "Dormir en Cangas de Onís o alrededores",
+    "stay_fact_en": "Stay in or around Cangas de Onís",
+    "tips": [
+      "En temporada alta, a los lagos de Covadonga se sube en bus desde Cangas.",
+      "La ruta del Cares no hace falta hacerla entera: id y volved por el mismo camino.",
+      "Llevad chubasquero: en Asturias el tiempo cambia rápido."
+    ],
+    "tips_en": [
+      "In high season, you reach the Lakes of Covadonga by bus from Cangas.",
+      "You don't need to walk the whole Cares trail: go and come back the same way.",
+      "Bring a rain jacket: the weather in Asturias changes fast."
+    ]
   }
 }

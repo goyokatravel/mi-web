@@ -13,8 +13,11 @@
     // Cuenta la visita en GoatCounter antes de salir (sin cookies; keepalive aguanta la redirección).
     function count(p){
       try {
+        // De dónde viene: ?utm_source=instagram (o ?ref=) si el enlace lo lleva; si no, la web anterior.
+        var q = new URLSearchParams(location.search);
+        var from = q.get('utm_source') || q.get('ref') || document.referrer || '';
         fetch('https://goyokatravel.goatcounter.com/count?p=' + encodeURIComponent(p) +
-              '&r=' + encodeURIComponent(document.referrer || '') + '&rnd=' + Math.random(),
+              '&r=' + encodeURIComponent(from) + '&rnd=' + Math.random(),
               {keepalive: true, mode: 'no-cors'});
       } catch (e) {}
     }
