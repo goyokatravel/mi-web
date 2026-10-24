@@ -70,3 +70,6 @@ html[lang="en"] .only-en{display:block}
 .l-en{display:none}
 html[lang="en"] .l-es{display:none}
 html[lang="en"] .l-en{display:inline}
+.related{margin-top:44px}
+.related h2{margin:0 0 18px}
+.related .grid{margin-bottom:0}

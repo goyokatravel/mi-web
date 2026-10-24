@@ -108,7 +108,7 @@ def h1_both(title):
 
 
 def h1_html(title):
-    m = re.search(r"\b((?:en|in) \d+ (?:días|dias|semanas|days|weeks))", title)
+    m = re.search(r"\b((?:en|in) \d+ (?:días|dias|semanas|days|weeks)|en un finde|in a weekend)", title)
     if not m:
         return e(title)
     a, b = title[:m.start()], m.group(1)
@@ -221,7 +221,47 @@ def footer(extra_links=""):
             f' · <a class="js-lang" href="/privacidad">{t("Privacidad", "Privacy")}</a></footer>')
 
 
-def page(it, extra):
+def seo_title(title_es):
+    """Título para Google: lo que la gente busca («qué ver», «itinerario») sin pasarse de largo."""
+    if ":" in title_es:
+        return f"{title_es} · Itinerario | YOKA"
+    return f"{title_es}: qué ver, itinerario y mapa | YOKA"
+
+
+def seo_desc(it, desc, title_es, ndays):
+    """Descripción para Google (unos 155 caracteres): resumen + qué trae la página."""
+    extra = f"Itinerario de {ndays} {'día' if ndays == 1 else 'días'} con mapa, horarios"
+    extra += ", presupuesto y consejos." if it.get("budget_per_person") else " y consejos."
+    base = es_of(desc).split(". Presupuesto")[0].rstrip(".") + "." if desc else f"{title_es}."
+    full = f"{base} {extra}"
+    if len(full) <= 160:
+        return full
+    cut = full[:157]
+    return cut[:cut.rfind(" ")].rstrip(",.;:") + "…"
+
+
+def related(it, items, n=3):
+    """Itinerarios parecidos para enlazar: primero del mismo país, luego del mismo tipo (escapada o ruta)."""
+    others = [i for i in items if i["slug"] != it["slug"]]
+    same_country = [i for i in others if country_of(i) == country_of(it)]
+    same_kind = [i for i in others if region(i) == region(it) and i not in same_country]
+    # para que no salgan siempre los mismos, empezamos en un punto distinto según la página
+    k = sum(map(ord, it["slug"]))
+    if same_kind:
+        k %= len(same_kind)
+        same_kind = same_kind[k:] + same_kind[:k]
+    return (same_country + same_kind + others)[:n]
+
+
+def related_html(it, items):
+    rel = related(it, items)
+    if not rel:
+        return ""
+    return (f'<section class="related">{t("Itinerarios parecidos", "Similar itineraries", "h2")}'
+            f'<div class="grid">{"".join(card(i) for i in rel)}</div></section>')
+
+
+def page(it, extra, all_items=()):
     slug = it["slug"]
     url = f"{BASE}/itinerarios/{slug}"
     days = it.get("days") or []
@@ -229,7 +269,7 @@ def page(it, extra):
     flag = it.get("country_flag") or ""
     desc = (extra.get("description") or it.get("description") or "").strip()
     title_es = es_of(it["title"])
-    meta_desc = es_of(desc) if len(desc) > 60 else f"{title_es}: plan día a día para viajar en grupo, con mapa, horarios y consejos."
+    meta_desc = seo_desc(it, desc, title_es, len(days))
 
     markers, seen = [], {}
     for di, d in enumerate(days):
@@ -306,7 +346,7 @@ def page(it, extra):
                f"Free on iPhone (beta on Android). In the app, find it in Explore → Itineraries: “{it['title']}”. "
                "Copy it to your trip, vote on the plans and split the costs.")
 
-    return head(f"{title_es} · Plan día a día con mapa | YOKA", meta_desc, url, it.get("photo") or f"{BASE}/og-image.png", ld, "article",
+    return head(seo_title(title_es), meta_desc, url, it.get("photo") or f"{BASE}/og-image.png", ld, "article",
                 '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">\n') + f"""
 <body>
 {NAV}
@@ -331,6 +371,7 @@ def page(it, extra):
     {t("Copiad el plan, cambiad lo que queráis, votad los sitios y llevad las cuentas de quién ha pagado qué.", "Copy the plan, change whatever you like, vote on places and keep track of who paid for what.", "p")}
     <a class="js-lang" href="/descarga">{t("Descargar YOKA", "Download YOKA")}</a>
   </section>
+  {related_html(it, all_items)}
 </main>
 {footer(" · <a class='js-lang' href='/itinerarios/'>" + t("Más itinerarios", "More itineraries") + "</a>")}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
@@ -427,7 +468,7 @@ def main():
         if old not in keep:
             os.remove(old)
     for i in items:
-        open(f"{OUT}/{i['slug']}.html", "w", encoding="utf-8").write(page(i, extras.get(i["slug"], {})))
+        open(f"{OUT}/{i['slug']}.html", "w", encoding="utf-8").write(page(i, extras.get(i["slug"], {}), items))
     open(f"{OUT}/index.html", "w", encoding="utf-8").write(index(items))
     update_sitemap(items)
     print(f"ok: {len(items)} itinerarios")
