@@ -218,6 +218,7 @@ function toggleNav(){
 
 def footer(extra_links=""):
     return (f'<footer>© {datetime.date.today().year} YOKA · <a class="js-lang" href="/">goyokatravel.com</a>{extra_links}'
+            f' · <a class="js-lang" href="/guias/">{t("Guías", "Guides")}</a>'
             f' · <a class="js-lang" href="/privacidad">{t("Privacidad", "Privacy")}</a></footer>')
 
 
