@@ -172,6 +172,7 @@ NAV = """<div class="nav-wrap">
     <a class="js-lang" href="/como-funciona.html" data-es="Cómo funciona" data-en="How it works">Cómo funciona</a>
     <a class="js-lang" href="/sobre-nosotros.html" data-es="Sobre nosotros" data-en="About us">Sobre nosotros</a>
     <a class="js-lang current" href="/itinerarios/" data-es="Itinerarios" data-en="Itineraries">Itinerarios</a>
+    <a class="js-lang" href="/blog/" data-es="Blog" data-en="Blog">Blog</a>
     <a class="js-lang" href="/faq.html" data-es="FAQ" data-en="FAQ">FAQ</a>
     <a class="js-lang" href="/contacto.html" data-es="Contacto" data-en="Contact">Contacto</a>
   </div>
@@ -199,6 +200,7 @@ NAV = """<div class="nav-wrap">
     <a class="js-lang" href="/como-funciona.html" data-es="Cómo funciona" data-en="How it works">Cómo funciona</a>
     <a class="js-lang" href="/sobre-nosotros.html" data-es="Sobre nosotros" data-en="About us">Sobre nosotros</a>
     <a class="js-lang current" href="/itinerarios/" data-es="Itinerarios" data-en="Itineraries">Itinerarios</a>
+    <a class="js-lang" href="/blog/" data-es="Blog" data-en="Blog">Blog</a>
     <a class="js-lang" href="/faq.html" data-es="FAQ" data-en="FAQ">FAQ</a>
     <a class="js-lang" href="/contacto.html" data-es="Contacto" data-en="Contact">Contacto</a>
   </div>
@@ -218,6 +220,7 @@ function toggleNav(){
 
 def footer(extra_links=""):
     return (f'<footer>© {datetime.date.today().year} YOKA · <a class="js-lang" href="/">goyokatravel.com</a>{extra_links}'
+            f' · <a class="js-lang" href="/blog/">Blog</a>'
             f' · <a class="js-lang" href="/privacidad">{t("Privacidad", "Privacy")}</a></footer>')
 
 
