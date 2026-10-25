@@ -1,0 +1,51 @@
+{
+  "slug": "como-organizar-un-viaje-con-amigos",
+  "date": "2026-10-25",
+  "related": ["lisboa-3-dias", "granada-finde", "despedida-en-cadiz"],
+  "es": {
+    "title": "Cómo organizar un viaje con amigos sin morir en el intento",
+    "h1": "Cómo organizar un viaje <mark>con amigos</mark>",
+    "seo_title": "Cómo organizar un viaje con amigos: guía paso a paso | YOKA",
+    "desc": "Paso a paso para organizar un viaje en grupo: fechas, presupuesto, destino, reservas, itinerario y gastos, sin perderlo todo en el chat.",
+    "lead": "Organizar un viaje en grupo es fácil hasta que sois más de tres. Esta es la forma de hacerlo sin 300 mensajes sin leer, sin un Excel que nadie abre y sin que la misma persona acabe haciéndolo todo.",
+    "sections": [
+      ["1. Primero fechas y presupuesto, después destino", "<p>El error más común es empezar por el destino. Si no sabéis cuándo podéis ir todos ni cuánto queréis gastar, cualquier destino que propongáis se caerá a la semana.</p><ul><li><strong>Fechas:</strong> que cada uno diga qué fines de semana o semanas tiene libres y quedaos con los que coinciden.</li><li><strong>Presupuesto:</strong> pactad un máximo por persona sin contar vuelos ni alojamiento, o contándolo todo. Lo importante es que todos digan la misma cifra en voz alta.</li></ul>"],
+      ["2. Elegid el destino votando", "<p>Con fechas y presupuesto claros, cada uno propone uno o dos destinos y se vota. Si gana uno con mucha diferencia, perfecto. Si hay empate, desempatad con el precio del transporte para esas fechas.</p><p>Si no se os ocurre nada, partir de un itinerario hecho ahorra mucho tiempo: mirad los <a href=\"/itinerarios/\">itinerarios para viajar con amigos</a> y elegid uno que encaje con vuestros días.</p>"],
+      ["3. Un solo sitio para toda la información", "<p>El chat del grupo está bien para hablar, pero fatal para guardar cosas: la dirección del hotel, las entradas o el plan del día acaban enterrados entre memes. Decidid desde el principio dónde va a estar todo y que nadie tenga que preguntar «¿me pasas el itinerario?».</p>"],
+      ["4. Repartid las reservas", "<p>No hace falta que una sola persona lo reserve todo. Repartid: una persona el alojamiento, otra el transporte, otra las entradas que haya que sacar con antelación. Lo que sí conviene es apuntar en el momento quién ha pagado qué, para no tener que reconstruirlo al volver.</p>"],
+      ["5. Un itinerario con margen", "<p>Un buen plan de grupo tiene uno o dos planes fijos por día (lo que hay que reservar o lo que no os queréis perder) y huecos para improvisar. Para los huecos, que cada uno vaya apuntando ideas: restaurantes, miradores, bares. El día antes, votáis y la más votada entra en el plan.</p>"],
+      ["6. Gastos al día desde el primer euro", "<p>Apuntad cada gasto cuando ocurre, con quién lo ha pagado y entre quién se reparte. Al final del viaje solo hay que mirar quién debe a quién y hacer los pagos. Lo explicamos con un ejemplo en <a href=\"/blog/como-dividir-gastos-viaje-amigos\">cómo dividir los gastos de un viaje entre amigos</a>.</p>"],
+      ["7. Durante el viaje", "<p>Que todo el mundo pueda ver el plan de hoy y la dirección del alojamiento sin depender de quien lo organizó. Y repartid lo que hay que llevar: no hacen falta cuatro secadores ni que nadie lleve cargador. Tenéis una lista en <a href=\"/blog/que-llevar-en-la-maleta-fin-de-semana\">qué llevar en la maleta para un fin de semana</a>.</p>"],
+      ["Errores típicos", "<ul><li>Decidir el destino antes que las fechas.</li><li>Que una sola persona lo organice todo y luego nadie sepa nada.</li><li>Llenar el itinerario de planes y no dejar tiempo libre.</li><li>Dejar las cuentas para el final.</li></ul>"]
+    ],
+    "yoka": "En <strong>YOKA</strong> creáis el viaje, invitáis al grupo con un código y lo tenéis todo en un sitio: el itinerario día a día, las ideas que se votan, el hotel de cada etapa, la maleta del grupo y los gastos con quién debe a quién. Durante el viaje, el modo Hoy os enseña el plan del día y el hotel aunque os quedéis sin cobertura.",
+    "faq": [
+      ["¿Con cuánta antelación hay que organizar un viaje con amigos?", "Para una escapada de fin de semana, con 4 a 6 semanas suele bastar. Para un viaje largo o en fechas muy demandadas, como puentes o verano, mejor con 2 o 3 meses, sobre todo por los vuelos y el alojamiento."],
+      ["¿Cómo ponemos de acuerdo a todos con el presupuesto?", "Pactad una cifra máxima por persona antes de elegir destino y decid qué incluye: solo el día a día o también vuelos y alojamiento. Si alguien no llega, mejor saberlo al principio y ajustar el plan."],
+      ["¿Qué app usar para organizar un viaje en grupo?", "Una que junte el plan, las reservas y los gastos en el mismo sitio y que todo el grupo pueda ver. YOKA está pensada justo para eso y es gratis en iPhone (en Android está en beta)."]
+    ]
+  },
+  "en": {
+    "title": "How to plan a trip with friends (and survive it)",
+    "h1": "How to plan a trip <mark>with friends</mark>",
+    "seo_title": "How to plan a trip with friends: step-by-step guide | YOKA",
+    "desc": "Step by step to plan a group trip: dates, budget, destination, bookings, itinerary and costs, without losing everything in the group chat.",
+    "lead": "Planning a group trip is easy until there are more than three of you. Here's how to do it without 300 unread messages, a spreadsheet nobody opens, or the same person ending up doing everything.",
+    "sections": [
+      ["1. Dates and budget first, destination second", "<p>The most common mistake is starting with the destination. If you don't know when everyone can go or how much you want to spend, any destination you pick will fall apart within a week.</p><ul><li><strong>Dates:</strong> everyone shares which weekends or weeks they're free, and you keep the ones that overlap.</li><li><strong>Budget:</strong> agree on a maximum per person, either excluding flights and accommodation or including everything. What matters is that everyone says the same number out loud.</li></ul>"],
+      ["2. Vote on the destination", "<p>Once dates and budget are clear, everyone suggests one or two places and you vote. If one wins by a mile, great. If it's a tie, break it with the price of getting there on those dates.</p><p>If nobody has ideas, starting from a ready-made plan saves a lot of time: browse the <a href=\"/itinerarios/\">itineraries for travelling with friends</a> and pick one that fits your days.</p>"],
+      ["3. One place for all the information", "<p>The group chat is great for talking but terrible for keeping things: the hotel address, the tickets and today's plan end up buried under memes. Decide from day one where everything will live, so nobody has to ask “can you send the itinerary again?”.</p>"],
+      ["4. Share out the bookings", "<p>One person doesn't have to book everything. Split it up: someone takes accommodation, someone transport, someone the tickets you need in advance. What you should do is note who paid for what right away, so you don't have to piece it together when you're back.</p>"],
+      ["5. An itinerary with room to breathe", "<p>A good group plan has one or two fixed plans a day (what needs booking or what you don't want to miss) and gaps to improvise. For the gaps, everyone adds ideas as they go: restaurants, viewpoints, bars. The day before, you vote and the top idea goes into the plan.</p>"],
+      ["6. Track costs from the first euro", "<p>Log every expense as it happens: who paid and who it's split between. At the end of the trip you just check who owes whom and settle up. We explain it with an example in <a href=\"/blog/como-dividir-gastos-viaje-amigos\">how to split travel costs with friends</a>.</p>"],
+      ["7. During the trip", "<p>Make sure everyone can see today's plan and the accommodation address without relying on whoever organised it. And share out what to bring: you don't need four hair dryers and no charger. There's a list in <a href=\"/blog/que-llevar-en-la-maleta-fin-de-semana\">what to pack for a weekend away</a>.</p>"],
+      ["Common mistakes", "<ul><li>Choosing the destination before the dates.</li><li>One person organising everything while nobody else knows anything.</li><li>Cramming the itinerary and leaving no free time.</li><li>Leaving the money until the end.</li></ul>"]
+    ],
+    "yoka": "In <strong>YOKA</strong> you create the trip, invite your group with a code and keep everything in one place: the day-by-day itinerary, ideas you vote on, the hotel for each stop, the group packing list and costs with who owes whom. During the trip, Today mode shows the day's plan and your hotel even without signal.",
+    "faq": [
+      ["How far in advance should you plan a trip with friends?", "For a weekend away, 4 to 6 weeks is usually enough. For a longer trip or busy dates like bank holidays or summer, 2 to 3 months is better, mainly because of flights and accommodation."],
+      ["How do we get everyone to agree on a budget?", "Agree on a maximum per person before choosing the destination and decide what it covers: just day-to-day spending or flights and accommodation too. If someone can't stretch to it, better to know early and adjust the plan."],
+      ["Which app should we use to plan a group trip?", "One that keeps the plan, bookings and costs in the same place and that the whole group can see. YOKA is built exactly for that and is free on iPhone (Android is in beta)."]
+    ]
+  }
+}
