@@ -42,10 +42,11 @@ h1 mark{background:var(--yellow);padding:0 .15em;border-radius:8px}
 .tips{background:var(--card);border:2px solid var(--line);border-radius:20px;padding:18px 20px;margin-bottom:24px}
 .tips h2{font-size:1.3rem;margin-bottom:8px}
 .tips ul{padding-left:18px;display:grid;gap:6px}
-.why{background:var(--yellow);border:2px solid var(--ink);border-radius:24px;padding:24px 20px;margin:10px 0 30px;text-align:center}
-.why h2{font-size:clamp(1.4rem,4vw,1.9rem);margin-bottom:8px}
-.why p{color:var(--soft);margin-bottom:16px}
-.why a{display:inline-block;background:var(--ink);color:var(--yellow);text-decoration:none;font-weight:800;border-radius:100px;padding:12px 24px}
+.why{background:var(--blue);color:#fff;border:2px solid var(--ink);border-radius:24px;padding:24px 20px;margin:10px 0 30px;text-align:center;box-shadow:5px 5px 0 var(--ink)}
+.why h2{font-size:clamp(1.4rem,4vw,1.9rem);margin-bottom:8px;color:#fff}
+.why p{color:#E3EFFB;margin-bottom:16px}
+.why p strong{color:#fff}
+.why a{display:inline-block;background:var(--yellow);color:var(--ink);text-decoration:none;font-weight:800;border-radius:100px;padding:12px 24px}
 footer{text-align:center;font-size:.85rem;color:var(--muted);padding:10px 16px 40px}
 .num{width:24px;height:24px;border-radius:50%;color:#fff;font:800 11px/20px Nunito,sans-serif;text-align:center;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,.35)}
 /* índice */
