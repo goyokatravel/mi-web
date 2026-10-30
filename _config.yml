@@ -1,0 +1,8 @@
+# GitHub Pages (Jekyll): publicar la carpeta oculta .well-known, donde
+# Apple (apple-app-site-association) y Google (assetlinks.json) buscan
+# la verificación de los enlaces que abren la app (join.html?code=...).
+include:
+  - .well-known
+  - apple-app-site-association
+exclude:
+  - _tools
