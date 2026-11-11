@@ -178,5 +178,37 @@
       "You don't need to walk the whole Cares trail: go and come back the same way.",
       "Bring a rain jacket: the weather in Asturias changes fast."
     ]
+  },
+  "viena-3-dias": {
+    "stay_fact": "Dormir en Neubau, Mariahilf o el centro",
+    "stay_fact_en": "Stay in Neubau, Mariahilf or the old town",
+    "tips": [
+      "El billete de transporte de 72 horas sale a cuenta si vais a moveros mucho en metro y tranvía.",
+      "Para la ópera de pie, haced la cola unos 80 minutos antes y atad un pañuelo a la barandilla para guardar el sitio.",
+      "Los mercadillos de Navidad abren de mediados de noviembre a finales de diciembre: comprobad las fechas.",
+      "En los cafés clásicos no se pide en la barra: esperad a que os sienten y pagad al camarero."
+    ],
+    "tips_en": [
+      "The 72-hour transport ticket pays off if you'll use the metro and trams a lot.",
+      "For standing opera tickets, queue about 80 minutes before and tie a scarf to the rail to keep your spot.",
+      "Christmas markets run from mid-November to late December: check the dates.",
+      "In the classic cafés you don't order at the bar: wait to be seated and pay the waiter."
+    ]
+  },
+  "berlin-3-dias": {
+    "stay_fact": "Dormir en Mitte, Kreuzberg o Friedrichshain",
+    "stay_fact_en": "Stay in Mitte, Kreuzberg or Friedrichshain",
+    "tips": [
+      "Reservad la cúpula del Reichstag online con varios días de antelación: es gratis pero se agota.",
+      "El billete de 72 horas de transporte cubre metro, tren y bus. Validadlo antes de subir.",
+      "En muchos bares y puestos solo se paga en efectivo: llevad algo de dinero.",
+      "Para Berghain: grupo pequeño, ropa oscura, nada de fotos y paciencia con la cola."
+    ],
+    "tips_en": [
+      "Book the Reichstag dome online several days ahead: it's free but it sells out.",
+      "The 72-hour transport ticket covers U-Bahn, S-Bahn and buses. Validate it before boarding.",
+      "Many bars and stalls are cash only: carry some money.",
+      "For Berghain: small group, dark clothes, no photos and patience in the queue."
+    ]
   }
 }

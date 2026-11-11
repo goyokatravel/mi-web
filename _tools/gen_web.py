@@ -21,7 +21,7 @@ DAY_COLORS = ["#0174D9", "#FF6B57", "#14213D", "#1D9E75", "#9B51E0", "#E6A100", 
 e = lambda s: html.escape(str(s) if s is not None else "", quote=True)
 CAT_EN = {"Activities": "Plan", "Sights": "Sights", "Restaurants": "Food", "Museums": "Museum", "Nightlife": "Nightlife",
           "Shopping": "Shopping", "Nature": "Nature", "Bars": "Bar", "Cafés": "Café", "Parks": "Nature", "Transport": "Transport"}
-COUNTRY_EN = {"Brasil y Argentina": "Brazil and Argentina", "Chequia": "Czechia", "España": "Spain", "Francia": "France",
+COUNTRY_EN = {"Alemania": "Germany", "Brasil y Argentina": "Brazil and Argentina", "Chequia": "Czechia", "España": "Spain", "Francia": "France",
               "Hungría": "Hungary", "Islandia": "Iceland", "Italia": "Italy", "Japón": "Japan", "Marruecos": "Morocco",
               "México": "Mexico", "Países Bajos": "Netherlands", "Perú": "Peru", "Reino Unido": "United Kingdom",
               "Tailandia": "Thailand", "Uzbekistán": "Uzbekistan"}
